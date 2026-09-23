@@ -10,7 +10,15 @@ import Layout from '../layouts/Layout.astro';
     
     <!-- Hero Section -->
     <section class="relative pt-32 pb-24 px-4 overflow-hidden border-b border-white/5">
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-breeze-cyan/10 blur-[150px] pointer-events-none"></div>
+      <!-- Dynamic Image Background -->
+      <div class="absolute inset-0 z-0 pointer-events-none">
+        <!-- 基础背景图 -->
+        <img src="/hero-bg.jpg" alt="微风网络核心架构" class="w-full h-full object-cover object-center opacity-60 mix-blend-lighten" />
+        <!-- 渐变遮罩：让顶部文字清晰，底部完美融入下一区块的深色 -->
+        <div class="absolute inset-0 bg-gradient-to-b from-[#0B1628]/70 via-[#0B1628]/50 to-breeze-dark"></div>
+        <!-- 侧边柔和遮罩：集中视觉焦点 -->
+        <div class="absolute inset-0 bg-gradient-to-r from-[#0B1628]/80 via-transparent to-[#0B1628]/80"></div>
+      </div>
       
       <div class="max-w-5xl mx-auto text-center relative z-10">
         <h1 class="text-breeze-cyan font-bold tracking-widest text-xs md:text-sm mb-6 flex items-center justify-center gap-4">
@@ -573,51 +581,16 @@ import Layout from '../layouts/Layout.astro';
     "@graph": [
       {
         "@type": "WebSite",
-        "name": "Breeze Network",
-        "alternateName": "微风网络",
+        "name": "微风网络",
+        "alternateName": "Breeze Network",
         "url": "https://breezenetwork.org/"
       },
       {
         "@type": "Organization",
-        "name": "Breeze Network",
-        "url": "https://breezenetwork.org/"
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "微风网络到底是什么？",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "微风网络是一个提供高质量跨境网络连接服务的品牌，主要解决外贸、开发、留学生等群体访问国际互联网时的延迟、封锁和不稳定问题，俗称“机场”或“梯子”。"
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "什么是“一键订阅”？我该怎么用？",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "“订阅”是一串以 http 开头的专属私密链接。您不需要手动输入服务器 IP 和密码，只需将这串链接粘贴到您的客户端软件中，软件就会自动下载并配置好所有数十个网络节点及其分流规则。"
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "我可以同时在电脑和手机上使用吗？",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "是的。只要您的套餐并发设备限制允许（具体以套餐说明为准），您可以将同一个订阅链接导入到 Windows, Mac, iOS 和 Android 等多台设备上同时使用。"
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "如果遇到节点连不上怎么办？",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "这通常是因为系统代理没有正确开启，或者您的本地网络环境发生了改变。请首先尝试在客户端中点击“更新订阅”，然后切换节点测试。如果仍不行，请前往本站的“帮助中心”进行快速排查，或查看服务状态面板。"
-            }
-          }
-        ]
+        "name": "微风网络",
+        "alternateName": "Breeze Network",
+        "url": "https://breezenetwork.org/",
+        "logo": "https://breezenetwork.org/logo.png"
       }
     ]
   }

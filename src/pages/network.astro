@@ -1,242 +1,221 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { networkRegions } from '../data/network';
 ---
 
 <Layout 
-  title="微风网络线路与节点｜IPLC・IEPL・中转网络说明 - 微风网络" 
-  description="了解微风网络的节点覆盖、线路类型、路由策略与不同使用场景，帮助你根据延迟、稳定性和网络需求选择合适线路。"
+  title="微风网络线路与节点｜IPLC・IEPL・中转网络说明" 
+  description="了解微风网络的线路与节点架构，包括 IPLC、IEPL、中转与直连线路的区别，以及延迟、晚高峰稳定性和不同网络使用场景的选择方法。"
 >
+  <Fragment slot="head">
+    <link rel="canonical" href="https://breezenetwork.org/network" />
+    <meta property="og:title" content="微风网络线路与节点｜IPLC・IEPL・中转网络说明" />
+    <meta property="og:description" content="了解微风网络的线路与节点架构，包括 IPLC、IEPL、中转与直连线路的区别，以及延迟、晚高峰稳定性和不同网络使用场景的选择方法。" />
+    <meta property="og:url" content="https://breezenetwork.org/network" />
+    <meta property="og:type" content="article" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "微风网络线路与节点｜IPLC・IEPL・中转网络说明",
+        "description": "了解微风网络的线路与节点架构，包括 IPLC、IEPL、中转与直连线路的区别，以及延迟、晚高峰稳定性和不同网络使用场景的选择方法。",
+        "url": "https://breezenetwork.org/network",
+        "inLanguage": "zh-CN",
+        "author": {
+          "@type": "Organization",
+          "name": "微风网络",
+          "url": "https://breezenetwork.org/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "微风网络",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://breezenetwork.org/logo.png"
+          }
+        },
+        "dateModified": "2026-09-23T00:00:00Z"
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "首页",
+            "item": "https://breezenetwork.org/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "线路与节点",
+            "item": "https://breezenetwork.org/network"
+          }
+        ]
+      }
+    </script>
+  </Fragment>
+
   <!-- Hero Section -->
-  <section class="relative py-24 px-4 overflow-hidden border-b border-white/5">
-    <!-- Abstract Background Elements -->
+  <section class="relative py-24 px-4 overflow-hidden border-b border-white/5 bg-breeze-dark">
     <div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
       <div class="absolute top-0 left-1/4 w-96 h-96 bg-breeze-blue rounded-full mix-blend-screen filter blur-[128px]"></div>
-      <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-breeze-cyan rounded-full mix-blend-screen filter blur-[128px]"></div>
     </div>
-
     <div class="relative z-10 max-w-4xl mx-auto text-center">
-      <p class="text-breeze-cyan font-semibold tracking-widest text-sm mb-4 uppercase">微风网络架构</p>
-      <h1 class="text-4xl md:text-5xl lg:text-6xl text-white font-bold mb-6 leading-tight tracking-tight">
-        微风网络线路与节点
-      </h1>
-      <p class="text-lg text-breeze-text leading-relaxed">
-        了解微风网络的节点覆盖、线路类型、路由策略与不同使用场景，<br class="hidden md:block"/>帮助你根据延迟、稳定性和网络需求选择合适线路。
+      <h1 class="text-4xl md:text-5xl lg:text-6xl text-white font-bold mb-6 leading-tight tracking-tight">微风网络线路与节点</h1>
+      <p class="text-lg md:text-xl text-gray-400 mb-10 leading-relaxed">
+        了解微风网络的线路结构、节点覆盖与不同网络连接方式。
       </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="/pricing" class="bg-breeze-cyan text-[#0B1628] font-bold px-8 py-3 rounded-lg hover:bg-cyan-400 transition-colors">查看套餐</a>
+        <a href="/status" class="bg-[#131F33] text-white border border-gray-700 px-8 py-3 rounded-lg hover:border-gray-500 transition-colors">查看服务状态</a>
+      </div>
     </div>
   </section>
 
-  <!-- 节点覆盖区域 -->
-  <section class="py-20 px-4">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-white mb-4">核心节点覆盖区域</h2>
-        <p class="text-breeze-text max-w-2xl mx-auto">我们围绕亚太与北美核心互联枢纽建立网络节点，为用户提供贴近业务的优质网络接入点。</p>
-      </div>
+  <main class="bg-breeze-dark py-16 px-4 font-sans text-gray-300">
+    <div class="max-w-4xl mx-auto space-y-20">
       
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-        {[
-          { region: "Hong Kong", code: "HK", name: "中国香港", desc: "极低延迟枢纽" },
-          { region: "Singapore", code: "SG", name: "新加坡", desc: "东南亚出海核心" },
-          { region: "Japan", code: "JP", name: "日本", desc: "亚太骨干互联" },
-          { region: "Taiwan", code: "TW", name: "中国台湾", desc: "特定亚太业务" },
-          { region: "United States", code: "US", name: "美国", desc: "全球互联网中枢" }
-        ].map(node => (
-          <div class="bg-[#0B1628] border border-white/5 rounded-xl p-5 hover:border-breeze-blue/50 transition-colors group">
-            <div class="flex justify-between items-start mb-4">
-              <span class="text-xs font-bold px-2 py-1 bg-[#131F33] text-breeze-cyan rounded">{node.code}</span>
-              <span class="flex h-3 w-3 relative">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-20"></span>
-                <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
-              </span>
+      <!-- Section 1: 线路覆盖 -->
+      <section>
+        <h2 class="text-3xl font-bold text-white mb-8 border-b border-white/10 pb-4">1. 节点区域覆盖</h2>
+        <p class="mb-8 leading-relaxed">我们致力于为用户提供就近接入的优质体验。以下是微风网络当前支持的主要节点区域分布：</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {networkRegions.map(region => (
+            <div class="bg-[#131F33] border border-white/5 rounded-xl p-5 hover:border-breeze-cyan/50 transition-colors">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-white font-bold text-lg">{region.region}</span>
+                <span class="text-xs font-mono bg-white/10 text-gray-400 px-2 py-1 rounded">{region.code}</span>
+              </div>
+              <p class="text-sm text-gray-400 mb-4 h-10">{region.description}</p>
+              {region.statusAvailable && (
+                <div class="flex items-center gap-2 text-xs text-green-400 font-medium">
+                  <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>当前提供
+                </div>
+              )}
             </div>
-            <h3 class="text-lg font-bold text-white mb-1">{node.region}</h3>
-            <p class="text-sm text-gray-400 mb-2">{node.name}</p>
-            <p class="text-xs text-gray-500 group-hover:text-breeze-text transition-colors">{node.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- 线路类型说明 (SEO Focus) -->
-  <section class="py-20 px-4 bg-[#0B1628]/50 border-y border-white/5">
-    <div class="max-w-7xl mx-auto">
-      <div class="mb-12 md:flex md:justify-between md:items-end">
-        <div class="max-w-2xl">
-          <h2 class="text-3xl font-bold text-white mb-4">线路类型解析</h2>
-          <p class="text-breeze-text">不同的网络环境需要不同的路由策略。我们在寻找兼顾延迟与带宽的完美平衡。</p>
+          ))}
         </div>
-      </div>
+      </section>
 
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-[#0B1628] rounded-2xl p-8 border border-white/5 hover:bg-[#131F33] transition-colors">
-          <div class="text-breeze-blue mb-4">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+      <!-- Section 2: 线路类型 -->
+      <section>
+        <h2 class="text-3xl font-bold text-white mb-8 border-b border-white/10 pb-4">2. 常见网络线路类型</h2>
+        <p class="mb-8 leading-relaxed">不同的业务场景需要不同级别的底层网络支撑。以下是目前跨境网络通信中常见的线路架构说明：</p>
+        <div class="space-y-6">
+          <div class="bg-[#131F33] border border-white/5 p-6 rounded-xl">
+            <h3 class="text-xl font-bold text-breeze-cyan mb-2">IPLC / IEPL 国际专线</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">IPLC (International Private Leased Circuit) 与 IEPL 均属于点对点物理/逻辑专线。它们不经过传统的公网路由，不受国际出口防火墙的拥堵影响，能够提供几乎无波动的超低延迟连接，是晚高峰稳定性的天花板。</p>
           </div>
-          <h3 class="text-xl font-bold text-white mb-3">IPLC / IEPL 物理专线</h3>
-          <p class="text-gray-400 text-sm leading-relaxed mb-4">
-            IPLC (国际专线) 和 IEPL (国际以太网专线) 是真正的物理端到端专线，其最大的特点是<strong>不经过公共互联网拥堵路段</strong>。对于游戏玩家和对延迟极度敏感的交易系统，这是必备之选。作为老牌的<strong>专线机场推荐</strong>与<strong>IPLC机场推荐</strong>服务方，我们的高阶套餐均标配此类线路，确保在任何时间段表现出极高的<strong>晚高峰稳定机场</strong>特性。
-          </p>
-        </div>
-
-        <div class="bg-[#0B1628] rounded-2xl p-8 border border-white/5 hover:bg-[#131F33] transition-colors">
-          <div class="text-[#22D3EE] mb-4">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
+          <div class="bg-[#131F33] border border-white/5 p-6 rounded-xl">
+            <h3 class="text-xl font-bold text-breeze-cyan mb-2">BGP 国内中转优化线路</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">数据先接入国内边缘 BGP 多线机房，随后通过企业级隧道加密传输至海外服务器。这种方式能有效缓解普通宽带跨网调度的延迟，大幅提升数据吞吐量。</p>
           </div>
-          <h3 class="text-xl font-bold text-white mb-3">高质量中转线路</h3>
-          <p class="text-gray-400 text-sm leading-relaxed mb-4">
-            通过 BGP (边界网关协议) 与 CN2 GIA 等优质国内骨干网将流量牵引至海外。这不仅提升了各地区不同运营商用户的连通率，还保留了很高的性价比。在寻找<strong>中转机场推荐</strong>时，优秀的中转路由调优往往能够做到与专线相媲美的带宽，是兼顾大流量与相对<strong>低延迟机场</strong>的绝佳选择。
-          </p>
-        </div>
-
-        <div class="bg-[#0B1628] rounded-2xl p-8 border border-white/5 hover:bg-[#131F33] transition-colors">
-          <div class="text-breeze-blue mb-4">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+          <div class="bg-[#131F33] border border-white/5 p-6 rounded-xl">
+            <h3 class="text-xl font-bold text-breeze-cyan mb-2">公网直连 (CN2 GIA 等)</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">设备直接通过运营商骨干网访问海外服务器。虽然部分优质骨干网（如电信 CN2 GIA）表现出色，但在极端网络波动期仍可能面临公网统一的拥堵问题。</p>
           </div>
-          <h3 class="text-xl font-bold text-white mb-3">原生 IP (Native IP)</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">
-            针对需要解锁特定地区限定服务（如流媒体、特殊游戏服务器、地区限制 API）的用户，原生 IP 意味着更纯净的网络信誉评分。作为优质的<strong>原生IP机场</strong>，我们在特定地区节点部署了家庭宽带或本地 ISP 广播 IP，确保不会被风控系统意外拦截。
-          </p>
         </div>
+      </section>
 
-        <div class="bg-[#0B1628] rounded-2xl p-8 border border-white/5 hover:bg-[#131F33] transition-colors">
-          <div class="text-[#22D3EE] mb-4">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
-          </div>
-          <h3 class="text-xl font-bold text-white mb-3">直连线路 (Direct)</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">
-            直接通过公共海缆传输。虽然容易受晚高峰 QoS（拥塞控制）影响，但在冷门时段或特定网络环境下依然能提供巨大的带宽吞吐量。Breeze Network 通常将直连作为备份冗余或大流量备用线路。
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 设计理念与技术原则 -->
-  <section class="py-20 px-4">
-    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-      <div>
-        <h2 class="text-3xl font-bold text-white mb-6">我们如何选择线路？</h2>
-        <div class="prose prose-invert prose-breeze text-gray-400">
-          <p>
-            我们从不单纯追求表面的“最低延迟数字”，而是综合考虑晚高峰稳定性、丢包率、路由质量、地区访问需求和综合成本。
-          </p>
-          <p>
-            一个常年显示 20ms 但每秒都在丢包的节点，远不如一个稳定在 60ms 但传输如丝般顺滑的节点。Breeze Network 的网络架构师每天都在监控跨境链路的健康度，针对不同运营商（电信/联通/移动）动态调整入口，确保您的数据能走在最顺畅的轨道上。
-          </p>
-          <ul class="mt-6 space-y-4">
-            <li class="flex items-start gap-3">
-              <svg class="w-6 h-6 text-[#22D3EE] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-              <span><strong>网络不是越多节点越好</strong>：节点数量只是一个营销指标。真正决定体验的是节点的冗余质量、拥塞程度和我们的底层维护能力。我们宁可维护 30 个极致稳定的高质量节点，也不会拿 200 个滥竽充数的廉价服务器凑数。</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-6 h-6 text-breeze-blue flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-              <span><strong>透明的节点状态与维护机制</strong>：节点可能因海底光缆故障、上游网络维护、政策路由调整而发生短暂变化。实际可用节点始终以用户后台订阅下发的配置为准。</span>
-            </li>
+      <!-- Section 3: 为什么体验不同 -->
+      <section>
+        <h2 class="text-3xl font-bold text-white mb-8 border-b border-white/10 pb-4">3. 为什么不同线路的体验差异巨大？</h2>
+        <div class="prose prose-invert max-w-none text-gray-400">
+          <p>许多用户在搜索<strong>专线机场推荐</strong>或<strong>低延迟机场</strong>时，常常疑惑：为什么都是连到香港，体验却天差地别？</p>
+          <ul class="leading-relaxed">
+            <li><strong>晚高峰拥塞程度：</strong> 每天晚上 8 点至 11 点，国际出口带宽压力剧增。普通直连线路在此期间容易遭遇大规模丢包，而专线（IPLC/IEPL）独立于公网之外，因此能保持<strong>晚高峰稳定</strong>。</li>
+            <li><strong>路由距离与绕路：</strong> 部分低价线路可能由于运营商 BGP 宣告问题，数据会先绕道美国再折返亚洲，导致延迟翻倍。</li>
+            <li><strong>节点负载与带宽：</strong> 优秀的网络服务会严格限制单台服务器的并发承载量，避免“拥挤的早高峰地铁”效应。</li>
           </ul>
         </div>
-      </div>
-      <div class="relative">
-        <div class="absolute inset-0 bg-gradient-to-r from-breeze-blue/20 to-[#22D3EE]/20 rounded-3xl blur-2xl transform rotate-3"></div>
-        <div class="relative bg-[#0B1628] border border-white/10 rounded-3xl p-8 shadow-2xl">
-          <h3 class="text-xl font-bold text-white mb-6 border-b border-white/5 pb-4">不同场景的最佳选择建议</h3>
-          <div class="space-y-6">
-            <div>
-              <h4 class="text-white font-medium mb-1">网页浏览 & 日常办公</h4>
-              <p class="text-sm text-gray-400">对带宽和延迟要求中等，建议使用新加坡或日本等大容量节点，兼顾极快的响应与稳定性。</p>
-            </div>
-            <div>
-              <h4 class="text-white font-medium mb-1">AI 工具 (ChatGPT/Claude/Gemini)</h4>
-              <p class="text-sm text-gray-400">对 IP 纯净度要求极高。请优先选择带有“原生 IP”标识的美国或冷门地区节点，避免触发 AI 平台的风控封号。</p>
-            </div>
-            <div>
-              <h4 class="text-white font-medium mb-1">4K 流媒体 (Netflix/Disney+)</h4>
-              <p class="text-sm text-gray-400">带宽至上，IP 解锁第二。选择对应区域的大带宽中转节点，无需强求专线，通常 50Mbps 即可畅享 4K。</p>
-            </div>
-            <div>
-              <h4 class="text-white font-medium mb-1">竞技类游戏联机</h4>
-              <p class="text-sm text-gray-400">延迟波动和丢包率决定生死。强烈建议使用香港/日本的 IPLC/IEPL 专线节点，绕过公网拥堵。</p>
-            </div>
+      </section>
+
+      <!-- Section 4: 场景选择 -->
+      <section>
+        <h2 class="text-3xl font-bold text-white mb-8 border-b border-white/10 pb-4">4. 匹配您的使用场景</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div class="bg-[#0B1628] border border-white/10 p-6 rounded-xl relative overflow-hidden">
+            <h3 class="text-white font-bold mb-2">日常浏览与社交</h3>
+            <p class="text-sm text-gray-400 mb-4">追求网页秒开与图文加载顺畅。</p>
+            <div class="text-xs text-breeze-cyan bg-breeze-cyan/10 px-2 py-1 rounded inline-block">关注重点：日常延迟、性价比</div>
+          </div>
+          <div class="bg-[#0B1628] border border-white/10 p-6 rounded-xl relative overflow-hidden">
+            <h3 class="text-white font-bold mb-2">流媒体观影 (4K/8K)</h3>
+            <p class="text-sm text-gray-400 mb-4">需要持续不断的大流量吞吐与地区解锁。</p>
+            <div class="text-xs text-breeze-cyan bg-breeze-cyan/10 px-2 py-1 rounded inline-block">关注重点：原生 IP 质量、带宽上限</div>
+          </div>
+          <div class="bg-[#0B1628] border border-white/10 p-6 rounded-xl relative overflow-hidden">
+            <h3 class="text-white font-bold mb-2">AI 工具与开发</h3>
+            <p class="text-sm text-gray-400 mb-4">避免请求超时与频繁的风控弹窗。</p>
+            <div class="text-xs text-breeze-cyan bg-breeze-cyan/10 px-2 py-1 rounded inline-block">关注重点：IP 纯净度、连接稳定性</div>
+          </div>
+          <div class="bg-[#0B1628] border border-white/10 p-6 rounded-xl relative overflow-hidden">
+            <h3 class="text-white font-bold mb-2">游戏与远程办公</h3>
+            <p class="text-sm text-gray-400 mb-4">对丢包零容忍，需要极致的网络抖动控制。</p>
+            <div class="text-xs text-breeze-cyan bg-breeze-cyan/10 px-2 py-1 rounded inline-block">关注重点：IPLC 专线、极低丢包率</div>
           </div>
         </div>
+      </section>
+
+      <!-- Section 5: 节点误区 -->
+      <section>
+        <h2 class="text-3xl font-bold text-white mb-8 border-b border-white/10 pb-4">5. 节点数量不等于网络质量</h2>
+        <div class="bg-white/5 rounded-xl p-8 border border-white/10">
+          <p class="text-gray-300 leading-relaxed mb-4">
+            许多新手用户喜欢追求拥有几百个甚至上千个节点的列表。然而，<strong>节点数量并不是判断网络质量的唯一标准。</strong>
+          </p>
+          <p class="text-gray-400 leading-relaxed text-sm">
+            真正决定体验的是：<strong>单节点的线路质量、维护团队的响应速度，以及底层路由的稳定性。</strong> 10 条高质量的物理专线，在实际使用中的体验远胜于 100 条经常掉线、需要反复切换的廉价 VPS 节点。我们建议用户更应关注晚高峰表现与长期维护能力。
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 6: FAQ -->
+      <section>
+        <h2 class="text-3xl font-bold text-white mb-8 border-b border-white/10 pb-4">6. 常见问题解答</h2>
+        <div class="space-y-4">
+          
+          <details class="group bg-[#131F33] rounded-xl border border-white/5 [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex justify-between items-center font-medium cursor-pointer p-6 text-white hover:text-breeze-cyan transition-colors">
+              <span>IPLC 和 IEPL 有什么区别？</span>
+            </summary>
+            <div class="text-gray-400 px-6 pb-6 text-sm leading-relaxed border-t border-white/5 pt-4">
+              两者同属高端跨境专线。IPLC (国际私有租用线路) 是传统的端到端物理专线；IEPL (国际以太网专线) 基于二层以太网架构，配置更灵活。在实际用户体验上，两者的延迟和稳定性几乎一样优秀，均不经过公网防火墙，适合要求极高的场景。
+            </div>
+          </details>
+
+          <details class="group bg-[#131F33] rounded-xl border border-white/5 [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex justify-between items-center font-medium cursor-pointer p-6 text-white hover:text-breeze-cyan transition-colors">
+              <span>为什么延迟低但速度不一定快？</span>
+            </summary>
+            <div class="text-gray-400 px-6 pb-6 text-sm leading-relaxed border-t border-white/5 pt-4">
+              “延迟（Ping）”衡量的是数据包往返的时间，而“速度”取决于链路的带宽上限。就像一条不堵车的小巷子，车开得很快（低延迟），但能同时并排跑的车很少（低带宽），所以下载大文件依然会慢。
+            </div>
+          </details>
+
+          <details class="group bg-[#131F33] rounded-xl border border-white/5 [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex justify-between items-center font-medium cursor-pointer p-6 text-white hover:text-breeze-cyan transition-colors">
+              <span>为什么部分节点会临时维护？</span>
+            </summary>
+            <div class="text-gray-400 px-6 pb-6 text-sm leading-relaxed border-t border-white/5 pt-4">
+              海外数据中心会定期进行电力轮转、硬件升级或上游路由调整。为确保长期稳定，机房临时切割或升级是正常的运维操作。如果您遇到节点不可用，可随时前往<a href="/help" class="text-breeze-cyan hover:underline">帮助中心</a>或查看最新的维护通告。
+            </div>
+          </details>
+
+        </div>
+      </section>
+
+      <!-- Bottom Links -->
+      <div class="border-t border-white/10 pt-8 flex flex-wrap gap-4 text-sm">
+        <a href="/airport-recommendation" class="text-gray-400 hover:text-white transition-colors">阅读机场选购指南</a>
+        <span class="text-gray-700 hidden sm:inline">|</span>
+        <a href="/dedicated-line" class="text-gray-400 hover:text-white transition-colors">深入了解专线网络</a>
       </div>
+      
     </div>
-  </section>
-
-  <!-- FAQ Section -->
-  <section class="py-20 px-4 bg-[#0B1628]/50 border-t border-white/5">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-3xl font-bold text-white mb-10 text-center">网络与线路 FAQ</h2>
-      <div class="space-y-4">
-        <details class="group bg-[#0B1628] rounded-xl border border-white/5 [&_summary::-webkit-details-marker]:hidden">
-          <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-white hover:text-breeze-cyan transition-colors">
-            <span>为什么有的节点延迟很低，但下载速度并不快？</span>
-            <span class="transition group-open:rotate-180">
-              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><polyline points="6 9 12 15 18 9"></polyline></svg>
-            </span>
-          </summary>
-          <div class="text-gray-400 mt-2 px-6 pb-6 text-sm leading-relaxed">
-            “延迟”仅仅是数据包从您的设备到达服务器一来一回的时间，它决定了网页开始响应的快慢。而“下载速度”是由线路的总带宽和拥堵程度决定的。有时低延迟的直连线路在晚高峰遭遇 QoS（带宽限制），就会出现“秒连接，但加载慢”的现象。此时切换到带宽充足的中转线路体验会更好。
-          </div>
-        </details>
-        
-        <details class="group bg-[#0B1628] rounded-xl border border-white/5 [&_summary::-webkit-details-marker]:hidden">
-          <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-white hover:text-breeze-cyan transition-colors">
-            <span>为什么晚高峰网络会变慢？</span>
-            <span class="transition group-open:rotate-180">
-              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><polyline points="6 9 12 15 18 9"></polyline></svg>
-            </span>
-          </summary>
-          <div class="text-gray-400 mt-2 px-6 pb-6 text-sm leading-relaxed">
-            晚上 8:00 - 11:00 是国际出口宽带最拥挤的时段。大部分民用宽带的国际出口流量会被运营商主动降级（QoS），导致丢包率飙升。我们的 IPLC/IEPL 专线由于物理上独立于公网，因此在晚高峰依然能保持稳定的全速状态。
-          </div>
-        </details>
-        
-        <details class="group bg-[#0B1628] rounded-xl border border-white/5 [&_summary::-webkit-details-marker]:hidden">
-          <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-white hover:text-breeze-cyan transition-colors">
-            <span>中转和直连到底有什么区别？</span>
-            <span class="transition group-open:rotate-180">
-              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><polyline points="6 9 12 15 18 9"></polyline></svg>
-            </span>
-          </summary>
-          <div class="text-gray-400 mt-2 px-6 pb-6 text-sm leading-relaxed">
-            直连是指您的宽带直接连接到海外服务器，高度依赖您本地宽带运营商本身的国际出口质量。中转则是通过国内一台高防且带宽高昂的服务器（如 BGP 多线接入点），将您的流量安全接管后，再由优质的骨干网传输到海外。中转显著提升了连接的稳定性，并抹平了不同地区、不同运营商之间的体验差异。
-          </div>
-        </details>
-        
-        <details class="group bg-[#0B1628] rounded-xl border border-white/5 [&_summary::-webkit-details-marker]:hidden">
-          <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-white hover:text-breeze-cyan transition-colors">
-            <span>IPLC 专线是否一定比中转快？</span>
-            <span class="transition group-open:rotate-180">
-              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><polyline points="6 9 12 15 18 9"></polyline></svg>
-            </span>
-          </summary>
-          <div class="text-gray-400 mt-2 px-6 pb-6 text-sm leading-relaxed">
-            不一定。IPLC 的强项在于“极高的稳定性和极低的丢包率”，它的延迟通常也是最低的。但是由于 IPLC 成本极高，带宽总上限往往不如中转节点大。因此如果是玩游戏、秒杀抢购，IPLC 无疑是王者；但如果是想测出千兆满速或下载几十 GB 的大文件，大带宽中转可能会比 IPLC 速度更高。
-          </div>
-        </details>
-
-        <details class="group bg-[#0B1628] rounded-xl border border-white/5 [&_summary::-webkit-details-marker]:hidden">
-          <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-white hover:text-breeze-cyan transition-colors">
-            <span>为什么我喜欢的某个节点临时消失了？</span>
-            <span class="transition group-open:rotate-180">
-              <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><polyline points="6 9 12 15 18 9"></polyline></svg>
-            </span>
-          </summary>
-          <div class="text-gray-400 mt-2 px-6 pb-6 text-sm leading-relaxed">
-            这通常意味着该节点正在进行例行维护、机房断电升级或路由阻断抢修。Breeze Network 的管理系统在检测到节点长时间离线时会自动将其从订阅列表中隐藏，以防您的客户端连上死节点。维护完成后它就会自动回归。
-          </div>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="py-24 px-4 text-center">
-    <h2 class="text-3xl font-bold text-white mb-6">体验微风般稳定的网络</h2>
-    <p class="text-gray-400 mb-8 max-w-2xl mx-auto">马上选择适合您的套餐，享受全球互联的极致速度与稳定性。</p>
-    <a href="/pricing" class="inline-flex items-center justify-center bg-breeze-blue text-white px-8 py-3 rounded-xl hover:bg-blue-500 transition-colors shadow-lg shadow-breeze-blue/30 font-medium">
-      查看所有套餐
-    </a>
-  </section>
+  </main>
 </Layout>

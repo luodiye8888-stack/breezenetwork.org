@@ -7,7 +7,10 @@ import '../styles/global.css';
 const { title, description } = Astro.props;
 ---
 <html lang="zh-CN" class="bg-breeze-dark text-breeze-text">
-  <SEO title={title} description={description} />
+  <head>
+    <SEO title={title} description={description} />
+    <slot name="head" />
+  </head>
   <body class="min-h-screen flex flex-col font-sans antialiased pt-16">
     <Header />
     <main class="flex-grow">

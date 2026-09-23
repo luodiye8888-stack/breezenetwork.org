@@ -1,19 +1,20 @@
 ---
 import { brand } from '../data/brand';
 ---
-<header class="fixed top-0 w-full z-50 bg-breeze-dark/80 backdrop-blur-md border-b border-breeze-card transition-all">
-  <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-    <a href="/" class="flex items-center gap-2 group text-white hover:opacity-80 transition">
+<header class="fixed top-0 w-full z-50 bg-breeze-dark/80 backdrop-blur-md border-b border-breeze-card transition-all h-16">
+  <div class="max-w-7xl mx-auto px-4 h-full flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2 group text-white hover:opacity-80 transition flex-shrink-0">
       <img src="/logo.png" alt="Breeze Network Logo" class="w-10 h-10 object-cover rounded-xl" />
       <div class="flex flex-col">
         <span class="font-bold text-lg leading-tight">{brand.nameZh}</span>
         <span class="text-[10px] text-breeze-cyan leading-tight">{brand.name}</span>
       </div>
     </a>
-    <nav class="hidden md:flex items-center gap-6 text-sm text-breeze-text h-16">
+    
+    <nav class="hidden md:flex items-center gap-6 text-sm text-breeze-text h-full whitespace-nowrap">
       <a href="/" class="hover:text-white transition-colors">首页</a>
       <a href="/pricing" class="hover:text-white transition-colors">套餐</a>
-      <a href="/network" class="hover:text-white transition-colors">网络</a>
+      <a href="/network" class="hover:text-white transition-colors">线路与节点</a>
       <a href="/guides" class="hover:text-white transition-colors">使用教程</a>
       <a href="/status" class="hover:text-white transition-colors">服务状态</a>
       
@@ -45,14 +46,43 @@ import { brand } from '../data/brand';
         </div>
       </div>
     </nav>
-    <div class="hidden md:flex gap-4">
-      <!-- 外部包裹层负责固定感应区域，防止边缘旋转时触发鼠标移出 -->
-      <a href="/go" rel="nofollow sponsored" id="aff-btn" class="group relative block w-36 h-10 cursor-pointer" style="perspective: 1000px;">
-        <!-- 内部容器负责实际翻转与背景颜色 -->
+    
+    <div class="hidden md:flex gap-4 flex-shrink-0">
+      <a href="/go" rel="nofollow sponsored" id="aff-btn" class="group relative block w-32 h-9 cursor-pointer" style="perspective: 1000px;">
         <div class="aff-inner relative w-full h-full flex items-center justify-center text-sm bg-breeze-blue text-white rounded-md">
-          <span class="absolute transition-opacity duration-300 group-hover:opacity-0">准备好购买了吗？</span>
-          <span class="absolute opacity-0 transition-opacity duration-300 group-hover:opacity-100">前往微风网络</span>
+          <span class="absolute transition-opacity duration-300 group-hover:opacity-0">前往用户中心</span>
+          <span class="absolute opacity-0 transition-opacity duration-300 group-hover:opacity-100">立即使用</span>
         </div>
+      </a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-btn" class="md:hidden text-white p-2 focus:outline-none flex-shrink-0" aria-expanded="false" aria-controls="mobile-menu" aria-label="打开菜单">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+    </button>
+  </div>
+
+  <!-- Mobile Overlay Menu -->
+  <div id="mobile-menu-overlay" class="fixed inset-0 bg-[#0B1628]/90 backdrop-blur-md z-40 opacity-0 invisible transition-all duration-300"></div>
+  <div id="mobile-menu" class="fixed top-0 right-0 w-64 h-full bg-[#131F33] border-l border-white/5 z-50 transform translate-x-full transition-transform duration-300 flex flex-col overflow-y-auto">
+    <div class="p-4 flex justify-end border-b border-white/5">
+      <button id="mobile-close-btn" class="text-gray-400 hover:text-white p-2 focus:outline-none" aria-label="关闭菜单">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
+    <div class="flex flex-col p-4 space-y-4 text-base text-gray-300">
+      <a href="/" class="hover:text-white transition-colors py-2 border-b border-white/5">首页</a>
+      <a href="/pricing" class="hover:text-white transition-colors py-2 border-b border-white/5">套餐</a>
+      <a href="/network" class="hover:text-white transition-colors py-2 border-b border-white/5">线路与节点</a>
+      <a href="/guides" class="hover:text-white transition-colors py-2 border-b border-white/5">使用教程</a>
+      <a href="/airport-recommendation" class="hover:text-white transition-colors py-2 border-b border-white/5">2026机场推荐</a>
+      <a href="/ladder-recommendation" class="hover:text-white transition-colors py-2 border-b border-white/5">梯子推荐</a>
+      <a href="/clash-airport" class="hover:text-white transition-colors py-2 border-b border-white/5">Clash机场推荐</a>
+      <a href="/status" class="hover:text-white transition-colors py-2 border-b border-white/5">服务状态</a>
+      <a href="/help" class="hover:text-white transition-colors py-2 mb-4">帮助中心</a>
+      
+      <a href="/go" rel="nofollow sponsored" class="bg-breeze-cyan text-[#0B1628] font-bold py-3 rounded-lg text-center transition-colors hover:bg-cyan-400">
+        前往用户中心
       </a>
     </div>
   </div>
@@ -63,27 +93,66 @@ import { brand } from '../data/brand';
     transition: transform 0.6s ease;
     transform-style: preserve-3d;
   }
-  /* 当外层 a 标签被 hover 时，触发内部 div 的翻转 */
   .group:hover .aff-inner {
     transform: rotateX(360deg);
   }
 </style>
 
 <script>
+  // Desktop Button Logic
   const btn = document.getElementById('aff-btn');
   if (btn) {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      const targetUrl = btn.href;
-      
-      // 锁定按钮状态并提示跳转 (覆盖内部容器内容，保留原有样式结构)
+      const targetUrl = btn.getAttribute('href');
       btn.style.pointerEvents = 'none';
       btn.innerHTML = '<div class="w-full h-full flex items-center justify-center text-sm bg-breeze-blue text-white rounded-md">安全跳转中...</div>';
-      
-      // 3秒伪装延迟
       setTimeout(() => {
         window.location.href = targetUrl;
       }, 3000);
+    });
+  }
+
+  // Mobile Menu Logic
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileCloseBtn = document.getElementById('mobile-close-btn');
+  const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  function openMenu() {
+    mobileMenuOverlay.classList.remove('opacity-0', 'invisible');
+    mobileMenuOverlay.classList.add('opacity-100', 'visible');
+    mobileMenu.classList.remove('translate-x-full');
+    mobileMenu.classList.add('translate-x-0');
+    mobileMenuBtn.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    mobileMenuOverlay.classList.remove('opacity-100', 'visible');
+    mobileMenuOverlay.classList.add('opacity-0', 'invisible');
+    mobileMenu.classList.remove('translate-x-0');
+    mobileMenu.classList.add('translate-x-full');
+    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  if (mobileMenuBtn && mobileCloseBtn && mobileMenuOverlay) {
+    mobileMenuBtn.addEventListener('click', openMenu);
+    mobileCloseBtn.addEventListener('click', closeMenu);
+    mobileMenuOverlay.addEventListener('click', closeMenu);
+    
+    // Close on ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileMenuBtn.getAttribute('aria-expanded') === 'true') {
+        closeMenu();
+      }
+    });
+
+    // Close on link click
+    const links = mobileMenu.querySelectorAll('a');
+    links.forEach(link => {
+      link.addEventListener('click', closeMenu);
     });
   }
 </script>
