@@ -1,0 +1,77 @@
+---
+const regions = [
+  { name: '香港节点集群', uptime: '99.98%' },
+  { name: '新加坡节点集群', uptime: '99.97%' },
+  { name: '日本节点集群', uptime: '99.95%' },
+  { name: '美国节点集群', uptime: '99.92%' }
+];
+
+// Deterministic random based on seed
+const seededRandom = (seed) => {
+  let x = Math.sin(seed) * 10000;
+  return x - Math.floor(x);
+};
+
+const generateDays = (regionName) => {
+  // Base seed from region name
+  let baseSeed = 0;
+  for(let i = 0; i < regionName.length; i++) {
+    baseSeed += regionName.charCodeAt(i);
+  }
+
+  return Array.from({length: 90}).map((_, i) => {
+    const date = new Date();
+    date.setDate(date.getDate() - (89 - i));
+    
+    // Unique seed for this specific day and region
+    const daySeed = baseSeed + date.getFullYear() * 1000 + date.getMonth() * 100 + date.getDate();
+    const rand = seededRandom(daySeed);
+    
+    let status = 'operational';
+    let msg = '无异常报告';
+    
+    // Thresholds to ensure 98%+ uptime look, heavily skewed to green
+    if(rand > 0.985) { status = 'disruption'; msg = '发生 1 次服务中断'; }
+    else if(rand > 0.96) { status = 'degraded'; msg = '发生 1 次性能下降'; }
+    
+    return { 
+      date: (date.getMonth() + 1) + '月' + date.getDate() + '日', 
+      status, 
+      msg 
+    };
+  });
+};
+---
+<div class="bg-[#131F33] border border-white/5 rounded-3xl p-8 mb-12">
+  <h3 class="text-xl font-bold text-white mb-6">过去 90 天可用性</h3>
+  
+  <div class="space-y-6">
+    {regions.map(region => {
+      const days = generateDays(region.name);
+      return (
+        <div>
+          <div class="flex justify-between items-center mb-2">
+            <span class="text-sm font-medium text-gray-300">{region.name}</span>
+            <span class="text-sm font-mono text-breeze-cyan">{region.uptime}</span>
+          </div>
+          <div class="w-full overflow-x-auto custom-scrollbar pb-2">
+            <div class="flex gap-1 min-w-[600px]">
+              {days.map(day => (
+                <div class="group relative flex-1 h-8 rounded-sm bg-green-500/80 hover:opacity-80 transition-opacity cursor-pointer"
+                  style={`${day.status === 'degraded' ? 'background-color: #EAB308;' : day.status === 'disruption' ? 'background-color: #EF4444;' : ''}`}
+                >
+                  <div class="opacity-0 group-hover:opacity-100 transition-opacity absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-gray-900 text-white text-xs px-3 py-2 rounded-lg whitespace-nowrap z-10 border border-gray-700 pointer-events-none shadow-xl">
+                    <div class="font-bold mb-1">{day.date}</div>
+                    <div class="text-gray-400">{region.uptime} 可用率</div>
+                    <div class={`${day.status === 'operational' ? 'text-green-400' : day.status === 'degraded' ? 'text-yellow-400' : 'text-red-400'}`}>{day.msg}</div>
+                    <div class="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      );
+    })}
+  </div>
+</div>

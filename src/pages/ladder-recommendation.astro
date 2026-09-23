@@ -1,0 +1,377 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="2026梯子推荐：稳定科学上网工具与Clash使用指南 | 微风网络" 
+  description="2026梯子推荐指南，介绍Windows、Android、iPhone、Mac常见科学上网方案，以及Clash、订阅、节点和线路如何选择，帮助新手找到适合自己的网络工具。"
+>
+  <main class="bg-breeze-dark min-h-screen text-gray-300 pt-24 pb-20 font-sans">
+    
+    <!-- Hero 首屏 -->
+    <section class="relative px-4 py-20 text-center overflow-hidden">
+      <!-- Background Glow -->
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-breeze-cyan/10 blur-[120px] pointer-events-none"></div>
+      
+      <div class="max-w-4xl mx-auto relative z-10">
+        <h1 class="text-4xl md:text-5xl font-black text-white mb-6 leading-tight tracking-tight">
+          2026 梯子推荐：<br class="hidden md:block"/>科学上网工具与 Clash 方案怎么选
+        </h1>
+        <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+          不同设备、用途和预算，需要的网络工具并不一样。<br class="hidden sm:block"/>从 Windows、Android、iPhone、Mac 到 Clash 客户端，这里帮你快速找到适合的使用方案。
+        </p>
+      </div>
+    </section>
+
+    <!-- 互动选择器：我需要什么梯子？ -->
+    <section class="py-12 px-4">
+      <div class="max-w-4xl mx-auto bg-[#131F33] border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden min-h-[350px] flex flex-col justify-center">
+        
+        <!-- Step 1: Device -->
+        <div id="wizard-step-1" class="wizard-step transition-opacity duration-300">
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-8 text-center">你主要在哪个设备使用？</h2>
+          <div class="flex flex-wrap justify-center gap-4">
+            <button class="device-btn bg-[#0B1628] border border-white/5 hover:border-breeze-cyan/50 text-white px-8 py-4 rounded-2xl transition-all hover:-translate-y-1 shadow-lg flex items-center gap-3" data-val="Windows">
+              <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 24 24"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.951-1.801"/></svg>
+              Windows
+            </button>
+            <button class="device-btn bg-[#0B1628] border border-white/5 hover:border-breeze-cyan/50 text-white px-8 py-4 rounded-2xl transition-all hover:-translate-y-1 shadow-lg flex items-center gap-3" data-val="Android">
+              <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 24 24"><path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993.0004.5511-.4482.9997-.9993.9997zm-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993 0 .5511-.4482.9997-.9993.9997zm11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.4162.4162 0 00-.5676.1521l-2.0223 3.503C15.5902 8.2435 13.8533 7.85 12 7.85s-3.5902.3935-5.1367 1.0998L4.841 5.4467a.416.416 0 00-.5676-.1521.416.416 0 00-.1521.5676l1.9973 3.4592C2.6889 11.1867.3432 14.6589 0 18.761h24c-.3432-4.1021-2.6889-7.5743-6.1185-9.4396z"/></svg>
+              Android
+            </button>
+            <button class="device-btn bg-[#0B1628] border border-white/5 hover:border-breeze-cyan/50 text-white px-8 py-4 rounded-2xl transition-all hover:-translate-y-1 shadow-lg flex items-center gap-3" data-val="iPhone/iPad">
+              <svg class="w-6 h-6 text-gray-300" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm3.125 15.625h-6.25c-.345 0-.625-.28-.625-.625v-10c0-.345.28-.625.625-.625h6.25c.345 0 .625.28.625.625v10c0 .345-.28.625-.625.625z"/></svg>
+              iPhone / iPad
+            </button>
+            <button class="device-btn bg-[#0B1628] border border-white/5 hover:border-breeze-cyan/50 text-white px-8 py-4 rounded-2xl transition-all hover:-translate-y-1 shadow-lg flex items-center gap-3" data-val="Mac">
+              <svg class="w-6 h-6 text-gray-300" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm1.25 14H10.75v-1.5h2.5V16zm4.5-3H6.25V6.5h11.5V13z"/></svg>
+              Mac
+            </button>
+            <button class="device-btn bg-[#0B1628] border border-white/5 hover:border-breeze-cyan/50 text-white px-8 py-4 rounded-2xl transition-all hover:-translate-y-1 shadow-lg font-bold" data-val="多设备">
+              多设备混合
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 2: Usage -->
+        <div id="wizard-step-2" class="wizard-step transition-opacity duration-300 hidden">
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-8 text-center">你的主要用途？</h2>
+          <div class="flex flex-wrap justify-center gap-4">
+            <button class="usage-btn bg-[#0B1628] border border-white/5 hover:border-breeze-cyan/50 text-white px-6 py-4 rounded-2xl transition-all hover:-translate-y-1 shadow-lg" data-usage="media">YouTube / Netflix 流媒体</button>
+            <button class="usage-btn bg-[#0B1628] border border-white/5 hover:border-breeze-cyan/50 text-white px-6 py-4 rounded-2xl transition-all hover:-translate-y-1 shadow-lg" data-usage="ai">ChatGPT / Claude 等 AI 工具</button>
+            <button class="usage-btn bg-[#0B1628] border border-white/5 hover:border-breeze-cyan/50 text-white px-6 py-4 rounded-2xl transition-all hover:-translate-y-1 shadow-lg" data-usage="daily">Google / 日常查阅资料</button>
+            <button class="usage-btn bg-[#0B1628] border border-white/5 hover:border-breeze-cyan/50 text-white px-6 py-4 rounded-2xl transition-all hover:-translate-y-1 shadow-lg" data-usage="game">联机游戏加速</button>
+            <button class="usage-btn bg-[#0B1628] border border-white/5 hover:border-breeze-cyan/50 text-white px-6 py-4 rounded-2xl transition-all hover:-translate-y-1 shadow-lg" data-usage="work">海外远程工作 / 外贸</button>
+          </div>
+        </div>
+
+        <!-- Result -->
+        <div id="wizard-result" class="wizard-step transition-opacity duration-300 hidden text-center">
+          <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-green-500/20 text-green-400 mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+          </div>
+          <h3 class="text-2xl font-bold text-white mb-6">为你匹配的科学上网方案：</h3>
+          
+          <div class="bg-[#0B1628] border border-breeze-cyan/30 rounded-2xl p-6 md:p-8 mb-8 max-w-2xl mx-auto flex flex-col md:flex-row items-center gap-6 text-left">
+            <div class="flex-1 space-y-4">
+              <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-breeze-blue/20 text-breeze-cyan flex items-center justify-center font-bold">1</span>
+                <span class="text-lg text-white font-medium">代理内核：<span id="res-client" class="text-breeze-cyan">Clash / Mihomo 类客户端</span></span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-breeze-blue/20 text-breeze-cyan flex items-center justify-center font-bold">2</span>
+                <span class="text-lg text-white font-medium">配置方案：<span class="text-breeze-cyan">稳定节点订阅服务</span></span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-breeze-blue/20 text-breeze-cyan flex items-center justify-center font-bold">3</span>
+                <span class="text-lg text-white font-medium">主用节点：<span id="res-node" class="text-breeze-cyan">香港 / 新加坡 / 日本 节点</span></span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="#breeze-solutions" class="bg-breeze-cyan text-[#0B1628] font-bold py-3 px-8 rounded-full shadow-[0_0_15px_rgba(34,211,238,0.4)] hover:shadow-[0_0_25px_rgba(34,211,238,0.7)] transition-all hover:-translate-y-1">
+              查看推荐订阅套餐 ↓
+            </a>
+            <button id="btn-restart" class="text-gray-400 hover:text-white transition-colors py-3 px-6 text-sm underline">
+              重新选择
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 梯子类型对比 -->
+    <section class="py-20 px-4">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl font-bold text-white mb-6 text-center">主流科学上网工具与梯子类型对比</h2>
+        <p class="text-center text-gray-400 mb-12">不要盲目跟风，了解不同工具的优缺点，才能找到最适合自己工作流的方案。</p>
+        
+        <div class="overflow-x-auto custom-scrollbar shadow-2xl rounded-2xl border border-gray-800">
+          <table class="w-full text-left border-collapse min-w-[700px]">
+            <thead>
+              <tr class="bg-[#131F33] border-b border-gray-700">
+                <th class="p-6 font-bold text-white rounded-tl-2xl">工具类型</th>
+                <th class="p-6 font-bold text-white">适合用户</th>
+                <th class="p-6 font-bold text-white">核心优点</th>
+                <th class="p-6 font-bold text-white rounded-tr-2xl">注意事项</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-800 bg-[#0B1628]">
+              <tr class="hover:bg-white/5 transition-colors">
+                <td class="p-6 font-bold text-breeze-cyan">Clash + 订阅</td>
+                <td class="p-6 text-gray-300">绝大多数用户 (推荐)</td>
+                <td class="p-6 text-green-400 text-sm leading-relaxed">极其灵活，支持多节点智能分流，性价比极高，可全平台通用。</td>
+                <td class="p-6 text-yellow-400 text-sm">第一次使用需要花 3 分钟导入订阅和学习。</td>
+              </tr>
+              <tr class="hover:bg-white/5 transition-colors">
+                <td class="p-6 font-bold text-gray-300">传统一键式 VPN</td>
+                <td class="p-6 text-gray-400">纯新手、不想折腾的用户</td>
+                <td class="p-6 text-gray-400 text-sm leading-relaxed">傻瓜式一键开关，无需任何配置。</td>
+                <td class="p-6 text-red-400 text-sm leading-relaxed">自定义程度低，节点容易被封锁，带宽倍率不透明。</td>
+              </tr>
+              <tr class="hover:bg-white/5 transition-colors">
+                <td class="p-6 font-bold text-gray-300">浏览器代理插件</td>
+                <td class="p-6 text-gray-400">临时应急查资料</td>
+                <td class="p-6 text-gray-400 text-sm leading-relaxed">无需安装系统底层软件，即插即用。</td>
+                <td class="p-6 text-yellow-400 text-sm leading-relaxed">仅仅影响当前浏览器，其他软件（如微信、游戏）无法走代理。</td>
+              </tr>
+              <tr class="hover:bg-white/5 transition-colors">
+                <td class="p-6 font-bold text-gray-300">自建 VPS 节点</td>
+                <td class="p-6 text-gray-400">极客玩家、高级技术人员</td>
+                <td class="p-6 text-gray-400 text-sm leading-relaxed">独享服务器资源，自由度最高，无隐私风险。</td>
+                <td class="p-6 text-red-400 text-sm leading-relaxed">维护成本高昂，IP 被封禁后更换费用极高，且无备用路由切换。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 不同设备怎么选 -->
+    <section class="py-20 px-4 bg-[#0B1628]/50 border-t border-white/5">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-white mb-12 text-center">不同设备应该如何配置？</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <!-- Windows -->
+          <div class="bg-[#131F33] p-8 rounded-3xl border border-white/5 flex flex-col h-full hover:border-blue-500/30 transition-colors">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400">
+                <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.951-1.801"/></svg>
+              </div>
+              <h3 class="text-2xl font-bold text-white">Windows 梯子推荐</h3>
+            </div>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-1">
+              在 Windows 系统上，目前最稳定且美观的选择是 <strong>Clash Verge Rev</strong> 或 <strong>Mihomo Party</strong>。它们原生支持最新的 Meta 内核，能完美接管系统的网络流量，避免传统梯子经常出现的“代理死锁”问题。
+            </p>
+            <div class="mt-auto">
+              <a href="/guides/clash-verge-rev" class="inline-flex items-center gap-1 text-breeze-cyan hover:underline font-medium text-sm">
+                查看完整配置教程 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Android -->
+          <div class="bg-[#131F33] p-8 rounded-3xl border border-white/5 flex flex-col h-full hover:border-green-500/30 transition-colors">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center text-green-400">
+                <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993.0004.5511-.4482.9997-.9993.9997zm-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993 0 .5511-.4482.9997-.9993.9997zm11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.4162.4162 0 00-.5676.1521l-2.0223 3.503C15.5902 8.2435 13.8533 7.85 12 7.85s-3.5902.3935-5.1367 1.0998L4.841 5.4467a.416.416 0 00-.5676-.1521.416.416 0 00-.1521.5676l1.9973 3.4592C2.6889 11.1867.3432 14.6589 0 18.761h24c-.3432-4.1021-2.6889-7.5743-6.1185-9.4396z"/></svg>
+              </div>
+              <h3 class="text-2xl font-bold text-white">Android 梯子推荐</h3>
+            </div>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-1">
+              安卓生态开放，工具选择众多。主流方案是使用 <strong>Clash Meta for Android</strong> 或者直接下载各家服务商提供的一键客户端。配置订阅后，可以通过 Android 自带的 VPN 接口实现全局级别的翻墙与流量分流。
+            </p>
+            <div class="mt-auto">
+              <a href="/guides" class="inline-flex items-center gap-1 text-breeze-cyan hover:underline font-medium text-sm">
+                查看完整配置教程 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- iOS -->
+          <div class="bg-[#131F33] p-8 rounded-3xl border border-white/5 flex flex-col h-full hover:border-gray-300/30 transition-colors">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 rounded-xl bg-gray-500/10 flex items-center justify-center text-gray-300">
+                <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm3.125 15.625h-6.25c-.345 0-.625-.28-.625-.625v-10c0-.345.28-.625.625-.625h6.25c.345 0 .625.28.625.625v10c0 .345-.28.625-.625.625z"/></svg>
+              </div>
+              <h3 class="text-2xl font-bold text-white">iPhone 梯子推荐</h3>
+            </div>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-1">
+              苹果 iOS 平台受到沙盒限制，必须使用特定软件接管网络。最主流且强大的是支持标准订阅格式的代理客户端（需在非国区 App Store 下载，例如 Shadowrocket、Quantumult X）。导入链接后，即可完美实现规则分流。
+            </p>
+            <div class="mt-auto">
+              <a href="/guides/subscription-import" class="inline-flex items-center gap-1 text-breeze-cyan hover:underline font-medium text-sm">
+                查看完整配置教程 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Mac -->
+          <div class="bg-[#131F33] p-8 rounded-3xl border border-white/5 flex flex-col h-full hover:border-gray-300/30 transition-colors">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 rounded-xl bg-gray-500/10 flex items-center justify-center text-gray-300">
+                <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm1.25 14H10.75v-1.5h2.5V16zm4.5-3H6.25V6.5h11.5V13z"/></svg>
+              </div>
+              <h3 class="text-2xl font-bold text-white">Mac 梯子推荐</h3>
+            </div>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-1">
+              macOS 上同样首推强大的 <strong>Clash Verge Rev</strong>。由于 Mac 底层基于 Unix，还可以方便地开启 TUN 模式（虚拟网卡），这对于需要在终端 (Terminal) 执行代码或进行海外开发的专业用户来说是必备功能。
+            </p>
+            <div class="mt-auto">
+              <a href="/guides/clash-verge-rev" class="inline-flex items-center gap-1 text-breeze-cyan hover:underline font-medium text-sm">
+                查看完整配置教程 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 免费 vs 付费梯子 -->
+    <section class="py-20 px-4">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl font-bold text-white mb-10 text-center">免费梯子 vs 付费梯子：你应该怎么选？</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <div class="bg-[#131F33] p-8 md:p-10 rounded-3xl border border-gray-700">
+            <h3 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+              <span class="w-4 h-4 rounded-full bg-gray-500"></span> 免费工具
+            </h3>
+            <div class="space-y-6">
+              <div>
+                <div class="font-bold text-gray-300 mb-1">优点：</div>
+                <p class="text-sm text-gray-400 leading-relaxed">门槛低，通常无需注册或绑定支付方式。适合临时应急查阅纯文本资料、或者进行极低频的网络连通性测试。</p>
+              </div>
+              <div>
+                <div class="font-bold text-gray-300 mb-1">核心问题：</div>
+                <p class="text-sm text-red-400/80 leading-relaxed">速度、隐私、节点质量、可用性通常极不稳定。晚高峰极易断线，并且存在兜售用户使用偏好、强制插入流氓广告等不可忽视的安全隐患。</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-gradient-to-br from-[#131F33] to-breeze-blue/10 p-8 md:p-10 rounded-3xl border border-breeze-cyan/30 shadow-lg shadow-breeze-blue/5">
+            <h3 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+              <span class="w-4 h-4 rounded-full bg-breeze-cyan shadow-[0_0_12px_rgba(34,211,238,0.6)] motion-safe:animate-pulse"></span> 付费订阅方案
+            </h3>
+            <div class="space-y-6">
+              <div>
+                <div class="font-bold text-white mb-1">适合人群：</div>
+                <p class="text-sm text-gray-300 leading-relaxed">长期使用、多设备协同、看重 4K 流媒体解锁、重度依赖 AI 生产力（如 ChatGPT / Claude），以及对连通率要求极高的跨境工作场景。</p>
+              </div>
+              <div>
+                <div class="font-bold text-white mb-1">核心优势：</div>
+                <p class="text-sm text-green-400/90 leading-relaxed">提供独立干净的原生 IP 与高速 BGP/IEPL 专线网络。拥有企业级 SLA 在线率保障、严格无日志隐私政策，以及针对各类复杂软件的专业售后指导。</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 微风网络方案 (CTA) -->
+    <section id="breeze-solutions" class="py-20 px-4 bg-[#0B1628]/80 border-t border-white/5">
+      <div class="max-w-4xl mx-auto bg-[#131F33] rounded-3xl p-10 md:p-14 border border-white/10 text-center shadow-2xl relative overflow-hidden">
+        <div class="absolute -right-20 -top-20 w-64 h-64 bg-breeze-cyan/10 blur-[80px] pointer-events-none"></div>
+        <div class="absolute -left-20 -bottom-20 w-64 h-64 bg-blue-500/10 blur-[80px] pointer-events-none"></div>
+        
+        <img src="/logo.png" alt="Breeze Network Logo" class="w-16 h-16 object-cover rounded-2xl mx-auto mb-6 relative z-10 shadow-lg" />
+        
+        <h2 class="text-3xl font-bold text-white mb-6 relative z-10">微风网络当前方案</h2>
+        <p class="text-gray-400 mb-10 leading-relaxed max-w-2xl mx-auto relative z-10">
+          如果你已经确定需要 Clash / Mihomo 类客户端 + 多地区节点的高速订阅方案，并且更看重长期的稳定性与服务质量，可以进一步查看微风网络当前提供的套餐与底层技术支持。
+        </p>
+        
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
+          <a href="/pricing" class="w-full sm:w-auto bg-gradient-to-r from-breeze-blue to-[#22D3EE] text-white font-bold py-4 px-8 rounded-full shadow-[0_0_20px_rgba(34,211,238,0.4)] hover:shadow-[0_0_30px_rgba(34,211,238,0.7)] transition-all hover:-translate-y-1">
+            查看微风网络套餐
+          </a>
+          <a href="/guides" class="w-full sm:w-auto bg-[#0B1628] text-gray-300 font-medium py-4 px-8 rounded-full border border-gray-700 hover:border-gray-400 hover:text-white transition-colors">
+            查看支持设备
+          </a>
+          <a href="/guides" class="w-full sm:w-auto bg-[#0B1628] text-gray-300 font-medium py-4 px-8 rounded-full border border-gray-700 hover:border-gray-400 hover:text-white transition-colors">
+            查看使用教程
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const step1 = document.getElementById('wizard-step-1');
+      const step2 = document.getElementById('wizard-step-2');
+      const result = document.getElementById('wizard-result');
+      
+      const resClient = document.getElementById('res-client');
+      const resNode = document.getElementById('res-node');
+      
+      let selDevice = '';
+      
+      document.querySelectorAll('.device-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          selDevice = btn.getAttribute('data-val');
+          
+          step1.style.opacity = '0';
+          setTimeout(() => {
+            step1.classList.add('hidden');
+            step2.classList.remove('hidden');
+            // trigger reflow
+            void step2.offsetWidth;
+            step2.style.opacity = '1';
+          }, 300);
+        });
+      });
+
+      document.querySelectorAll('.usage-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const usage = btn.getAttribute('data-usage');
+          
+          // Compute result
+          if(selDevice === 'iPhone/iPad') {
+            resClient.innerText = 'Shadowrocket / iOS 代理软件';
+          } else if(selDevice === 'Android') {
+            resClient.innerText = 'Clash Meta for Android';
+          } else {
+            resClient.innerText = 'Clash Verge Rev / Mihomo 类客户端';
+          }
+          
+          if(usage === 'media') {
+            resNode.innerText = '新加坡 / 美国 / 香港 原生流媒体节点';
+          } else if(usage === 'ai') {
+            resNode.innerText = '美国 / 日本 / 台湾 (低并发高纯净度 IP)';
+          } else if(usage === 'game') {
+            resNode.innerText = '日本 / 香港 (IPLC 或 IEPL 游戏专线)';
+          } else {
+            resNode.innerText = '香港 / 日本 / 新加坡 (BGP 中转节点)';
+          }
+
+          step2.style.opacity = '0';
+          setTimeout(() => {
+            step2.classList.add('hidden');
+            result.classList.remove('hidden');
+            void result.offsetWidth;
+            result.style.opacity = '1';
+          }, 300);
+        });
+      });
+
+      document.getElementById('btn-restart').addEventListener('click', () => {
+        result.style.opacity = '0';
+        setTimeout(() => {
+          result.classList.add('hidden');
+          step1.classList.remove('hidden');
+          void step1.offsetWidth;
+          step1.style.opacity = '1';
+          selDevice = '';
+        }, 300);
+      });
+    });
+  </script>
+</Layout>

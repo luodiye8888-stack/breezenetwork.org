@@ -1,0 +1,42 @@
+---
+import { brand } from '../data/brand';
+---
+<footer class="bg-breeze-dark border-t border-breeze-card pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+    <div>
+      <div class="text-white font-bold mb-4">微风网络官方网站</div>
+      <p class="text-sm text-breeze-text font-mono mb-2">breezenetwork.org</p>
+      <p class="text-sm text-breeze-text">稳定连接，像微风一样自然。</p>
+    </div>
+    <div>
+      <h3 class="text-white font-bold mb-4">产品</h3>
+      <ul class="space-y-2 text-sm text-breeze-text">
+        <li><a href="/pricing" class="hover:text-white">套餐</a></li>
+        <li><a href="/network" class="hover:text-white">网络</a></li>
+        <li><a href="/guides" class="hover:text-white">使用教程</a></li>
+        <li><a href="/status" class="hover:text-white">服务状态</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-white font-bold mb-4">资源</h3>
+      <ul class="space-y-2 text-sm text-breeze-text">
+        <li><a href="/airport-recommendation" class="hover:text-white">2026机场推荐</a></li>
+        <li><a href="/ladder-recommendation" class="hover:text-white">梯子推荐</a></li>
+        <li><a href="/clash-airport" class="hover:text-white">Clash机场推荐</a></li>
+        <li><a href="/dedicated-line" class="hover:text-white">专线机场推荐</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-white font-bold mb-4">支持与法律</h3>
+      <ul class="space-y-2 text-sm text-breeze-text">
+        <li><a href="/help" class="hover:text-white">帮助中心</a></li>
+        <li><a href="/contact" class="hover:text-white">联系我们</a></li>
+        <li><a href="/privacy" class="hover:text-white">隐私政策</a></li>
+        <li><a href="/terms" class="hover:text-white">服务条款</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="text-center text-sm text-breeze-text border-t border-breeze-card pt-8">
+    &copy; 2026 {brand.nameZh} · {brand.name}
+  </div>
+</footer>

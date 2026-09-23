@@ -1,0 +1,625 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="微风网络官网｜2026机场推荐・稳定专线机场推荐" 
+  description="微风网络官方网站，提供稳定高速的网络连接服务、套餐与使用教程，并整理2026机场推荐、稳定机场推荐、专线机场推荐、梯子推荐及Clash使用指南，帮助用户选择适合自己的网络方案。"
+>
+  <main class="bg-breeze-dark min-h-screen font-sans">
+    
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-24 px-4 overflow-hidden border-b border-white/5">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-breeze-cyan/10 blur-[150px] pointer-events-none"></div>
+      
+      <div class="max-w-5xl mx-auto text-center relative z-10">
+        <h1 class="text-breeze-cyan font-bold tracking-widest text-xs md:text-sm mb-6 flex items-center justify-center gap-4">
+          <span class="w-12 h-[1px] bg-gradient-to-r from-transparent to-breeze-cyan/50"></span>
+          微风网络官网｜2026稳定机场推荐
+          <span class="w-12 h-[1px] bg-gradient-to-l from-transparent to-breeze-cyan/50"></span>
+        </h1>
+        <div class="text-5xl md:text-7xl font-black text-white mb-8 tracking-tight" role="heading" aria-level="2">稳定连接，<br class="md:hidden"/>像微风一样自然。</div>
+        <p class="max-w-2xl mx-auto text-lg md:text-xl text-gray-400 mb-6 leading-relaxed">
+          欢迎访问微风网络官方网站。<br class="hidden md:block"/>
+          无论是日常浏览网页、4K 流媒体观影，还是处理高强度的 AI 工作，我们都能为您提供坚实稳定的基础网络设施。
+        </p>
+        
+        <div class="max-w-3xl mx-auto bg-white/5 border border-white/10 rounded-2xl p-6 mb-12 text-left backdrop-blur-sm">
+          <h2 class="text-breeze-cyan font-bold mb-2">关于微风网络</h2>
+          <p class="text-gray-300 text-sm md:text-base leading-relaxed">
+            <strong class="text-white">breezenetwork.org</strong> 是微风网络官方品牌网站，提供套餐信息、线路说明、客户端下载、使用教程与服务支持。致力于为全球用户提供无感、极速的跨网络连接体验。
+          </p>
+        </div>
+        
+        <!-- Trust Tags -->
+        <div class="flex flex-wrap justify-center gap-3 mb-12 max-w-3xl mx-auto">
+          <div class="bg-[#131F33] border border-white/10 px-4 py-2 rounded-full text-xs md:text-sm text-gray-300 flex items-center gap-2 shadow-lg shadow-black/20">
+            <svg class="w-4 h-4 text-breeze-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg> 
+            多平台设备支持
+          </div>
+          <div class="bg-[#131F33] border border-white/10 px-4 py-2 rounded-full text-xs md:text-sm text-gray-300 flex items-center gap-2 shadow-lg shadow-black/20">
+            <svg class="w-4 h-4 text-breeze-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg> 
+            完美兼容 Clash / Mihomo
+          </div>
+          <div class="bg-[#131F33] border border-white/10 px-4 py-2 rounded-full text-xs md:text-sm text-gray-300 flex items-center gap-2 shadow-lg shadow-black/20">
+            <svg class="w-4 h-4 text-breeze-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg> 
+            专线架构与优质中转
+          </div>
+          <div class="bg-[#131F33] border border-white/10 px-4 py-2 rounded-full text-xs md:text-sm text-gray-300 flex items-center gap-2 shadow-lg shadow-black/20">
+            <svg class="w-4 h-4 text-breeze-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg> 
+            完善的使用教程
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/pricing" class="bg-breeze-cyan text-[#0B1628] font-bold px-8 py-4 rounded-xl hover:bg-cyan-400 transition-all shadow-[0_0_20px_rgba(34,211,238,0.3)] hover:-translate-y-1">
+            查看订阅套餐
+          </a>
+          <a href="/network" class="text-white bg-[#131F33] px-8 py-4 rounded-xl hover:bg-[#1a2b47] border border-gray-700 transition-all hover:-translate-y-1">
+            了解微风网络
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 认识微风网络 -->
+    <section class="py-24 px-4 relative">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">重新定义您的跨境网络体验</h2>
+          <p class="text-gray-400 leading-relaxed mb-6">
+            Breeze Network 致力于为您提供无感知的国际网络体验。我们不追求繁杂的噱头，只专注于最核心的三件事：<strong class="text-gray-200">连得上、速度快、不掉线</strong>。
+          </p>
+          <a href="/network" class="inline-flex items-center gap-2 text-breeze-cyan hover:text-cyan-400 font-medium transition-colors">
+            深入了解我们的网络架构 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </a>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div class="bg-[#131F33] p-6 rounded-2xl border border-white/5 shadow-xl">
+            <h3 class="text-lg font-bold text-white mb-2">稳定连接</h3>
+            <p class="text-sm text-gray-500">优化的路由分发机制，通过国内高防 BGP 接入，大幅降低跨国传输丢包率。</p>
+          </div>
+          <div class="bg-[#131F33] p-6 rounded-2xl border border-white/5 shadow-xl">
+            <h3 class="text-lg font-bold text-white mb-2">灵活节点</h3>
+            <p class="text-sm text-gray-500">网络架构覆盖香港、日本、新加坡、美国等亚欧与北美核心区域。</p>
+          </div>
+          <div class="bg-[#131F33] p-6 rounded-2xl border border-white/5 shadow-xl">
+            <h3 class="text-lg font-bold text-white mb-2">全平台覆盖</h3>
+            <p class="text-sm text-gray-500">支持 Windows, Mac, iOS, Android 甚至路由器等各类常见系统的代理客户端。</p>
+          </div>
+          <div class="bg-[#131F33] p-6 rounded-2xl border border-white/5 shadow-xl">
+            <h3 class="text-lg font-bold text-white mb-2">清晰指南</h3>
+            <p class="text-sm text-gray-500">拒绝谜语人，我们提供从零开始的详细图文教程与智能故障诊断器。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 网络与线路 -->
+    <section class="py-24 px-4 bg-[#0B1628] border-y border-white/5 relative overflow-hidden">
+      <!-- bg pattern -->
+      <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 32px 32px;"></div>
+      
+      <div class="max-w-7xl mx-auto relative z-10">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">全球基础设施与专线架构</h2>
+          <p class="text-gray-400 max-w-2xl mx-auto">针对不同的网络环境与需求，我们提供优质大带宽中转与极速专线等多种底层架构。</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div class="bg-gradient-to-b from-[#131F33] to-transparent p-8 rounded-3xl border border-white/5">
+            <div class="text-green-400 font-mono text-sm mb-4">区域覆盖</div>
+            <h3 class="text-xl font-bold text-white mb-4">核心节点地区</h3>
+            <p class="text-gray-400 text-sm mb-6">精选距离大陆最近的骨干机房，实现极速响应。</p>
+            <ul class="space-y-4">
+              <li class="flex justify-between items-center text-sm"><span class="text-gray-300 flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-green-500"></span> Hong Kong</span> <span class="text-gray-500 font-mono">香港</span></li>
+              <li class="flex justify-between items-center text-sm"><span class="text-gray-300 flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-green-500"></span> Japan</span> <span class="text-gray-500 font-mono">日本</span></li>
+              <li class="flex justify-between items-center text-sm"><span class="text-gray-300 flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-green-500"></span> Singapore</span> <span class="text-gray-500 font-mono">新加坡</span></li>
+              <li class="flex justify-between items-center text-sm"><span class="text-gray-300 flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-green-500"></span> United States</span> <span class="text-gray-500 font-mono">美国</span></li>
+            </ul>
+          </div>
+          <div class="lg:col-span-2 bg-gradient-to-br from-[#131F33] to-[#0d1627] p-8 rounded-3xl border border-white/5 relative overflow-hidden">
+            <div class="text-breeze-cyan font-mono text-sm mb-4">架构解析</div>
+            <h3 class="text-2xl font-bold text-white mb-8">优质中转 与 IPLC / IEPL 专线的区别</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              <div>
+                <h4 class="text-white font-medium mb-3 border-l-2 border-gray-600 pl-3">优质中转线路</h4>
+                <p class="text-sm text-gray-400 leading-relaxed">通过国内高防 BGP 服务器接管流量，抹平运营商差异。带宽极大，非常适合下载大文件与观看 4K 高清流媒体，是极具性价比的日常首选。</p>
+              </div>
+              <div>
+                <h4 class="text-white font-medium mb-3 border-l-2 border-breeze-cyan pl-3">IPLC 极速专线</h4>
+                <p class="text-sm text-gray-400 leading-relaxed">物理层面上独立于公网的跨境光缆，完全免疫晚高峰网络拥堵（QoS）。延迟极低、丢包率接近 0%，是竞技游戏联机与对稳定性要求极高的严肃工作首选。</p>
+              </div>
+            </div>
+            <div class="mt-10 pt-6 border-t border-white/10 flex flex-wrap gap-6">
+              <a href="/network" class="text-sm text-breeze-cyan hover:underline font-bold">查看微风完整网络说明 &rarr;</a>
+              <a href="/dedicated-line" class="text-sm text-gray-400 hover:text-white transition-colors">深入了解什么是专线机场 &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 按用途选择 -->
+    <section class="py-24 px-4 relative">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-16 text-center">您主要使用网络做什么？</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="group bg-gradient-to-b from-[#131F33] to-[#0B1628] p-8 rounded-2xl border border-white/5 hover:border-breeze-cyan/50 transition-all hover:-translate-y-2 cursor-default">
+            <div class="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center text-gray-300 mb-6 group-hover:bg-breeze-cyan/20 group-hover:text-breeze-cyan transition-colors">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-3">日常网页浏览</h3>
+            <p class="text-sm text-gray-400 mb-6 line-clamp-3">对带宽和延迟要求中等，建议使用新加坡或日本等大容量节点，兼顾极快的响应与稳定性。</p>
+            <a href="/network" class="text-breeze-cyan text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">查看建议 &rarr;</a>
+          </div>
+          
+          <div class="group bg-gradient-to-b from-[#131F33] to-[#0B1628] p-8 rounded-2xl border border-white/5 hover:border-breeze-cyan/50 transition-all hover:-translate-y-2 cursor-default">
+            <div class="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center text-gray-300 mb-6 group-hover:bg-breeze-cyan/20 group-hover:text-breeze-cyan transition-colors">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-3">4K 影音娱乐</h3>
+            <p class="text-sm text-gray-400 mb-6 line-clamp-3">带宽至上，IP 解锁第二。利用大带宽中转节点，轻松解锁各区流媒体限制，晚高峰也能秒开 4K。</p>
+            <a href="/guides/streaming-unlock" class="text-breeze-cyan text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">流媒体解锁指南 &rarr;</a>
+          </div>
+          
+          <div class="group bg-gradient-to-b from-[#131F33] to-[#0B1628] p-8 rounded-2xl border border-white/5 hover:border-breeze-cyan/50 transition-all hover:-translate-y-2 cursor-default">
+            <div class="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center text-gray-300 mb-6 group-hover:bg-breeze-cyan/20 group-hover:text-breeze-cyan transition-colors">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-3">AI 生产力工具</h3>
+            <p class="text-sm text-gray-400 mb-6 line-clamp-3">AI 平台对 IP 纯净度要求极高。我们提供原生节点，降低 ChatGPT/Claude 封号风险，无需频繁切换。</p>
+            <a href="/guides/ai-unlock" class="text-breeze-cyan text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">AI 节点选择建议 &rarr;</a>
+          </div>
+
+          <div class="group bg-gradient-to-b from-[#131F33] to-[#0B1628] p-8 rounded-2xl border border-white/5 hover:border-breeze-cyan/50 transition-all hover:-translate-y-2 cursor-default">
+            <div class="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center text-gray-300 mb-6 group-hover:bg-breeze-cyan/20 group-hover:text-breeze-cyan transition-colors">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-3">Clash 深度定制</h3>
+            <p class="text-sm text-gray-400 mb-6 line-clamp-3">完美兼容 Clash / Mihomo / Verge Rev，支持 Rule 与 TUN 模式智能分流，提供详尽排查教程。</p>
+            <a href="/clash-airport" class="text-breeze-cyan text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">Clash 机场指南 &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 网络选择指南 -->
+    <section class="py-20 px-4 bg-[#0B1628]/50 border-t border-white/5">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+          <div class="max-w-2xl">
+            <h2 class="text-3xl font-bold text-white mb-4">全网生态与选择指南</h2>
+            <p class="text-gray-400">除了提供微风网络服务，我们也为您整理了客观的网络工具与路线选购知识，帮助您避坑并做出最适合自己的选择。</p>
+          </div>
+        </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <a href="/airport-recommendation" class="block p-6 bg-[#131F33] rounded-2xl border border-white/5 hover:border-gray-500 transition-colors">
+            <div class="text-xs font-mono text-gray-500 mb-3 uppercase tracking-wider">选购避坑</div>
+            <h3 class="text-lg font-bold text-white mb-3">2026 机场推荐指南</h3>
+            <p class="text-sm text-gray-400 leading-relaxed mb-6">机场到底应该看线路、节点地区还是倍率？避坑参数全解析。</p>
+            <span class="text-sm text-breeze-cyan font-bold flex items-center gap-1">阅读指南 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></span>
+          </a>
+          <a href="/ladder-recommendation" class="block p-6 bg-[#131F33] rounded-2xl border border-white/5 hover:border-gray-500 transition-colors">
+            <div class="text-xs font-mono text-gray-500 mb-3 uppercase tracking-wider">工具对比</div>
+            <h3 class="text-lg font-bold text-white mb-3">梯子推荐与客户端选择</h3>
+            <p class="text-sm text-gray-400 leading-relaxed mb-6">Windows, Mac, iOS, Android 各平台最适合的科学上网客户端是哪个？</p>
+            <span class="text-sm text-breeze-cyan font-bold flex items-center gap-1">阅读指南 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></span>
+          </a>
+          <a href="/clash-airport" class="block p-6 bg-[#131F33] rounded-2xl border border-white/5 hover:border-gray-500 transition-colors">
+            <div class="text-xs font-mono text-gray-500 mb-3 uppercase tracking-wider">硬核玩家</div>
+            <h3 class="text-lg font-bold text-white mb-3">Clash 机场进阶</h3>
+            <p class="text-sm text-gray-400 leading-relaxed mb-6">订阅格式、YAML 规则分流与 TUN 虚拟网卡模式，打造最强路由策略。</p>
+            <span class="text-sm text-breeze-cyan font-bold flex items-center gap-1">阅读指南 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></span>
+          </a>
+          <a href="/dedicated-line" class="block p-6 bg-[#131F33] rounded-2xl border border-white/5 hover:border-gray-500 transition-colors">
+            <div class="text-xs font-mono text-gray-500 mb-3 uppercase tracking-wider">底层原理</div>
+            <h3 class="text-lg font-bold text-white mb-3">专线网络深度解析</h3>
+            <p class="text-sm text-gray-400 leading-relaxed mb-6">IPLC 与普通直连的本质区别，为什么晚高峰延迟依然能保持在 30ms？</p>
+            <span class="text-sm text-breeze-cyan font-bold flex items-center gap-1">阅读指南 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 新手流程与使用指南 -->
+    <section class="py-24 px-4 bg-[#0B1628]">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
+        
+        <!-- Clash Flow -->
+        <div class="lg:col-span-5">
+          <h2 class="text-3xl font-bold text-white mb-4">极简使用流程</h2>
+          <p class="text-gray-400 mb-10">无需复杂的代理原理基础，只需三步即可在任意设备上打通微风网络连接。</p>
+          
+          <div class="flex flex-col space-y-6">
+            <div class="flex items-start gap-5">
+              <div class="w-10 h-10 rounded-full bg-breeze-cyan/20 border border-breeze-cyan text-breeze-cyan font-bold flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(34,211,238,0.2)]">1</div>
+              <div class="pt-2">
+                <h4 class="text-white font-medium mb-1">获取订阅</h4>
+                <p class="text-sm text-gray-500">在官网购买套餐后，获取您的专属一键订阅链接。</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-5">
+              <div class="w-10 h-10 rounded-full bg-breeze-cyan/20 border border-breeze-cyan text-breeze-cyan font-bold flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(34,211,238,0.2)]">2</div>
+              <div class="pt-2">
+                <h4 class="text-white font-medium mb-1">下载客户端</h4>
+                <p class="text-sm text-gray-500">根据我们提供的下载地址，安装适合您系统的 Clash / Mihomo / Shadowrocket 软件。</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-5">
+              <div class="w-10 h-10 rounded-full bg-breeze-cyan/20 border border-breeze-cyan text-breeze-cyan font-bold flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(34,211,238,0.2)]">3</div>
+              <div class="pt-2">
+                <h4 class="text-white font-medium mb-1">导入并连接</h4>
+                <p class="text-sm text-gray-500">将订阅链接粘贴进软件并导入，选择心仪的节点并开启系统代理即可。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Guides Preview -->
+        <div class="lg:col-span-7 bg-[#131F33] p-8 md:p-10 rounded-3xl border border-white/5">
+          <div class="flex justify-between items-end mb-8">
+            <h2 class="text-2xl font-bold text-white">从这里开始阅读</h2>
+            <a href="/guides" class="text-sm text-breeze-cyan hover:underline hidden sm:block">浏览全部教程 &rarr;</a>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <a href="/guides/quick-start-11" class="block p-5 bg-[#0B1628] rounded-xl border border-white/5 hover:border-gray-600 transition-colors">
+              <div class="text-xs text-gray-500 mb-1">入门安装</div>
+              <h3 class="text-white font-bold mb-2 text-sm md:text-base">Windows / Android 快速起步</h3>
+              <p class="text-xs md:text-sm text-gray-400 line-clamp-2">使用 Clash Verge Rev 与 Mihomo 进行导入配置的最简单图文方法。</p>
+            </a>
+            <a href="/guides/quick-start-12" class="block p-5 bg-[#0B1628] rounded-xl border border-white/5 hover:border-gray-600 transition-colors">
+              <div class="text-xs text-gray-500 mb-1">入门安装</div>
+              <h3 class="text-white font-bold mb-2 text-sm md:text-base">iPhone / Mac (Apple生态) 快速起步</h3>
+              <p class="text-xs md:text-sm text-gray-400 line-clamp-2">如何在 iOS 的 Shadowrocket 及 macOS 环境下快速打通网络。</p>
+            </a>
+            <a href="/guides/subscription-import-1-1-1-1" class="block p-5 bg-[#0B1628] rounded-xl border border-white/5 hover:border-gray-600 transition-colors">
+              <div class="text-xs text-gray-500 mb-1">基础操作</div>
+              <h3 class="text-white font-bold mb-2 text-sm md:text-base">如何手动更新节点订阅？</h3>
+              <p class="text-xs md:text-sm text-gray-400 line-clamp-2">解决节点突然消失、名称乱码及获取最新地区接入点。</p>
+            </a>
+            <a href="/guides/clash-timeout-1" class="block p-5 bg-[#0B1628] rounded-xl border border-white/5 hover:border-gray-600 transition-colors">
+              <div class="text-xs text-gray-500 mb-1">故障排查</div>
+              <h3 class="text-white font-bold mb-2 text-sm md:text-base">节点全部超时 (Timeout) 怎么解决？</h3>
+              <p class="text-xs md:text-sm text-gray-400 line-clamp-2">排查本地网络拦截、订阅过期与系统时间不同步问题。</p>
+            </a>
+          </div>
+          <a href="/guides" class="text-sm text-breeze-cyan hover:underline block text-center mt-6 sm:hidden">浏览全部教程 &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 服务状态 & 帮助中心 -->
+    <section class="py-20 px-4 bg-[#131F33] border-y border-white/5">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
+        <!-- Status Preview -->
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <span class="relative flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+            </span>
+            <h2 class="text-2xl font-bold text-white">微风网络服务状态</h2>
+          </div>
+          <p class="text-gray-400 mb-8">我们提供极高的服务透明度，您可以随时查看各个核心路由群的连通状态与波动情况。</p>
+          
+          <div class="bg-[#0B1628] rounded-2xl border border-white/5 overflow-hidden mb-6">
+             <div class="flex justify-between items-center p-4 border-b border-white/5">
+               <span class="text-gray-300 text-sm">官网及订阅系统 (Subscription API)</span>
+               <span class="text-green-400 text-sm font-medium">运行正常</span>
+             </div>
+             <div class="flex justify-between items-center p-4 border-b border-white/5">
+               <span class="text-gray-300 text-sm">亚洲核心骨干节点 (Asia Core)</span>
+               <span class="text-green-400 text-sm font-medium">运行正常</span>
+             </div>
+             <div class="flex justify-between items-center p-4">
+               <span class="text-gray-300 text-sm">北美区域节点 (US Regions)</span>
+               <span class="text-green-400 text-sm font-medium">运行正常</span>
+             </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="px-3 py-1 bg-white/5 text-gray-500 rounded text-xs font-mono">该面板呈现采样监控数据</span>
+            <a href="/status" class="text-sm text-breeze-cyan hover:underline font-medium">查看实时状态与 90 天记录 &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Help Center -->
+        <div>
+          <h2 class="text-2xl font-bold text-white mb-6">需要帮助？</h2>
+          <p class="text-gray-400 mb-8">遇到连接问题不要慌，我们的帮助中心提供详尽的故障分类和智能诊断工具，帮您在 1 分钟内定位问题。</p>
+          <div class="grid grid-cols-2 gap-3 mb-8">
+             <a href="/help#cat-connect" class="bg-[#0B1628] p-4 rounded-xl border border-white/5 text-center hover:border-breeze-cyan transition-colors">
+               <div class="text-gray-300 font-medium text-sm">完全无法连接网络</div>
+             </a>
+             <a href="/help#cat-sub" class="bg-[#0B1628] p-4 rounded-xl border border-white/5 text-center hover:border-breeze-cyan transition-colors">
+               <div class="text-gray-300 font-medium text-sm">无法导入 / 更新订阅</div>
+             </a>
+             <a href="/help#cat-clash" class="bg-[#0B1628] p-4 rounded-xl border border-white/5 text-center hover:border-breeze-cyan transition-colors">
+               <div class="text-gray-300 font-medium text-sm">Clash 使用报错</div>
+             </a>
+             <a href="/help#cat-account" class="bg-[#0B1628] p-4 rounded-xl border border-white/5 text-center hover:border-breeze-cyan transition-colors">
+               <div class="text-gray-300 font-medium text-sm">套餐重置与流量问题</div>
+             </a>
+          </div>
+          <a href="/help" class="inline-flex items-center justify-center w-full sm:w-auto bg-white/5 border border-white/10 text-white px-8 py-3 rounded-xl text-sm font-bold hover:bg-white/10 transition-all">
+            启动智能故障排查器
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 常见问题 FAQ -->
+    <section class="py-24 px-4 bg-[#0B1628]">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-white mb-12 text-center">新用户最常关心的问题</h2>
+        <div class="space-y-4">
+          <details class="group bg-[#131F33] rounded-xl border border-white/5 [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-white hover:text-breeze-cyan transition-colors">
+              <span>微风网络到底是什么？</span>
+              <span class="transition group-open:rotate-180 text-gray-500">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </summary>
+            <div class="text-gray-400 mt-2 px-6 pb-6 text-sm leading-relaxed border-t border-white/5 pt-4">
+              微风网络是一个提供高质量跨境网络连接服务的品牌，主要解决外贸、开发、留学生等群体访问国际互联网时的延迟、封锁和不稳定问题，俗称“机场”或“梯子”。
+            </div>
+          </details>
+          <details class="group bg-[#131F33] rounded-xl border border-white/5 [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-white hover:text-breeze-cyan transition-colors">
+              <span>什么是“一键订阅”？我该怎么用？</span>
+              <span class="transition group-open:rotate-180 text-gray-500">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </summary>
+            <div class="text-gray-400 mt-2 px-6 pb-6 text-sm leading-relaxed border-t border-white/5 pt-4">
+              “订阅”是一串以 http 开头的专属私密链接。您不需要手动输入服务器 IP 和密码，只需将这串链接粘贴到您的客户端软件中，软件就会自动下载并配置好所有数十个网络节点及其分流规则。
+            </div>
+          </details>
+          <details class="group bg-[#131F33] rounded-xl border border-white/5 [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-white hover:text-breeze-cyan transition-colors">
+              <span>我可以同时在电脑和手机上使用吗？</span>
+              <span class="transition group-open:rotate-180 text-gray-500">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </summary>
+            <div class="text-gray-400 mt-2 px-6 pb-6 text-sm leading-relaxed border-t border-white/5 pt-4">
+              是的。只要您的套餐并发设备限制允许（具体以套餐说明为准），您可以将同一个订阅链接导入到 Windows, Mac, iOS 和 Android 等多台设备上同时使用。
+            </div>
+          </details>
+          <details class="group bg-[#131F33] rounded-xl border border-white/5 [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-white hover:text-breeze-cyan transition-colors">
+              <span>如果遇到节点连不上怎么办？</span>
+              <span class="transition group-open:rotate-180 text-gray-500">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </summary>
+            <div class="text-gray-400 mt-2 px-6 pb-6 text-sm leading-relaxed border-t border-white/5 pt-4">
+              这通常是因为系统代理没有正确开启，或者您的本地网络环境发生了改变。请首先尝试在客户端中点击“更新订阅”，然后切换节点测试。如果仍不行，请前往本站的“帮助中心”进行快速排查，或查看服务状态面板。
+            </div>
+          </details>
+          <details class="group bg-[#131F33] rounded-xl border border-white/5 [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-white hover:text-breeze-cyan transition-colors">
+              <span>应该如何选择适合自己的节点？</span>
+              <span class="transition group-open:rotate-180 text-gray-500">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </summary>
+            <div class="text-gray-400 mt-2 px-6 pb-6 text-sm leading-relaxed border-t border-white/5 pt-4">
+              如果是日常浏览，建议选择距离较近的香港或日本节点；如果为了看特定国家的流媒体或使用特定地区服务（如 ChatGPT），则必须选择对应的美国或新加坡节点。具体可参阅我们的使用指南。
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 最终 CTA -->
+    <section class="py-24 md:py-32 px-4 relative overflow-hidden bg-[#131F33] border-t border-breeze-cyan/20">
+      <!-- Glow -->
+      <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-breeze-cyan/10 blur-[100px] pointer-events-none"></div>
+      
+      <div class="max-w-4xl mx-auto text-center relative z-10">
+        <h2 class="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight">准备好开始使用了吗？</h2>
+        <p class="text-lg text-gray-400 mb-12 max-w-2xl mx-auto">
+          选择适合自己的方案，或先查看使用指南与网络架构说明。<br class="hidden sm:block"/>即刻开启稳定、极速、无感知的跨境体验。
+        </p>
+        <div class="flex flex-col sm:flex-row gap-5 justify-center">
+          <a href="/pricing" class="bg-breeze-cyan text-[#0B1628] font-bold px-10 py-4 rounded-xl hover:bg-cyan-400 transition-colors shadow-lg shadow-breeze-cyan/30">
+            查看订阅套餐
+          </a>
+          <a href="/guides/quick-start-11" class="text-white bg-[#0B1628] border border-gray-600 px-10 py-4 rounded-xl hover:bg-gray-800 transition-colors">
+            阅读新手使用指南
+          </a>
+        </div>
+        <div class="mt-10 flex flex-wrap justify-center gap-4 sm:gap-8 text-sm">
+          <a href="/status" class="text-gray-400 hover:text-white transition-colors">查看服务状态</a>
+          <span class="text-gray-700 hidden sm:block">|</span>
+          <a href="/help" class="text-gray-400 hover:text-white transition-colors">访问帮助中心</a>
+          <span class="text-gray-700 hidden sm:block">|</span>
+          <a href="/network" class="text-gray-400 hover:text-white transition-colors">了解线路详情</a>
+        </div>
+        
+        <!-- Contact Dock -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <style>
+        .contact-dock {
+          display: flex;
+          gap: 16px;
+          justify-content: center;
+          align-items: center;
+          margin-top: 50px;
+        }
+        .contact-dock .letter {
+          position: relative;
+          width: 52px;
+          height: 52px;
+          perspective: 1000px;
+          cursor: pointer;
+          text-decoration: none;
+        }
+        .contact-dock .flip {
+          width: 100%;
+          height: 100%;
+          position: relative;
+          transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+          transform-style: preserve-3d;
+        }
+        .contact-dock .letter:hover .flip {
+          transform: rotateY(180deg);
+        }
+        .contact-dock .front, .contact-dock .back {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          backface-visibility: hidden;
+          -webkit-backface-visibility: hidden;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 22px;
+          border-radius: 14px;
+          box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .contact-dock .front {
+          background: rgba(255,255,255,0.03);
+          color: #9CA3AF;
+          border: 1px solid rgba(255,255,255,0.05);
+          font-weight: bold;
+          transition: all 0.3s;
+        }
+        .contact-dock .letter:hover .front {
+          color: white;
+          background: rgba(255,255,255,0.08);
+          border-color: rgba(255,255,255,0.2);
+        }
+        .contact-dock .back {
+          transform: rotateY(180deg);
+          color: white;
+        }
+        .contact-dock .logo .back { background: transparent; border: none; }
+        .contact-dock .email .back { background: #ea4335; }
+        .contact-dock .facebook .back { background: #1877f2; }
+        .contact-dock .github .back { background: #333; }
+        
+        .contact-dock .tooltip {
+          position: absolute;
+          top: -45px;
+          left: 50%;
+          transform: translateX(-50%) scale(0.8);
+          opacity: 0;
+          background: rgba(11, 22, 40, 0.9);
+          color: #D1D5DB;
+          padding: 6px 12px;
+          border-radius: 8px;
+          font-size: 13px;
+          font-weight: 500;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          pointer-events: none;
+          white-space: nowrap;
+          border: 1px solid rgba(255,255,255,0.1);
+          backdrop-filter: blur(4px);
+        }
+        .contact-dock .letter:hover .tooltip {
+          opacity: 1;
+          color: white;
+          transform: translateX(-50%) scale(1);
+        }
+        </style>
+        
+        <div class="contact-dock">
+            <!-- 联 -->
+            <a href="/go" rel="nofollow sponsored" class="letter logo" target="_blank">
+                <div class="flip">
+                    <div class="front">联</div>
+                    <div class="back"><img src="/logo.png" alt="微风网络" class="w-full h-full object-cover rounded-[14px]" /></div>
+                </div>
+                <span class="tooltip">微风网络</span>
+            </a>
+        
+            <!-- 系 -->
+            <a href="mailto:support@breezenetwork.org" class="letter email">
+                <div class="flip">
+                    <div class="front">系</div>
+                    <div class="back"><i class="fa-solid fa-envelope"></i></div>
+                </div>
+                <span class="tooltip">Email Support</span>
+            </a>
+        
+            <!-- 我 -->
+            <a href="https://facebook.com/" class="letter facebook" target="_blank">
+                <div class="flip">
+                    <div class="front">我</div>
+                    <div class="back"><i class="fa-brands fa-facebook-f"></i></div>
+                </div>
+                <span class="tooltip">Facebook</span>
+            </a>
+        
+            <!-- 们 -->
+            <a href="https://github.com/weifeng" class="letter github" target="_blank">
+                <div class="flip">
+                    <div class="front">们</div>
+                    <div class="back"><i class="fa-brands fa-github"></i></div>
+                </div>
+                <span class="tooltip">GitHub Repo</span>
+            </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "Breeze Network",
+        "alternateName": "微风网络",
+        "url": "https://breezenetwork.org/"
+      },
+      {
+        "@type": "Organization",
+        "name": "Breeze Network",
+        "url": "https://breezenetwork.org/"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "微风网络到底是什么？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "微风网络是一个提供高质量跨境网络连接服务的品牌，主要解决外贸、开发、留学生等群体访问国际互联网时的延迟、封锁和不稳定问题，俗称“机场”或“梯子”。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "什么是“一键订阅”？我该怎么用？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "“订阅”是一串以 http 开头的专属私密链接。您不需要手动输入服务器 IP 和密码，只需将这串链接粘贴到您的客户端软件中，软件就会自动下载并配置好所有数十个网络节点及其分流规则。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "我可以同时在电脑和手机上使用吗？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "是的。只要您的套餐并发设备限制允许（具体以套餐说明为准），您可以将同一个订阅链接导入到 Windows, Mac, iOS 和 Android 等多台设备上同时使用。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "如果遇到节点连不上怎么办？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "这通常是因为系统代理没有正确开启，或者您的本地网络环境发生了改变。请首先尝试在客户端中点击“更新订阅”，然后切换节点测试。如果仍不行，请前往本站的“帮助中心”进行快速排查，或查看服务状态面板。"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</Layout>

@@ -1,0 +1,84 @@
+---
+import fs from 'node:fs';
+import path from 'node:path';
+
+// Get current path
+const currentPath = Astro.url.pathname.replace(/\/$/, ''); // e.g. /guides/ai-unlock
+
+// Parse all guides
+const guidesDir = path.join(process.cwd(), 'src/pages/guides');
+const files = fs.readdirSync(guidesDir).filter(f => f.endsWith('.astro') && f !== 'index.astro');
+
+const articles = files.map(file => {
+  const content = fs.readFileSync(path.join(guidesDir, file), 'utf-8');
+  const match = content.match(/title="([^"]+)"/);
+  return {
+    url: '/guides/' + file.replace('.astro', ''),
+    title: match ? match[1] : file.replace('.astro', '')
+  };
+});
+
+// Find current index
+const currentIndex = articles.findIndex(a => a.url === currentPath);
+
+let prev = null;
+let next = null;
+let related = [];
+
+if (currentIndex !== -1) {
+  if (currentIndex > 0) prev = articles[currentIndex - 1];
+  if (currentIndex < articles.length - 1) next = articles[currentIndex + 1];
+  
+  // Pick 3 random articles that are not current, prev, or next
+  const pool = articles.filter((a, i) => i !== currentIndex && a !== prev && a !== next);
+  // Shuffle pool deterministically based on currentIndex to avoid hydration issues, or just slice
+  // Since it's SSG, Math.random() is fine, it will freeze at build time.
+  for (let i = pool.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [pool[i], pool[j]] = [pool[j], pool[i]];
+  }
+  related = pool.slice(0, 3);
+}
+---
+
+{currentIndex !== -1 && (
+  <div class="mt-16 pt-10 border-t border-white/10">
+    <div class="flex flex-col md:flex-row justify-between gap-6 mb-16">
+      {prev ? (
+        <a href={prev.url} class="flex-1 bg-[#131F33] p-6 rounded-2xl border border-white/5 hover:border-breeze-cyan transition-colors group relative overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-r from-breeze-cyan/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          <div class="text-xs text-gray-500 mb-2 font-mono group-hover:text-breeze-cyan transition-colors relative z-10">&larr; 上一篇</div>
+          <div class="text-white font-bold text-base md:text-lg group-hover:text-breeze-cyan transition-colors relative z-10">{prev.title}</div>
+        </a>
+      ) : (
+        <div class="flex-1"></div>
+      )}
+      
+      {next ? (
+        <a href={next.url} class="flex-1 bg-[#131F33] p-6 rounded-2xl border border-white/5 hover:border-breeze-cyan transition-colors group relative overflow-hidden text-right">
+          <div class="absolute inset-0 bg-gradient-to-l from-breeze-cyan/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          <div class="text-xs text-gray-500 mb-2 font-mono group-hover:text-breeze-cyan transition-colors relative z-10">下一篇 &rarr;</div>
+          <div class="text-white font-bold text-base md:text-lg group-hover:text-breeze-cyan transition-colors relative z-10">{next.title}</div>
+        </a>
+      ) : (
+        <div class="flex-1"></div>
+      )}
+    </div>
+
+    {related.length > 0 && (
+      <div>
+        <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+          <svg class="w-6 h-6 text-breeze-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+          相关阅读
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          {related.map(article => (
+            <a href={article.url} class="bg-[#131F33] p-5 rounded-xl border border-white/5 hover:border-breeze-cyan hover:bg-[#1a2b47] transition-all block group shadow-lg">
+              <h4 class="text-gray-300 font-medium text-sm leading-relaxed group-hover:text-white transition-colors">{article.title}</h4>
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+  </div>
+)}

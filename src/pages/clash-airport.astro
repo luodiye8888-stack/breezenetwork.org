@@ -1,0 +1,265 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="2026 Clash机场推荐：Clash订阅、节点与客户端指南 | 微风网络" 
+  description="2026 Clash机场使用指南，介绍Clash订阅、节点选择、规则模式、TUN模式、客户端兼容性以及常见连接问题，帮助新手了解Clash机场怎么选。"
+>
+  <main class="bg-breeze-dark min-h-screen text-gray-300 pt-24 pb-20 font-sans">
+    
+    <!-- Hero 首屏 -->
+    <section class="relative px-4 py-20 text-center overflow-hidden">
+      <!-- Background Glow -->
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-breeze-cyan/15 blur-[120px] pointer-events-none"></div>
+      
+      <div class="max-w-4xl mx-auto relative z-10">
+        <h1 class="text-4xl md:text-5xl font-black text-white mb-6 leading-tight tracking-tight">
+          2026 Clash机场推荐：<br class="hidden md:block"/>订阅、节点与客户端怎么选
+        </h1>
+        <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+          想用 Clash，你真正需要准备什么？<br/>
+          <strong class="text-white">一个兼容的客户端 + 可用的订阅服务 + 合适的节点线路。</strong>
+        </p>
+      </div>
+    </section>
+
+    <!-- Clash 兼容性中心 -->
+    <section class="py-12 px-4">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl font-bold text-white mb-8 text-center">Clash 客户端生态与兼容性指南</h2>
+        <p class="text-center text-gray-400 mb-10 max-w-2xl mx-auto">原版 Clash 核心已经停止更新，2026年主流机场全面转向基于 Meta (Mihomo) 内核的全新生态客户端。</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-[#131F33] p-6 rounded-2xl border border-white/5 hover:border-breeze-cyan/30 transition-all flex flex-col items-center text-center">
+            <svg class="w-12 h-12 text-gray-400 mb-4" fill="currentColor" viewBox="0 0 24 24"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.951-1.801"/></svg>
+            <h3 class="text-xl font-bold text-white mb-2">Windows</h3>
+            <div class="text-breeze-cyan font-mono text-sm mb-2">推荐选择</div>
+            <p class="text-gray-300 font-medium">Clash Verge Rev<br/>Mihomo Party</p>
+          </div>
+          
+          <div class="bg-[#131F33] p-6 rounded-2xl border border-white/5 hover:border-breeze-cyan/30 transition-all flex flex-col items-center text-center">
+            <svg class="w-12 h-12 text-gray-400 mb-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm1.25 14H10.75v-1.5h2.5V16zm4.5-3H6.25V6.5h11.5V13z"/></svg>
+            <h3 class="text-xl font-bold text-white mb-2">macOS</h3>
+            <div class="text-breeze-cyan font-mono text-sm mb-2">推荐选择</div>
+            <p class="text-gray-300 font-medium">Clash Verge Rev<br/>Mihomo</p>
+          </div>
+          
+          <div class="bg-[#131F33] p-6 rounded-2xl border border-white/5 hover:border-breeze-cyan/30 transition-all flex flex-col items-center text-center">
+            <svg class="w-12 h-12 text-green-500 mb-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993.0004.5511-.4482.9997-.9993.9997zm-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993 0 .5511-.4482.9997-.9993.9997zm11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.4162.4162 0 00-.5676.1521l-2.0223 3.503C15.5902 8.2435 13.8533 7.85 12 7.85s-3.5902.3935-5.1367 1.0998L4.841 5.4467a.416.416 0 00-.5676-.1521.416.416 0 00-.1521.5676l1.9973 3.4592C2.6889 11.1867.3432 14.6589 0 18.761h24c-.3432-4.1021-2.6889-7.5743-6.1185-9.4396z"/></svg>
+            <h3 class="text-xl font-bold text-white mb-2">Android</h3>
+            <div class="text-breeze-cyan font-mono text-sm mb-2">推荐选择</div>
+            <p class="text-gray-300 font-medium">Clash Meta for Android<br/>Mihomo 类客户端</p>
+          </div>
+          
+          <div class="bg-[#131F33] p-6 rounded-2xl border border-white/5 hover:border-breeze-cyan/30 transition-all flex flex-col items-center text-center">
+            <svg class="w-12 h-12 text-gray-300 mb-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm3.125 15.625h-6.25c-.345 0-.625-.28-.625-.625v-10c0-.345.28-.625.625-.625h6.25c.345 0 .625.28.625.625v10c0 .345-.28.625-.625.625z"/></svg>
+            <h3 class="text-xl font-bold text-white mb-2">iPhone / iPad</h3>
+            <div class="text-breeze-cyan font-mono text-sm mb-2">推荐选择</div>
+            <p class="text-gray-300 font-medium">需兼容订阅协议的<br/>iOS 代理客户端</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Clash 机场应该看什么 -->
+    <section class="py-20 px-4 bg-[#0B1628]/50 border-y border-white/5">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-white mb-6 text-center">专为 Clash 玩家：机场参数怎么看？</h2>
+        <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">区别于泛泛而谈的价格，Clash 用户的核心需求是“智能分流”与“连接质量”。衡量一个服务是否适配 Clash，需要重点关注以下指标。</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="bg-[#131F33] p-6 rounded-2xl border border-white/5">
+            <h3 class="font-bold text-white text-lg mb-2">订阅格式支持</h3>
+            <p class="text-gray-400 text-sm">提供原生 YAML 格式的 Clash 专属订阅链接，无需手动使用第三方网站转换，避免隐私泄露与规则错乱。</p>
+          </div>
+          <div class="bg-[#131F33] p-6 rounded-2xl border border-white/5">
+            <h3 class="font-bold text-white text-lg mb-2">节点协议兼容</h3>
+            <p class="text-gray-400 text-sm">服务端需良好支持 Trojan、Vless 或 Shadowsocks 等现代协议，完美兼容最新版 Meta (Mihomo) 内核。</p>
+          </div>
+          <div class="bg-[#131F33] p-6 rounded-2xl border border-white/5">
+            <h3 class="font-bold text-white text-lg mb-2">规则模式 (Rule)</h3>
+            <p class="text-gray-400 text-sm">订阅配置需内置合理的 GeoIP 与大陆白名单规则集，确保国内直连不卡顿，海外流量无缝加速。</p>
+          </div>
+          <div class="bg-[#131F33] p-6 rounded-2xl border border-white/5">
+            <h3 class="font-bold text-white text-lg mb-2">TUN 虚拟网卡</h3>
+            <p class="text-gray-400 text-sm">节点 UDP 转发支持良好，开启 TUN 模式后能直接接管不支持系统代理的软件（如游戏和部分终端工具）。</p>
+          </div>
+          <div class="bg-[#131F33] p-6 rounded-2xl border border-white/5">
+            <h3 class="font-bold text-white text-lg mb-2">订阅自动更新</h3>
+            <p class="text-gray-400 text-sm">服务端 Header 支持 ETag，允许 Clash 客户端设置 24 小时自动更新订阅，故障节点自动淘汰下发。</p>
+          </div>
+          <div class="bg-[#131F33] p-6 rounded-2xl border border-white/5">
+            <h3 class="font-bold text-white text-lg mb-2">节点倍率体系</h3>
+            <p class="text-gray-400 text-sm">专线节点与普通节点的倍率清晰。Clash 策略组可以根据倍率自动分流大流量下载与低延迟需求。</p>
+          </div>
+          <div class="bg-[#131F33] p-6 rounded-2xl border border-white/5">
+            <h3 class="font-bold text-white text-lg mb-2">真实测速延迟</h3>
+            <p class="text-gray-400 text-sm">在 Clash 面板中进行 UrlTest 时，不仅要看绿色延迟数字（Ping），更要看真实下载吞吐量是否过关。</p>
+          </div>
+          <div class="bg-[#131F33] p-6 rounded-2xl border border-white/5">
+            <h3 class="font-bold text-white text-lg mb-2">晚高峰抗跌性</h3>
+            <p class="text-gray-400 text-sm">拥有强大的 BGP 中转入口或 IPLC 专线池，在晚高峰也能让 Clash 的连通性保持在绿色状态。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 交互模块：Clash 专属场景策略 -->
+    <section class="py-20 px-4">
+      <div class="max-w-4xl mx-auto bg-[#131F33] border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
+        <h2 class="text-2xl md:text-3xl font-bold text-white mb-8 text-center">你的 Clash 使用场景是什么？</h2>
+        <p class="text-center text-gray-400 mb-8">选择你的核心场景，获取最佳的 Clash 设置建议。</p>
+        
+        <div class="flex flex-wrap justify-center gap-3 mb-10">
+          <button class="clash-scenario-btn bg-breeze-blue text-white px-6 py-3 rounded-xl transition-all shadow-[0_0_15px_rgba(34,211,238,0.3)] font-medium" data-val="daily">日常极速浏览</button>
+          <button class="clash-scenario-btn bg-[#0B1628] text-gray-400 border border-white/5 px-6 py-3 rounded-xl hover:text-white transition-all font-medium" data-val="media">YouTube / Netflix 流媒体</button>
+          <button class="clash-scenario-btn bg-[#0B1628] text-gray-400 border border-white/5 px-6 py-3 rounded-xl hover:text-white transition-all font-medium" data-val="ai">ChatGPT / AI 工具</button>
+          <button class="clash-scenario-btn bg-[#0B1628] text-gray-400 border border-white/5 px-6 py-3 rounded-xl hover:text-white transition-all font-medium" data-val="game">外服游戏加速</button>
+          <button class="clash-scenario-btn bg-[#0B1628] text-gray-400 border border-white/5 px-6 py-3 rounded-xl hover:text-white transition-all font-medium" data-val="multi">多设备全能配置</button>
+        </div>
+
+        <div id="clash-result" class="bg-[#0B1628] border border-breeze-cyan/30 rounded-2xl p-6 md:p-8 transition-opacity duration-300">
+          <h3 class="text-xl font-bold text-white mb-6 border-b border-gray-800 pb-4">Clash 最佳配置建议：</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <div class="text-gray-500 text-sm mb-1 font-mono">全局模式 / 规则模式 (Mode)</div>
+              <div id="res-mode" class="text-breeze-cyan font-bold">规则模式 (Rule)</div>
+            </div>
+            <div>
+              <div class="text-gray-500 text-sm mb-1 font-mono">节点选择策略</div>
+              <div id="res-node" class="text-breeze-cyan font-bold">香港 / 新加坡 (延迟优先)</div>
+            </div>
+            <div>
+              <div class="text-gray-500 text-sm mb-1 font-mono">TUN 虚拟网卡</div>
+              <div id="res-tun" class="text-breeze-cyan font-bold">无需开启</div>
+            </div>
+            <div>
+              <div class="text-gray-500 text-sm mb-1 font-mono">操作建议</div>
+              <div id="res-extra" class="text-breeze-cyan font-bold">开启节点自动选择 (UrlTest)</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Clash 机场常见问题排障 -->
+    <section class="py-20 px-4 bg-[#0B1628]/50 border-t border-white/5">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-white mb-10 text-center">Clash 使用排障与常见问题</h2>
+        
+        <div class="space-y-4 mb-10">
+          <div class="bg-[#131F33] p-6 rounded-2xl border border-white/5">
+            <h3 class="font-bold text-white text-lg mb-2">Clash 能打开但完全没有网怎么办？</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-3">最常见原因是“系统代理”被其他软件接管，或者时间与服务器未对齐。尝试重启软件并在设置里重新打开 System Proxy。</p>
+          </div>
+          <div class="bg-[#131F33] p-6 rounded-2xl border border-white/5">
+            <h3 class="font-bold text-white text-lg mb-2">Clash 测速全部显示 Timeout 是什么意思？</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-3">代表客户端无法连接到任何节点。通常是订阅已经过期、当前网络环境（如公司内网）屏蔽了代理端口，或是机场遭遇了全盘屏蔽。首先尝试更新订阅。</p>
+          </div>
+          <div class="bg-[#131F33] p-6 rounded-2xl border border-white/5">
+            <h3 class="font-bold text-white text-lg mb-2">Rule / Global / Direct 有什么区别？</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-3"><code>Rule (规则)</code> 是智能分流，国内走直连，国外走代理；<code>Global (全局)</code> 是所有流量强制走代理节点；<code>Direct (直连)</code> 是所有流量不经过代理。</p>
+          </div>
+          <div class="bg-[#131F33] p-6 rounded-2xl border border-white/5">
+            <h3 class="font-bold text-white text-lg mb-2">TUN 模式需要开吗？</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-3">TUN 模式会在系统创建一个虚拟网卡，能强制接管所有不遵循系统代理的流量（如部分游戏、命令行工具）。普通网页浏览不需要开，玩游戏时必须开启。</p>
+          </div>
+        </div>
+        
+        <div class="text-center">
+          <a href="/guides" class="inline-flex items-center gap-2 text-breeze-cyan hover:text-white transition-colors">
+            查看更多 Clash 详细排障教程 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 微风网络 × Clash 专区 -->
+    <section class="py-20 px-4">
+      <div class="max-w-4xl mx-auto bg-gradient-to-br from-[#131F33] to-breeze-blue/10 rounded-3xl p-10 md:p-14 border border-breeze-cyan/30 text-center shadow-2xl relative overflow-hidden">
+        <div class="absolute -right-20 -top-20 w-64 h-64 bg-breeze-cyan/10 blur-[80px] pointer-events-none"></div>
+        
+        <h2 class="text-3xl font-bold text-white mb-4 relative z-10">微风网络是否完美支持 Clash？</h2>
+        <p class="text-gray-300 mb-8 max-w-2xl mx-auto relative z-10">
+          我们为所有现代代理内核提供深度支持，确保每一次连接都稳定可靠。
+        </p>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10 relative z-10 text-left">
+          <div class="bg-[#0B1628]/80 p-4 rounded-xl border border-white/5">
+            <div class="text-xs text-gray-500 mb-1">订阅下发</div>
+            <div class="text-white font-bold">原生 YAML 订阅</div>
+          </div>
+          <div class="bg-[#0B1628]/80 p-4 rounded-xl border border-white/5">
+            <div class="text-xs text-gray-500 mb-1">规则集</div>
+            <div class="text-white font-bold">内置全套分流</div>
+          </div>
+          <div class="bg-[#0B1628]/80 p-4 rounded-xl border border-white/5">
+            <div class="text-xs text-gray-500 mb-1">客户端兼容</div>
+            <div class="text-white font-bold">Meta / Mihomo</div>
+          </div>
+          <div class="bg-[#0B1628]/80 p-4 rounded-xl border border-white/5">
+            <div class="text-xs text-gray-500 mb-1">协议支持</div>
+            <div class="text-white font-bold">Trojan / Vless</div>
+          </div>
+        </div>
+        
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
+          <a href="/pricing" class="w-full sm:w-auto bg-breeze-cyan text-[#0B1628] font-bold py-4 px-8 rounded-full shadow-[0_0_20px_rgba(34,211,238,0.4)] hover:shadow-[0_0_30px_rgba(34,211,238,0.7)] transition-all hover:-translate-y-1">
+            获取微风网络订阅
+          </a>
+          <a href="/guides/clash-verge-rev" class="w-full sm:w-auto bg-[#0B1628] text-white font-medium py-4 px-8 rounded-full border border-gray-700 hover:border-gray-500 transition-colors">
+            查看 Clash 配置教程
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const btns = document.querySelectorAll('.clash-scenario-btn');
+      const resContainer = document.getElementById('clash-result');
+      
+      const elMode = document.getElementById('res-mode');
+      const elNode = document.getElementById('res-node');
+      const elTun = document.getElementById('res-tun');
+      const elExtra = document.getElementById('res-extra');
+
+      const data = {
+        daily: { mode: '规则模式 (Rule)', node: '香港 / 新加坡 (自动选择)', tun: '无需开启', extra: '开启 UrlTest 或 Fallback，无感切换' },
+        media: { mode: '规则模式 (Rule)', node: '原生流媒体解锁节点 (美区/狮城)', tun: '无需开启', extra: '可在配置中绑定特定的流媒体分流策略组' },
+        ai: { mode: '全局模式 或 强制规则', node: '美国 / 日本 / 台湾 (原生 IP)', tun: '无需开启', extra: '保持固定 IP 防止 AI 账号触发风控封禁' },
+        game: { mode: '规则模式 (Rule) + 游戏组', node: 'IPLC / IEPL 专线 (极低延迟)', tun: '必须开启 (接管所有 UDP)', extra: '确保机场服务端支持完备的 UDP 转发' },
+        multi: { mode: '规则模式 (Rule)', node: '智能匹配全局分布策略', tun: '按需开启', extra: '建议在后台设置订阅链接每天定时自动更新' }
+      };
+
+      btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Reset styles
+          btns.forEach(b => {
+            b.classList.remove('bg-breeze-blue', 'text-white', 'shadow-[0_0_15px_rgba(34,211,238,0.3)]');
+            b.classList.add('bg-[#0B1628]', 'text-gray-400');
+          });
+          
+          btn.classList.add('bg-breeze-blue', 'text-white', 'shadow-[0_0_15px_rgba(34,211,238,0.3)]');
+          btn.classList.remove('bg-[#0B1628]', 'text-gray-400');
+          
+          const key = btn.getAttribute('data-val');
+          const cfg = data[key];
+
+          resContainer.style.opacity = '0';
+          setTimeout(() => {
+            elMode.innerText = cfg.mode;
+            elNode.innerText = cfg.node;
+            elTun.innerText = cfg.tun;
+            elExtra.innerText = cfg.extra;
+            resContainer.style.opacity = '1';
+          }, 200);
+        });
+      });
+    });
+  </script>
+</Layout>

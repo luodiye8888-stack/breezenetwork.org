@@ -1,0 +1,48 @@
+---
+// 链接伪装 (Link Cloaking) 的中转页
+---
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>安全跳转中 - 微风网络</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0B1628;
+      color: #D1D5DB;
+      font-family: system-ui, -apple-system, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .loader {
+      border: 3px solid rgba(255,255,255,0.1);
+      border-top: 3px solid #22D3EE;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin-bottom: 20px;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+  <script>
+    setTimeout(() => {
+      window.location.replace("https://edp01.breezenetaff.com/#/?code=bSnymFll");
+    }, 500); // 轻微延迟增加真实感
+  </script>
+</head>
+<body>
+  <div class="loader"></div>
+  <p>正在前往微风网络官方订阅系统...</p>
+</body>
+</html>

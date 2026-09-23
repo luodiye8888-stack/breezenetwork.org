@@ -1,0 +1,26 @@
+---
+import { statusData } from '../../data/status';
+---
+<div class="bg-[#131F33] border border-white/5 rounded-3xl p-8 h-full">
+  <h3 class="text-xl font-bold text-white mb-6">近期事故通报</h3>
+  
+  {statusData.incidents.length === 0 ? (
+    <div class="text-gray-400 text-sm italic">今日暂无异常事故报告。</div>
+  ) : (
+    <div class="space-y-8">
+      {statusData.incidents.map(inc => (
+        <div class="border-l-2 border-gray-700 pl-4 relative">
+          <div class="absolute -left-[5px] top-1.5 w-2 h-2 rounded-full bg-gray-500 ring-4 ring-[#131F33]"></div>
+          <div class="text-xs text-gray-500 mb-1 font-mono">{inc.date}</div>
+          <h4 class="text-white font-bold mb-2">{inc.title}</h4>
+          <div class="text-xs font-medium text-gray-400 mb-2 flex items-center gap-2">
+            <span class="text-green-400 bg-green-400/10 px-2 py-0.5 rounded">{inc.status}</span>
+            <span>·</span>
+            <span>{inc.duration}</span>
+          </div>
+          <p class="text-sm text-gray-400 leading-relaxed">{inc.desc}</p>
+        </div>
+      ))}
+    </div>
+  )}
+</div>

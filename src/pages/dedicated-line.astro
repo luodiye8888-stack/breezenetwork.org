@@ -1,0 +1,399 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="2026专线机场指南：IPLC、IEPL与中转线路区别 | 微风网络" 
+  description="了解2026专线机场、IPLC、IEPL和中转线路的区别，包括延迟、稳定性、晚高峰表现、节点质量与适用场景，帮助用户选择合适的网络线路。"
+>
+  <main class="bg-breeze-dark min-h-screen text-gray-300 pt-24 pb-20 font-sans">
+    
+    <!-- Hero 首屏 -->
+    <section class="relative px-4 py-20 text-center overflow-hidden">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-breeze-cyan/15 blur-[120px] pointer-events-none"></div>
+      
+      <div class="max-w-4xl mx-auto relative z-10">
+        <h1 class="text-4xl md:text-5xl font-black text-white mb-8 leading-tight tracking-tight">
+          2026专线机场指南：<br class="hidden md:block"/>IPLC、IEPL与普通线路有什么区别？
+        </h1>
+        <p class="text-lg md:text-xl text-gray-400 mb-6 max-w-3xl mx-auto leading-relaxed">
+          如果你只是偶尔浏览网页，普通线路可能已经够用。
+        </p>
+        <p class="text-lg md:text-xl text-white font-medium mb-10 max-w-3xl mx-auto leading-relaxed">
+          但如果更在意<span class="text-breeze-cyan">晚高峰稳定性、跨境延迟、高清视频与 AI 工具</span>的使用体验，则有必要进一步了解专线和优质中转架构。
+        </p>
+      </div>
+    </section>
+
+    <!-- 什么是“专线” (图解架构) -->
+    <section class="py-16 px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-white mb-12 text-center">硬核科普：到底什么是“专线”？</h2>
+        
+        <div class="space-y-8 mb-16">
+          <!-- 直连 -->
+          <div class="bg-[#131F33] border border-white/5 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center gap-6">
+            <div class="md:w-1/4">
+              <h3 class="text-xl font-bold text-white mb-2">普通直连 (Direct)</h3>
+              <p class="text-sm text-gray-400">数据直接穿越公共互联网出口，晚高峰极易拥堵、丢包严重。</p>
+            </div>
+            <div class="flex-1 flex flex-col sm:flex-row items-center justify-between w-full font-mono text-sm gap-2">
+              <div class="bg-[#0B1628] px-4 py-3 rounded-lg border border-gray-700 text-gray-300 w-full sm:w-auto text-center">用户设备</div>
+              <div class="text-gray-600 hidden sm:block">→</div>
+              <div class="bg-red-500/10 border border-red-500/30 text-red-400 px-4 py-3 rounded-lg w-full sm:w-auto text-center">公共国际出口 (极易拥堵)</div>
+              <div class="text-gray-600 hidden sm:block">→</div>
+              <div class="bg-[#0B1628] px-4 py-3 rounded-lg border border-gray-700 text-gray-300 w-full sm:w-auto text-center">海外节点</div>
+            </div>
+          </div>
+          
+          <!-- 中转 -->
+          <div class="bg-[#131F33] border border-white/5 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center gap-6">
+            <div class="md:w-1/4">
+              <h3 class="text-xl font-bold text-white mb-2">中转线路 (Transit)</h3>
+              <p class="text-sm text-gray-400">先连接国内优质 BGP 节点，再通过隧道加密传输至海外，大幅提升稳定性。</p>
+            </div>
+            <div class="flex-1 flex flex-col sm:flex-row items-center justify-between w-full font-mono text-sm gap-2">
+              <div class="bg-[#0B1628] px-4 py-3 rounded-lg border border-gray-700 text-gray-300 w-full sm:w-auto text-center">用户设备</div>
+              <div class="text-breeze-cyan hidden sm:block">→</div>
+              <div class="bg-breeze-blue/10 border border-breeze-cyan/30 text-breeze-cyan px-4 py-3 rounded-lg w-full sm:w-auto text-center">国内入口 → 优化隧道</div>
+              <div class="text-breeze-cyan hidden sm:block">→</div>
+              <div class="bg-[#0B1628] px-4 py-3 rounded-lg border border-gray-700 text-gray-300 w-full sm:w-auto text-center">海外节点</div>
+            </div>
+          </div>
+
+          <!-- 专线 -->
+          <div class="bg-gradient-to-r from-[#131F33] to-[#1a2b47] border border-breeze-cyan/40 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center gap-6 shadow-lg shadow-breeze-cyan/5">
+            <div class="md:w-1/4">
+              <h3 class="text-xl font-bold text-white mb-2 flex items-center gap-2">专线 (IPLC / IEPL)</h3>
+              <p class="text-sm text-gray-400">通过物理/二层独立内网传输，不经过公共防火墙，拥有极致延迟与零丢包率。</p>
+            </div>
+            <div class="flex-1 flex flex-col sm:flex-row items-center justify-between w-full font-mono text-sm gap-2 relative">
+              <div class="bg-[#0B1628] px-4 py-3 rounded-lg border border-gray-700 text-gray-300 w-full sm:w-auto text-center z-10">用户设备</div>
+              <div class="text-green-400 hidden sm:block z-10">→</div>
+              <div class="bg-green-500/20 border border-green-400/50 text-green-400 px-4 py-3 rounded-lg w-full sm:w-auto text-center font-bold z-10 shadow-[0_0_15px_rgba(74,222,128,0.2)]">专用骨干网 (物理隔离)</div>
+              <div class="text-green-400 hidden sm:block z-10">→</div>
+              <div class="bg-[#0B1628] px-4 py-3 rounded-lg border border-gray-700 text-gray-300 w-full sm:w-auto text-center z-10">海外节点</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+          <div class="bg-[#0B1628] p-6 rounded-xl border border-white/5">
+            <h4 class="font-bold text-breeze-cyan mb-2">IPLC 是什么？</h4>
+            <p class="text-sm text-gray-400 leading-relaxed">国际专线 (International Private Leased Circuit) 的传统概念，点对点的硬连接物理专线，不受传统公网拥堵影响。</p>
+          </div>
+          <div class="bg-[#0B1628] p-6 rounded-xl border border-white/5">
+            <h4 class="font-bold text-breeze-cyan mb-2">IEPL 是什么？</h4>
+            <p class="text-sm text-gray-400 leading-relaxed">国际以太网专线 (International Ethernet Private Line)，基于以太网的现代化二层网络架构，具备更高的灵活性，是目前专线机场的主流方案。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 专线 vs 普通线路 (对比表) -->
+    <section class="py-20 px-4 bg-[#0B1628]/50 border-y border-white/5">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl font-bold text-white mb-10 text-center">专线与普通线路体验差异对比</h2>
+        
+        <div class="overflow-x-auto custom-scrollbar shadow-2xl rounded-2xl border border-gray-800">
+          <table class="w-full text-left border-collapse min-w-[700px]">
+            <thead>
+              <tr class="bg-[#131F33] border-b border-gray-700">
+                <th class="p-6 font-bold text-white rounded-tl-2xl">核心维度</th>
+                <th class="p-6 font-bold text-gray-400">普通直连</th>
+                <th class="p-6 font-bold text-gray-300">中转线路 (BGP)</th>
+                <th class="p-6 font-bold text-breeze-cyan rounded-tr-2xl">专线类 (IPLC/IEPL)</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-800 bg-[#0B1628]">
+              <tr class="hover:bg-white/5 transition-colors">
+                <td class="p-6 font-bold text-gray-300">服务器成本</td>
+                <td class="p-6 text-green-400">极低</td>
+                <td class="p-6 text-yellow-400">中等</td>
+                <td class="p-6 text-red-400">极高</td>
+              </tr>
+              <tr class="hover:bg-white/5 transition-colors">
+                <td class="p-6 font-bold text-gray-300">晚高峰表现</td>
+                <td class="p-6 text-red-400 text-sm">波动明显，严重丢包</td>
+                <td class="p-6 text-green-400 text-sm">较稳定，能满足高清视频</td>
+                <td class="p-6 text-breeze-cyan text-sm font-bold">通常更稳定，丝滑流畅</td>
+              </tr>
+              <tr class="hover:bg-white/5 transition-colors">
+                <td class="p-6 font-bold text-gray-300">延迟水平</td>
+                <td class="p-6 text-gray-400 text-sm">视国际路由而定</td>
+                <td class="p-6 text-green-400 text-sm">较低 (40-70ms)</td>
+                <td class="p-6 text-breeze-cyan text-sm font-bold">极低 (20-40ms)</td>
+              </tr>
+              <tr class="hover:bg-white/5 transition-colors">
+                <td class="p-6 font-bold text-gray-300">适合场景</td>
+                <td class="p-6 text-gray-400 text-sm">轻量网页浏览</td>
+                <td class="p-6 text-green-400 text-sm">日常长期使用、流媒体追剧</td>
+                <td class="p-6 text-breeze-cyan text-sm font-bold">联机游戏加速、硬核业务需求</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 专线不是越贵越好 (科普防坑) -->
+    <section class="py-20 px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-white mb-6 text-center">防坑指南：“专线”并不是万能灵药</h2>
+        <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">很多劣质机场打着“极低价全线 IPLC”的噱头，实际体验却极差。因为“专线”只是一个物理维度，最终体验还受以下众多因素制约：</p>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+          <div class="bg-[#131F33] p-5 rounded-xl border border-white/5 text-center">
+            <div class="text-breeze-cyan font-bold mb-1">入口质量</div>
+            <div class="text-xs text-gray-500">国内接入点是否拥堵</div>
+          </div>
+          <div class="bg-[#131F33] p-5 rounded-xl border border-white/5 text-center">
+            <div class="text-breeze-cyan font-bold mb-1">带宽容量</div>
+            <div class="text-xs text-gray-500">总管口是否超售测速</div>
+          </div>
+          <div class="bg-[#131F33] p-5 rounded-xl border border-white/5 text-center">
+            <div class="text-breeze-cyan font-bold mb-1">用户数量</div>
+            <div class="text-xs text-gray-500">拥挤程度与并发情况</div>
+          </div>
+          <div class="bg-[#131F33] p-5 rounded-xl border border-white/5 text-center">
+            <div class="text-breeze-cyan font-bold mb-1">节点负载</div>
+            <div class="text-xs text-gray-500">落地机的 CPU/内存状态</div>
+          </div>
+          <div class="bg-[#131F33] p-5 rounded-xl border border-white/5 text-center">
+            <div class="text-gray-300 font-bold mb-1">国际出口</div>
+            <div class="text-xs text-gray-500">穿透后的落地机房质量</div>
+          </div>
+          <div class="bg-[#131F33] p-5 rounded-xl border border-white/5 text-center">
+            <div class="text-gray-300 font-bold mb-1">当地 ISP</div>
+            <div class="text-xs text-gray-500">原生 IP 与流媒体解锁</div>
+          </div>
+          <div class="bg-[#131F33] p-5 rounded-xl border border-white/5 text-center">
+            <div class="text-gray-300 font-bold mb-1">路由优化</div>
+            <div class="text-xs text-gray-500">动态故障切换的能力</div>
+          </div>
+          <div class="bg-[#131F33] p-5 rounded-xl border border-white/5 text-center">
+            <div class="text-gray-300 font-bold mb-1">节点倍率</div>
+            <div class="text-xs text-gray-500">滥用限制与流量控制</div>
+          </div>
+        </div>
+        
+        <div class="text-center text-sm text-gray-400 bg-blue-500/10 border border-blue-500/20 p-4 rounded-xl max-w-3xl mx-auto">
+          <strong class="text-blue-400">总结：</strong>不要盲目迷信“纯专线”。一个维护良好、带宽充足的优质 BGP 中转网络，体验往往秒杀过度超售的“廉价假专线”。
+        </div>
+      </div>
+    </section>
+
+    <!-- 哪些场景更需要专线 -->
+    <section class="py-20 px-4 bg-[#0B1628]/50 border-t border-white/5">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-white mb-12 text-center">哪些场景更值得投资优质专线/中转？</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-[#131F33] p-8 rounded-2xl border border-white/5 hover:-translate-y-1 transition-transform">
+            <h3 class="text-xl font-bold text-white mb-3">🤖 AI / ChatGPT</h3>
+            <p class="text-sm text-gray-400 leading-relaxed">强调<strong class="text-gray-200">极度稳定的长连接</strong>。专线不易断线丢包，能有效避免 AI 会话中断、频繁验证码报错以及账号触发风控。</p>
+          </div>
+          <div class="bg-[#131F33] p-8 rounded-2xl border border-white/5 hover:-translate-y-1 transition-transform">
+            <h3 class="text-xl font-bold text-white mb-3">🎬 高清流媒体</h3>
+            <p class="text-sm text-gray-400 leading-relaxed">强调<strong class="text-gray-200">晚高峰的高吞吐量</strong>。即使在晚上最拥堵的 9 点，优质网络依然能瞬间拉满带宽，4K 视频进度条随意拖拽无缓冲。</p>
+          </div>
+          <div class="bg-[#131F33] p-8 rounded-2xl border border-white/5 hover:-translate-y-1 transition-transform">
+            <h3 class="text-xl font-bold text-white mb-3">💼 远程跨境工作</h3>
+            <p class="text-sm text-gray-400 leading-relaxed">强调<strong class="text-gray-200">路由的绝对稳定</strong>。Zoom 跨国会议、代码拉取提交、跨境电商后台管理，任何一次掉线都可能导致数据丢失。</p>
+          </div>
+          <div class="bg-[#131F33] p-8 rounded-2xl border border-white/5 hover:-translate-y-1 transition-transform">
+            <h3 class="text-xl font-bold text-white mb-3">📱 多设备家庭</h3>
+            <p class="text-sm text-gray-400 leading-relaxed">强调<strong class="text-gray-200">强大的节点负载与套餐容量</strong>。路由器底层翻墙，手机电脑电视同时并发，劣质线路会被瞬间拖垮。</p>
+          </div>
+          <div class="md:col-span-2 bg-[#131F33] p-8 rounded-2xl border border-white/5 hover:-translate-y-1 transition-transform relative overflow-hidden">
+            <div class="absolute right-0 top-0 w-32 h-32 bg-green-500/10 blur-3xl"></div>
+            <h3 class="text-xl font-bold text-white mb-3 relative z-10">🎮 联机外服游戏 (特别说明)</h3>
+            <p class="text-sm text-gray-400 leading-relaxed relative z-10 mb-2">强调<strong class="text-gray-200">极致的低延迟与零抖动 (Jitter)</strong>。专线是游戏加速的底座，但必须注意：</p>
+            <p class="text-xs text-gray-500 relative z-10">
+              * 专线节点不等于专业游戏加速器（如 UU、雷神）。专线能解决你到落地机的物理延迟，但最终游戏体验还受游戏官方服务器位置、UDP 转发协议等限制。建议重度玩家配合专门的游戏加速器使用。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 视觉化路线动态 -->
+    <section class="py-20 px-4 overflow-hidden">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-white mb-12">现代专线架构网络拓扑</h2>
+        
+        <div class="relative bg-[#131F33] p-10 rounded-3xl border border-gray-800">
+          <div class="flex flex-col md:flex-row items-center justify-between relative z-10 gap-6">
+            
+            <div class="bg-[#0B1628] p-4 rounded-xl border border-gray-700 w-full md:w-auto">
+              <div class="text-white font-bold">中国大陆</div>
+              <div class="text-xs text-gray-500">用户终端设备</div>
+            </div>
+            
+            <!-- Flow Animation -->
+            <div class="flex-1 flex justify-center items-center h-10 w-full md:w-auto">
+              <div class="h-[2px] w-full bg-gray-800 relative overflow-hidden flex items-center justify-center">
+                <div class="absolute h-[2px] w-20 bg-gradient-to-r from-transparent via-breeze-cyan to-transparent animate-[flow_2s_linear_infinite]"></div>
+              </div>
+            </div>
+            
+            <div class="bg-breeze-cyan/10 p-4 rounded-xl border border-breeze-cyan/30 w-full md:w-auto">
+              <div class="text-breeze-cyan font-bold">高防/BGP 入口</div>
+              <div class="text-xs text-breeze-cyan/70">国内骨干接入点</div>
+            </div>
+            
+            <!-- Flow Animation -->
+            <div class="flex-1 flex justify-center items-center h-10 w-full md:w-auto">
+              <div class="h-[2px] w-full bg-gray-800 relative overflow-hidden flex items-center justify-center">
+                <div class="absolute h-[2px] w-20 bg-gradient-to-r from-transparent via-green-400 to-transparent animate-[flow_1.5s_linear_infinite]"></div>
+              </div>
+            </div>
+            
+            <div class="bg-[#0B1628] p-4 rounded-xl border border-gray-700 w-full md:w-auto">
+              <div class="text-white font-bold">海外落地机房</div>
+              <div class="text-xs text-gray-500">日本 / 新加坡 / 美国</div>
+            </div>
+
+          </div>
+          <style>
+            @keyframes flow {
+              0% { left: -20%; }
+              100% { left: 120%; }
+            }
+          </style>
+        </div>
+      </div>
+    </section>
+
+    <!-- 延迟不是唯一指标互动 -->
+    <section class="py-20 px-4 bg-[#0B1628]/50 border-y border-white/5">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-white mb-6 text-center">灵魂拷问：30ms 一定比 60ms 更快吗？</h2>
+        <p class="text-center text-gray-400 mb-12">延迟 (Ping) 仅仅代表“首包响应时间”。点击下方两个节点，看看你会选哪个？</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <button class="ping-btn group bg-[#131F33] p-8 rounded-2xl border border-gray-700 hover:border-red-500/50 transition-all text-left relative overflow-hidden" data-choice="a">
+            <div class="absolute right-4 top-4 text-gray-600 group-hover:text-red-400 transition-colors">点击选择</div>
+            <h3 class="text-2xl font-bold text-white mb-4">节点 A</h3>
+            <div class="flex items-center justify-between border-b border-gray-800 pb-2 mb-2">
+              <span class="text-gray-400">延迟 (Ping)</span>
+              <span class="text-green-400 font-mono text-lg font-bold">32 ms</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-gray-400">丢包率 (Loss)</span>
+              <span class="text-red-400 font-mono text-lg font-bold">8 %</span>
+            </div>
+          </button>
+          
+          <button class="ping-btn group bg-[#131F33] p-8 rounded-2xl border border-gray-700 hover:border-green-500/50 transition-all text-left relative overflow-hidden" data-choice="b">
+            <div class="absolute right-4 top-4 text-gray-600 group-hover:text-green-400 transition-colors">点击选择</div>
+            <h3 class="text-2xl font-bold text-white mb-4">节点 B</h3>
+            <div class="flex items-center justify-between border-b border-gray-800 pb-2 mb-2">
+              <span class="text-gray-400">延迟 (Ping)</span>
+              <span class="text-yellow-400 font-mono text-lg font-bold">58 ms</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-gray-400">丢包率 (Loss)</span>
+              <span class="text-green-400 font-mono text-lg font-bold">0 %</span>
+            </div>
+          </button>
+        </div>
+
+        <div id="ping-result-a" class="hidden bg-red-500/10 border border-red-500/30 rounded-2xl p-6 text-red-200 transition-opacity">
+          <strong class="text-red-400 text-lg block mb-2">❌ 不建议选择节点 A！</strong>
+          虽然 32ms 的基础延迟看起来非常漂亮，但在复杂的网络传输中，<strong class="text-white">高达 8% 的丢包率是致命的</strong>。这意味着你看视频会疯狂卡顿缓冲，下载文件会频繁断开，甚至网页都会加载一半卡死。不要被单一的 Ping 值骗了！
+        </div>
+
+        <div id="ping-result-b" class="hidden bg-green-500/10 border border-green-500/30 rounded-2xl p-6 text-green-200 transition-opacity">
+          <strong class="text-green-400 text-lg block mb-2">✅ 正确！节点 B 是更好的长期选择。</strong>
+          虽然 58ms 比 32ms 多出了约 26 毫秒（人类的神经反馈几乎无法感知这段差异），但 <strong class="text-white">0% 的丢包率意味着这是一条极其稳定的通道</strong>。在这条线路上看 4K 视频、远程工作、持续进行 AI 会话都将如丝般顺滑。这也是优质中转和专线的核心价值。
+        </div>
+      </div>
+    </section>
+
+    <!-- 专线常见问题 FAQ -->
+    <section class="py-20 px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-white mb-10 text-center">专线线路常见问题解答 (FAQ)</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-[#131F33] p-6 rounded-2xl border border-white/5">
+            <h3 class="font-bold text-white mb-2">IPLC 和 IEPL 哪个更好？</h3>
+            <p class="text-sm text-gray-400 leading-relaxed">两者对个人终端用户的体验差异极小。IEPL 基于现代以太网架构，提供更高的灵活性，是当前大多数高端服务商的优先选择。</p>
+          </div>
+          <div class="bg-[#131F33] p-6 rounded-2xl border border-white/5">
+            <h3 class="font-bold text-white mb-2">专线机场为什么比较贵？</h3>
+            <p class="text-sm text-gray-400 leading-relaxed">专线需要跨国物理/二层线路的独享带宽采购，其每 Mbps 成本远远高于走公网的普通直连机器，一分钱一分货体现得淋漓尽致。</p>
+          </div>
+          <div class="bg-[#131F33] p-6 rounded-2xl border border-white/5">
+            <h3 class="font-bold text-white mb-2">专线一定不会掉线吗？</h3>
+            <p class="text-sm text-gray-400 leading-relaxed">不一定。专线规避了公网墙的干扰，但在机房断电、入口服务器遭受 DDoS 攻击或底层光缆物理切断时，依然会掉线。因此多链路冗余很重要。</p>
+          </div>
+          <div class="bg-[#131F33] p-6 rounded-2xl border border-white/5">
+            <h3 class="font-bold text-white mb-2">游戏一定要用专线吗？</h3>
+            <p class="text-sm text-gray-400 leading-relaxed">如果是对外服延迟要求苛刻的 FPS 游戏，专线是基础保障。但建议专业玩家使用专门的游戏加速器以获得最佳的 UDP 转发支持。</p>
+          </div>
+          <div class="bg-[#131F33] p-6 rounded-2xl border border-white/5">
+            <h3 class="font-bold text-white mb-2">延迟多少算正常？</h3>
+            <p class="text-sm text-gray-400 leading-relaxed">香港、日本通常在 30-70ms；新加坡在 50-90ms；美国西海岸在 130-180ms。只要不丢包，这些范围内的延迟都能保证极佳的浏览体验。</p>
+          </div>
+          <div class="bg-[#131F33] p-6 rounded-2xl border border-white/5">
+            <h3 class="font-bold text-white mb-2">专线机场适合新手吗？</h3>
+            <p class="text-sm text-gray-400 leading-relaxed">非常适合。越是高端稳定的线路，平时需要的折腾和排障就越少，新手配置好客户端后，几乎可以做到“无感使用，全年不换节点”。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 微风网络方案 (CTA) -->
+    <section class="py-20 px-4 bg-[#0B1628]/80 border-t border-white/5">
+      <div class="max-w-4xl mx-auto bg-gradient-to-br from-[#131F33] to-breeze-blue/10 rounded-3xl p-10 md:p-14 border border-breeze-cyan/30 text-center shadow-2xl relative overflow-hidden">
+        <div class="absolute -left-20 -bottom-20 w-64 h-64 bg-breeze-cyan/10 blur-[80px] pointer-events-none"></div>
+        
+        <h2 class="text-3xl font-bold text-white mb-6 relative z-10">微风网络线路方案</h2>
+        <p class="text-gray-300 mb-10 leading-relaxed max-w-2xl mx-auto relative z-10">
+          如果你正在寻找适合长期使用的网络方案，想要摆脱晚高峰的拥堵与断流烦恼，可以进一步查看微风网络当前提供的线路网络体系、节点地区覆盖和套餐信息。
+        </p>
+        
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
+          <a href="/network" class="w-full sm:w-auto bg-[#0B1628] text-white font-medium py-4 px-8 rounded-full border border-gray-700 hover:border-gray-500 transition-colors">
+            查看微风网络架构体系
+          </a>
+          <a href="/pricing" class="w-full sm:w-auto bg-breeze-cyan text-[#0B1628] font-bold py-4 px-8 rounded-full shadow-[0_0_20px_rgba(34,211,238,0.4)] hover:shadow-[0_0_30px_rgba(34,211,238,0.7)] transition-all hover:-translate-y-1">
+            查看套餐方案
+          </a>
+          <a href="/status" class="w-full sm:w-auto bg-[#0B1628] text-white font-medium py-4 px-8 rounded-full border border-gray-700 hover:border-gray-500 transition-colors">
+            查看实时运行状态
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const btns = document.querySelectorAll('.ping-btn');
+      const resA = document.getElementById('ping-result-a');
+      const resB = document.getElementById('ping-result-b');
+
+      btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Reset
+          btns.forEach(b => b.classList.remove('ring-4', 'ring-white/20'));
+          btn.classList.add('ring-4', 'ring-white/20');
+
+          const choice = btn.getAttribute('data-choice');
+          
+          if(choice === 'a') {
+            resB.classList.add('hidden');
+            resA.classList.remove('hidden');
+          } else {
+            resA.classList.add('hidden');
+            resB.classList.remove('hidden');
+          }
+        });
+      });
+    });
+  </script>
+</Layout>

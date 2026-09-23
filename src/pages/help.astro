@@ -1,0 +1,409 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="微风网络帮助中心 | 订阅、Clash、节点与连接问题解决" 
+  description="微风网络帮助中心，提供订阅导入、Clash配置、节点连接、网络异常、客户端使用与常见问题解决方法。"
+>
+  <main class="bg-breeze-dark min-h-screen text-gray-300 pt-24 pb-20 font-sans">
+    
+    <!-- Hero & 搜索框 -->
+    <section class="relative px-4 py-16 text-center overflow-hidden border-b border-white/5 bg-[#0B1628]/50">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-breeze-cyan/10 blur-[120px] pointer-events-none"></div>
+      
+      <div class="max-w-3xl mx-auto relative z-10">
+        <h1 class="text-4xl md:text-5xl font-black text-white mb-6">微风网络帮助中心</h1>
+        <p class="text-lg text-gray-400 mb-10">
+          遇到连接、订阅、客户端或节点问题？<br class="hidden sm:block"/>搜索问题或从下方分类快速找到排查与解决方法。
+        </p>
+        
+        <div class="relative max-w-2xl mx-auto mb-12">
+          <input type="text" id="help-search" placeholder="搜索问题，例如：“订阅更新失败”、“Clash 显示 Timeout”" 
+            class="w-full bg-[#131F33] border border-gray-700 text-white px-6 py-5 rounded-2xl pl-14 focus:outline-none focus:border-breeze-cyan focus:ring-1 focus:ring-breeze-cyan transition-all shadow-lg text-lg">
+          <svg class="w-6 h-6 text-gray-500 absolute left-5 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+        </div>
+        
+        <!-- 6 个快捷分类 -->
+        <div class="flex flex-wrap justify-center gap-3">
+          <a href="#cat-connect" class="bg-[#131F33] border border-white/5 hover:border-breeze-cyan/50 text-gray-300 hover:text-white px-5 py-2.5 rounded-xl transition-all text-sm font-medium">无法连接</a>
+          <a href="#cat-sub" class="bg-[#131F33] border border-white/5 hover:border-breeze-cyan/50 text-gray-300 hover:text-white px-5 py-2.5 rounded-xl transition-all text-sm font-medium">订阅问题</a>
+          <a href="#cat-clash" class="bg-[#131F33] border border-white/5 hover:border-breeze-cyan/50 text-gray-300 hover:text-white px-5 py-2.5 rounded-xl transition-all text-sm font-medium">Clash 问题</a>
+          <a href="#cat-node" class="bg-[#131F33] border border-white/5 hover:border-breeze-cyan/50 text-gray-300 hover:text-white px-5 py-2.5 rounded-xl transition-all text-sm font-medium">节点问题</a>
+          <a href="#cat-account" class="bg-[#131F33] border border-white/5 hover:border-breeze-cyan/50 text-gray-300 hover:text-white px-5 py-2.5 rounded-xl transition-all text-sm font-medium">账号 / 套餐</a>
+          <a href="/go" rel="nofollow sponsored" target="_blank" class="bg-breeze-cyan/10 border border-breeze-cyan/30 text-breeze-cyan px-5 py-2.5 rounded-xl transition-all text-sm font-bold">联系客服</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 互动式问题诊断器 -->
+    <section class="py-16 px-4">
+      <div class="max-w-4xl mx-auto bg-gradient-to-br from-[#131F33] to-[#1a2b47] rounded-3xl p-8 md:p-12 border border-breeze-cyan/30 shadow-2xl relative overflow-hidden">
+        <div class="absolute -right-20 -top-20 w-64 h-64 bg-breeze-cyan/10 blur-[80px] pointer-events-none"></div>
+        
+        <div class="flex items-center gap-3 mb-8">
+          <div class="w-10 h-10 rounded-full bg-breeze-cyan/20 flex items-center justify-center text-breeze-cyan">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-white">智能故障诊断器</h2>
+        </div>
+        
+        <div id="ts-container" class="bg-[#0B1628] rounded-2xl p-6 md:p-8 border border-white/5 min-h-[200px] flex flex-col justify-center transition-opacity duration-300">
+          <h3 id="ts-question" class="text-xl text-white font-medium mb-6 text-center">你遇到了什么问题？</h3>
+          <div id="ts-options" class="flex flex-wrap justify-center gap-3">
+            <!-- 动态注入按钮 -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 新手快速帮助 -->
+    <section class="py-12 px-4 bg-[#0B1628]/50 border-y border-white/5">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-2xl font-bold text-white mb-8 flex items-center gap-2">
+          <span class="w-2 h-8 bg-green-500 rounded-full inline-block"></span> 新手快速入门
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <a href="/guides" class="bg-[#131F33] p-5 rounded-xl border border-white/5 hover:border-green-500/50 transition-colors group">
+            <h3 class="text-white font-medium mb-1 group-hover:text-green-400 transition-colors">购买后第一步做什么？</h3>
+            <p class="text-xs text-gray-500">查看新手整体流程</p>
+          </a>
+          <a href="/guides" class="bg-[#131F33] p-5 rounded-xl border border-white/5 hover:border-green-500/50 transition-colors group">
+            <h3 class="text-white font-medium mb-1 group-hover:text-green-400 transition-colors">哪里获取订阅链接？</h3>
+            <p class="text-xs text-gray-500">官网后台导入指南</p>
+          </a>
+          <a href="/guides/clash-verge-rev" class="bg-[#131F33] p-5 rounded-xl border border-white/5 hover:border-green-500/50 transition-colors group">
+            <h3 class="text-white font-medium mb-1 group-hover:text-green-400 transition-colors">Windows 怎么用？</h3>
+            <p class="text-xs text-gray-500">Clash Verge 配置教程</p>
+          </a>
+          <a href="/guides/subscription-import" class="bg-[#131F33] p-5 rounded-xl border border-white/5 hover:border-green-500/50 transition-colors group">
+            <h3 class="text-white font-medium mb-1 group-hover:text-green-400 transition-colors">iPhone 怎么用？</h3>
+            <p class="text-xs text-gray-500">Shadowrocket 教程</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 主要分类 FAQ -->
+    <section class="py-16 px-4 faq-section" id="faq-wrapper">
+      <div class="max-w-4xl mx-auto space-y-16">
+        
+        <!-- 连接排查标准流程 -->
+        <div id="cat-connect" class="scroll-mt-24">
+          <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+            <span class="w-2 h-8 bg-red-500 rounded-full inline-block"></span> 无法连接：标准排查流程
+          </h2>
+          <div class="bg-[#131F33] p-8 rounded-2xl border border-red-500/20 mb-8">
+            <p class="text-gray-400 mb-6">如果你突然无法上网、节点全部变红或打不开网页，请严格按照以下顺序执行：</p>
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-2 text-sm font-bold text-white">
+              <div class="bg-red-500/10 text-red-400 px-4 py-2 rounded-lg w-full sm:w-auto text-center border border-red-500/20">1. 更新订阅</div>
+              <div class="text-gray-600 hidden sm:block">→</div>
+              <div class="bg-red-500/10 text-red-400 px-4 py-2 rounded-lg w-full sm:w-auto text-center border border-red-500/20">2. 切换节点</div>
+              <div class="text-gray-600 hidden sm:block">→</div>
+              <div class="bg-red-500/10 text-red-400 px-4 py-2 rounded-lg w-full sm:w-auto text-center border border-red-500/20">3. 开启系统代理</div>
+              <div class="text-gray-600 hidden sm:block">→</div>
+              <div class="bg-red-500/10 text-red-400 px-4 py-2 rounded-lg w-full sm:w-auto text-center border border-red-500/20">4. 重启客户端</div>
+            </div>
+            <div class="mt-8 text-center text-sm text-gray-400 leading-relaxed border-t border-red-500/10 pt-6">
+              如果以上 4 步均无效，通常说明上游机房出现了突发网络波动。<br class="hidden sm:block"/>
+              您可以 <a href="/go" rel="nofollow sponsored" target="_blank" class="text-breeze-cyan font-bold hover:underline transition-colors">联系官方客服</a> 反馈，或者耐心稍等十几分钟，技术团队通常已触发告警并正在紧急修复中。<br class="hidden sm:block mt-2"/>
+              <span class="text-gray-500 text-xs">您也可以随时前往 <a href="/status" class="text-gray-400 underline hover:text-white transition-colors">服务器状态面板</a> 查看是否有全网中断通告。</span>
+            </div>
+          </div>
+          
+          <div class="space-y-3">
+            <details class="group bg-[#131F33] rounded-xl border border-white/5 faq-item">
+              <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-gray-200 group-open:text-white transition-colors">
+                <span>节点全部 Timeout 怎么办？</span>
+                <span class="transition group-open:rotate-180 text-gray-500"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+              </summary>
+              <div class="text-gray-400 text-sm p-5 pt-0 leading-relaxed border-t border-white/5 mt-2 faq-answer">
+                说明客户端无法与任何服务器建立物理连接。原因通常是：1. 订阅过期，请前往官网确认套餐时间。 2. 你的本地网络（如公司 Wi-Fi 或校园网）屏蔽了翻墙端口，尝试切换手机热点测试。 3. 服务器遭受大面积封锁，请点击更新订阅获取最新接入点。
+              </div>
+            </details>
+            <details class="group bg-[#131F33] rounded-xl border border-white/5 faq-item">
+              <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-gray-200 group-open:text-white transition-colors">
+                <span>显示已连接，有绿色数字，但打不开网页？</span>
+                <span class="transition group-open:rotate-180 text-gray-500"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+              </summary>
+              <div class="text-gray-400 text-sm p-5 pt-0 leading-relaxed border-t border-white/5 mt-2 faq-answer">
+                这说明代理通道已经打通，但你的系统流量没有走到客户端里。绝大部分原因是 **系统代理 (System Proxy)** 没有开启，或是被其他浏览器插件（如 SwitchyOmega、去广告插件）冲突拦截了。
+              </div>
+            </details>
+            <details class="group bg-[#131F33] rounded-xl border border-white/5 faq-item">
+              <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-gray-200 group-open:text-white transition-colors">
+                <span>手机可以用，但电脑不能用？</span>
+                <span class="transition group-open:rotate-180 text-gray-500"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+              </summary>
+              <div class="text-gray-400 text-sm p-5 pt-0 leading-relaxed border-t border-white/5 mt-2 faq-answer">
+                说明微风网络的节点完全正常。问题出在电脑端的设置上：检查电脑客户端是否处于最新版、系统时间是否与现实时间精准同步（差 1 分钟都会导致加密失败）、以及尝试重启电脑释放被占用的端口。
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <!-- 订阅问题 -->
+        <div id="cat-sub" class="scroll-mt-24">
+          <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+            <span class="w-2 h-8 bg-breeze-cyan rounded-full inline-block"></span> 订阅问题
+          </h2>
+          <div class="space-y-3">
+            <details class="group bg-[#131F33] rounded-xl border border-white/5 faq-item">
+              <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-gray-200 group-open:text-white transition-colors">
+                <span>订阅更新失败 / Subscription Failed</span>
+                <span class="transition group-open:rotate-180 text-gray-500"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+              </summary>
+              <div class="text-gray-400 text-sm p-5 pt-0 leading-relaxed border-t border-white/5 mt-2 faq-answer">
+                通常是因为您的本地网络打不开官网后台接口。解决办法：将客户端当前拥有的节点中，随便选中一个可用的，处于“翻墙成功”的状态下，再去点击“更新订阅”，一般都能成功秒更。
+              </div>
+            </details>
+            <details class="group bg-[#131F33] rounded-xl border border-white/5 faq-item">
+              <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-gray-200 group-open:text-white transition-colors">
+                <span>订阅链接在哪里？怎么重新导入？</span>
+                <span class="transition group-open:rotate-180 text-gray-500"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+              </summary>
+              <div class="text-gray-400 text-sm p-5 pt-0 leading-relaxed border-t border-white/5 mt-2 faq-answer">
+                请登录微风网络官网用户中心，在首页仪表盘（Dashboard）中寻找“一键订阅”或“复制订阅链接”的按钮。换新设备时，只需在新设备上的客户端里粘贴该链接即可。
+              </div>
+            </details>
+            <details class="group bg-[#131F33] rounded-xl border border-white/5 faq-item">
+              <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-gray-200 group-open:text-white transition-colors">
+                <span>订阅链接可以分享给别人吗？</span>
+                <span class="transition group-open:rotate-180 text-gray-500"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+              </summary>
+              <div class="text-gray-400 text-sm p-5 pt-0 leading-relaxed border-t border-white/5 mt-2 faq-answer">
+                强烈不建议。您的订阅链接包含了唯一的 Token。如果系统检测到连接 IP 异常分散、并发数超标，您的账号可能会被风控系统自动封禁。如需多人使用，请让对方单独购买。
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <!-- Clash 问题 -->
+        <div id="cat-clash" class="scroll-mt-24">
+          <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+            <span class="w-2 h-8 bg-blue-500 rounded-full inline-block"></span> Clash / Mihomo 帮助
+          </h2>
+          <div class="space-y-3">
+            <details class="group bg-[#131F33] rounded-xl border border-white/5 faq-item">
+              <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-gray-200 group-open:text-white transition-colors">
+                <span>Rule / Global / Direct 有什么区别？</span>
+                <span class="transition group-open:rotate-180 text-gray-500"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+              </summary>
+              <div class="text-gray-400 text-sm p-5 pt-0 leading-relaxed border-t border-white/5 mt-2 faq-answer">
+                <strong>Rule (规则)</strong>：智能分流，国内网站直连，国外网站走代理，推荐日常使用。<br/>
+                <strong>Global (全局)</strong>：所有流量强制走代理节点，常用于特定网站在规则中未命中，或需要隐藏原生 IP 时。<br/>
+                <strong>Direct (直连)</strong>：所有流量不走代理，相当于关闭翻墙。
+              </div>
+            </details>
+            <details class="group bg-[#131F33] rounded-xl border border-white/5 faq-item">
+              <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-gray-200 group-open:text-white transition-colors">
+                <span>TUN Mode (虚拟网卡) 要不要开？</span>
+                <span class="transition group-open:rotate-180 text-gray-500"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+              </summary>
+              <div class="text-gray-400 text-sm p-5 pt-0 leading-relaxed border-t border-white/5 mt-2 faq-answer">
+                日常看网页、看视频不需要开启。当你在玩外服游戏、使用命令行工具 (Terminal)，或发现某些国产软件无视系统代理时，开启 TUN 模式可以强制接管电脑的所有网络流量。
+              </div>
+            </details>
+            <div class="mt-4">
+              <a href="/clash-airport" class="text-sm text-breeze-cyan hover:underline">查看更多关于 Clash 机场的专项指南 →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 节点与线路 -->
+        <div id="cat-node" class="scroll-mt-24">
+          <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+            <span class="w-2 h-8 bg-purple-500 rounded-full inline-block"></span> 节点与线路问题
+          </h2>
+          <div class="space-y-3">
+            <details class="group bg-[#131F33] rounded-xl border border-white/5 faq-item">
+              <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-gray-200 group-open:text-white transition-colors">
+                <span>为什么不同节点的延迟不一样？</span>
+                <span class="transition group-open:rotate-180 text-gray-500"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+              </summary>
+              <div class="text-gray-400 text-sm p-5 pt-0 leading-relaxed border-t border-white/5 mt-2 faq-answer">
+                物理距离决定了光信号传输的时间。通常香港/日本节点因为离大陆近，延迟在 30-70ms 左右；美国节点由于跨越太平洋，延迟在 130ms 以上是正常现象，但这并不影响看高清视频的流畅度。
+              </div>
+            </details>
+            <details class="group bg-[#131F33] rounded-xl border border-white/5 faq-item">
+              <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-gray-200 group-open:text-white transition-colors">
+                <span>节点倍率是什么意思？</span>
+                <span class="transition group-open:rotate-180 text-gray-500"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+              </summary>
+              <div class="text-gray-400 text-sm p-5 pt-0 leading-relaxed border-t border-white/5 mt-2 faq-answer">
+                由于专线（如 IPLC/IEPL）成本极其高昂，部分节点会有倍率设定。例如 2.0 倍率意味着你在这个节点上消耗 1GB 的实际流量，将会在你的套餐中扣除 2GB 的额度。
+              </div>
+            </details>
+            <div class="mt-4">
+              <a href="/dedicated-line" class="text-sm text-purple-400 hover:underline">深入了解 IPLC/IEPL 与低延迟线路区别 →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 场景帮助卡片 -->
+    <section class="py-16 px-4 bg-[#0B1628]/50 border-y border-white/5">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-2xl font-bold text-white mb-8 text-center">特定使用场景指南</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-gradient-to-br from-[#131F33] to-[#1a2033] p-6 rounded-2xl border border-gray-700">
+            <h3 class="text-lg font-bold text-white mb-3">我想看 YouTube / Netflix</h3>
+            <p class="text-gray-400 text-sm mb-4">流媒体有区域限制和 IP 黑名单机制。</p>
+            <ul class="text-sm text-gray-500 space-y-2 list-disc pl-5">
+              <li>确保选择原生解锁该地区的节点（如美国、新加坡）。</li>
+              <li>如果提示无法观看，尝试清除浏览器缓存或开启浏览器的无痕模式。</li>
+              <li>检查客户端是否在“Rule”模式下，且没有被国产杀毒软件拦截。</li>
+            </ul>
+          </div>
+          <div class="bg-gradient-to-br from-[#131F33] to-[#152e2a] p-6 rounded-2xl border border-gray-700">
+            <h3 class="text-lg font-bold text-white mb-3">我想使用 ChatGPT / Claude</h3>
+            <p class="text-gray-400 text-sm mb-4">AI 服务对 IP 的纯净度要求极高。</p>
+            <ul class="text-sm text-gray-500 space-y-2 list-disc pl-5">
+              <li>推荐使用美国、日本的原生节点。</li>
+              <li><strong class="text-red-400">千万不要</strong>频繁切换节点地区（一会选美国，一会选香港），极易触发 OpenAI 封号风控。</li>
+              <li>建议在客户端中开启全局模式 (Global)。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 联系支持 -->
+    <section class="py-20 px-4" id="cat-support">
+      <div class="max-w-4xl mx-auto bg-[#131F33] rounded-3xl p-10 md:p-14 border border-breeze-cyan/30 text-center shadow-2xl relative overflow-hidden">
+        <div class="absolute -right-20 -top-20 w-64 h-64 bg-breeze-cyan/10 blur-[80px] pointer-events-none"></div>
+        
+        <h2 class="text-3xl font-bold text-white mb-6 relative z-10">仍然没有解决？</h2>
+        <p class="text-gray-400 mb-10 leading-relaxed max-w-2xl mx-auto relative z-10">
+          如果以上方法仍无法解决问题，请通过微风网络官方客服渠道联系支持。<br/>
+          为了提高沟通效率，请在提问时准备好以下信息：
+        </p>
+        
+        <div class="flex flex-wrap justify-center gap-3 mb-10 relative z-10 text-xs text-gray-500 font-mono">
+          <span class="bg-[#0B1628] px-3 py-1 rounded border border-gray-700">使用的设备系统</span>
+          <span class="bg-[#0B1628] px-3 py-1 rounded border border-gray-700">客户端名称及版本</span>
+          <span class="bg-[#0B1628] px-3 py-1 rounded border border-gray-700">遇到的错误截图</span>
+          <span class="bg-[#0B1628] px-3 py-1 rounded border border-gray-700">正在使用的节点地区</span>
+        </div>
+        
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
+          <!-- 官方客服导流 (假设有特定链接，这里填 / 或者实际工单系统) -->
+          <a href="/go" rel="nofollow sponsored" target="_blank" class="w-full sm:w-auto bg-breeze-cyan text-[#0B1628] font-bold py-4 px-10 rounded-full shadow-[0_0_20px_rgba(34,211,238,0.4)] hover:shadow-[0_0_30px_rgba(34,211,238,0.7)] transition-all hover:-translate-y-1">
+            联系微风官方客服
+          </a>
+          <a href="/pricing" class="w-full sm:w-auto bg-[#0B1628] text-white font-medium py-4 px-10 rounded-full border border-gray-700 hover:border-gray-500 transition-colors">
+            购买 / 售前咨询
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 搜索与诊断器脚本 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. 搜索过滤功能
+      const searchInput = document.getElementById('help-search');
+      const faqItems = document.querySelectorAll('.faq-item');
+      
+      searchInput.addEventListener('input', (e) => {
+        const term = e.target.value.toLowerCase();
+        faqItems.forEach(item => {
+          const q = item.querySelector('summary').innerText.toLowerCase();
+          const a = item.querySelector('.faq-answer').innerText.toLowerCase();
+          if(q.includes(term) || a.includes(term)) {
+            item.style.display = 'block';
+            if(term.length > 1) {
+              item.setAttribute('open', ''); // 自动展开匹配项
+            }
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+
+      // 2. 互动诊断器逻辑
+      const tsContainer = document.getElementById('ts-container');
+      const tsQ = document.getElementById('ts-question');
+      const tsOpts = document.getElementById('ts-options');
+
+      const tsData = {
+        start: {
+          q: "你遇到了什么主要问题？",
+          opts: [
+            { t: "完全无法上网 / 打不开网页", next: "no_net" },
+            { t: "订阅报错 / 节点消失", next: "sub_err" },
+            { t: "速度很慢 / 频繁断线", next: "slow" }
+          ]
+        },
+        no_net: {
+          q: "在客户端中测试节点延迟，有绿色数字吗？",
+          opts: [
+            { t: "有，显示了 ms 数字", next: "has_ping" },
+            { t: "没有，全是 Timeout", next: "timeout" },
+            { t: "不知道怎么看", next: "start" }
+          ]
+        },
+        has_ping: {
+          q: "节点本身畅通，这通常是本地设置问题：",
+          res: "1. 请检查并开启客户端中的【System Proxy / 系统代理】开关。<br>2. 关闭浏览器中可能冲突的插件（如去广告插件）。<br>3. 尝试重启电脑或手机。"
+        },
+        timeout: {
+          q: "说明无法连接到远端服务器，建议：",
+          res: "1. 请确保您的套餐未过期。<br>2. 点击客户端的【更新订阅】。<br>3. 前往 /status 查看是否发生了大规模区域中断。"
+        },
+        sub_err: {
+          q: "订阅无法更新，请尝试：",
+          res: "订阅更新需要连接官网后台。请随便选中一个目前仍然可用的节点，在【翻墙成功的状态下】再点击更新订阅。如果仍报错，请检查官网是否正在维护。"
+        },
+        slow: {
+          q: "网络缓慢有多种原因，建议：",
+          res: "1. 尝试将模式切换为 Rule(规则)，避免国内网站也绕路国外。<br>2. 切换到其他国家节点测试是否是单点故障。<br>3. 晚高峰请尽量使用中转或专线节点。"
+        }
+      };
+
+      const renderState = (stateKey) => {
+        tsContainer.style.opacity = '0';
+        setTimeout(() => {
+          const step = tsData[stateKey];
+          tsQ.innerText = step.q;
+          tsOpts.innerHTML = '';
+
+          if(step.res) {
+            // End result
+            tsOpts.innerHTML = `
+              <div class="text-gray-300 text-sm leading-relaxed mb-6 bg-breeze-cyan/10 p-5 rounded-xl border border-breeze-cyan/20">
+                ${step.res}
+              </div>
+              <div class="flex gap-4">
+                <button class="ts-reset text-gray-500 hover:text-white text-sm underline transition-colors">重新测试</button>
+                <a href="#cat-connect" class="text-breeze-cyan text-sm font-bold hover:underline">查看更详细教程</a>
+              </div>
+            `;
+            // Bind reset
+            tsOpts.querySelector('.ts-reset').addEventListener('click', () => renderState('start'));
+          } else {
+            // Options
+            step.opts.forEach(opt => {
+              const btn = document.createElement('button');
+              btn.className = "bg-[#131F33] hover:bg-breeze-blue text-white px-6 py-4 rounded-xl border border-white/10 hover:border-breeze-blue transition-all shadow-lg text-sm md:text-base font-medium flex-1 min-w-[200px]";
+              btn.innerText = opt.t;
+              btn.addEventListener('click', () => renderState(opt.next));
+              tsOpts.appendChild(btn);
+            });
+          }
+          tsContainer.style.opacity = '1';
+        }, 200);
+      };
+
+      // Init
+      renderState('start');
+    });
+  </script>
+</Layout>

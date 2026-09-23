@@ -1,0 +1,26 @@
+---
+import { brand } from '../data/brand';
+const { title, description, canonicalURL = new URL(Astro.url.pathname, Astro.site).toString() } = Astro.props;
+const siteUrl = Astro.site?.toString() || brand.url;
+---
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalURL} />
+  <link rel="icon" type="image/png" href="/logo.png" />
+  
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="微风网络 Breeze Network" />
+  <meta property="og:image" content={new URL('/logo.png', siteUrl).toString()} />
+  
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={new URL('/logo.png', siteUrl).toString()} />
+  <link rel="sitemap" href="/sitemap-index.xml" />
+</head>

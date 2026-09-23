@@ -1,0 +1,241 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { pricingPlans } from '../data/pricing';
+
+const affLink = "/go";
+---
+<Layout 
+  title="套餐价格 - 微风网络 Breeze Network" 
+  description="Breeze Network 微风网络提供灵活的套餐组合，支持多设备与高速网络，满足从日常到重度使用的各类场景。"
+>
+  <section class="py-24 px-4 bg-breeze-dark">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl text-white font-bold mb-6 tracking-tight">选择适合您的微风套餐</h1>
+        <p class="text-lg text-breeze-text max-w-2xl mx-auto">无论是轻度浏览还是重度下载，都能享受全 IPLC 专线带来的极致稳定体验。所有套餐均不限制设备数量和连接速度。</p>
+      </div>
+
+      <!-- 动态映射卡片网格 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+        {pricingPlans.map((plan) => (
+          <div class="group relative bg-[#0B1628] rounded-2xl p-6 border border-gray-800 hover:border-breeze-blue/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_15px_40px_-15px_rgba(59,130,246,0.25)] flex flex-col overflow-hidden">
+            
+            <!-- 卡片悬停时的顶部高光 -->
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-breeze-blue to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+            <!-- 卡片头部标题与图标 -->
+            <div class="flex justify-between items-center mb-6">
+              <h3 class="text-xl font-bold text-white transition-colors group-hover:text-breeze-cyan">{plan.name}</h3>
+              <div class="w-10 h-10 rounded-full bg-gray-800/50 border border-gray-700/50 flex items-center justify-center text-breeze-cyan group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path>
+                </svg>
+              </div>
+            </div>
+
+            <!-- 价格区块 -->
+            <div class="bg-[#131F33] rounded-xl p-4 mb-4 border border-white/5 group-hover:border-breeze-blue/20 transition-colors">
+              <div class="text-xs text-gray-400 mb-1 tracking-wider">价格</div>
+              <div class="flex items-baseline gap-1">
+                <span class="text-3xl font-black text-[#22D3EE] group-hover:text-white transition-colors duration-300">¥{plan.price}</span>
+                <span class="text-sm text-gray-400">{plan.period}</span>
+              </div>
+            </div>
+
+            <!-- 流量区块 -->
+            <div class="bg-[#131F33] rounded-xl p-4 mb-6 border border-white/5 flex justify-between items-center group-hover:border-breeze-blue/20 transition-colors">
+              <div class="flex items-center gap-2 text-gray-400 text-sm">
+                <svg class="w-4 h-4 text-[#22D3EE]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                流量
+              </div>
+              <div class="text-white font-bold">{plan.traffic}</div>
+            </div>
+
+            <!-- 详细功能列表 -->
+            <div class="flex-grow mb-8">
+              <div class="text-xs text-gray-400 mb-4 tracking-wider">详情</div>
+              <ul class="space-y-3">
+                {plan.features.map(feature => (
+                  <li class="flex items-start gap-3 text-sm text-gray-300 group-hover:text-gray-200 transition-colors">
+                    <div class="w-1.5 h-1.5 rounded-full bg-[#22D3EE] mt-2 flex-shrink-0 shadow-[0_0_8px_rgba(34,211,238,0.6)]"></div>
+                    <span class="leading-relaxed">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <!-- 购买按钮 -->
+            <a 
+              href={affLink} 
+              rel="nofollow sponsored"
+              class={[
+                'pricing-aff-btn w-full py-3.5 rounded-xl flex items-center justify-center gap-2 text-sm font-medium transition-all duration-300',
+                plan.highlight  
+                  ? 'bg-breeze-blue text-white shadow-[0_4px_20px_-5px_rgba(59,130,246,0.5)] hover:bg-blue-500 hover:shadow-breeze-blue/40' 
+                  : 'bg-transparent text-gray-300 border border-gray-700 hover:border-breeze-blue hover:text-[#22D3EE] hover:bg-breeze-blue/5'
+              ].join(' ')}
+            >
+              查看并订阅 
+              <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 用户评价 Marquee -->
+  <section class="py-24 px-4 bg-[#0B1628]/50 border-t border-white/5 overflow-hidden">
+    <div class="max-w-4xl mx-auto text-center mb-12">
+      <h2 class="text-3xl font-bold text-white mb-4">来自微风用户的真实反馈</h2>
+      <p class="text-gray-400">稳定、快速，听听他们的使用体验。</p>
+    </div>
+    
+    <div class="relative w-full max-w-7xl mx-auto overflow-hidden">
+      <!-- 左右渐变遮罩层，让划入划出更自然 -->
+      <div class="absolute inset-y-0 left-0 w-12 md:w-32 bg-gradient-to-r from-[#0B1628]/50 to-transparent z-10 pointer-events-none"></div>
+      <div class="absolute inset-y-0 right-0 w-12 md:w-32 bg-gradient-to-l from-[#0B1628]/50 to-transparent z-10 pointer-events-none"></div>
+      
+      <div class="marquee-track flex w-max">
+        <!-- 为了无缝滚动，我们将 5 个评价重复渲染 2 遍 -->
+        {[...Array(2)].map((_, i) => (
+          <div class="flex gap-6 px-3" aria-hidden={i === 1 ? 'true' : 'false'}>
+            <!-- Slide 1 -->
+            <div class="w-[320px] md:w-[400px] flex-shrink-0">
+              <div class="bg-[#131F33] border border-white/5 p-8 rounded-3xl flex flex-col h-full shadow-xl hover:border-breeze-blue/30 transition-colors">
+                <div class="flex text-yellow-400 mb-4 space-x-1">
+                  {Array.from({length: 5}).map(() => (
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                  ))}
+                </div>
+                <p class="text-sm md:text-base text-gray-300 italic mb-6 leading-relaxed flex-grow">"之前打 APEX 经常丢包，换了 Breeze 的 IPLC 专线之后稳定在 40ms 左右，晚高峰也稳如老狗，真的是竞技玩家的福音！"</p>
+                <div class="flex items-center gap-3 mt-auto">
+                  <div class="w-10 h-10 rounded-full bg-breeze-blue/20 flex items-center justify-center text-breeze-cyan font-bold">K</div>
+                  <div class="text-left">
+                    <div class="font-bold text-white text-sm">@Gamer_K</div>
+                    <div class="text-xs text-gray-500">破风 (Breaking) 订阅</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="w-[320px] md:w-[400px] flex-shrink-0">
+              <div class="bg-[#131F33] border border-white/5 p-8 rounded-3xl flex flex-col h-full shadow-xl hover:border-breeze-blue/30 transition-colors">
+                <div class="flex text-yellow-400 mb-4 space-x-1">
+                  {Array.from({length: 5}).map(() => (
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                  ))}
+                </div>
+                <p class="text-sm md:text-base text-gray-300 italic mb-6 leading-relaxed flex-grow">"买的长风不限时套餐，用来看 Netflix 4K 完全不卡。最主要是不限时流量放在那边不用也不会过期，对于偶尔追剧的人来说太良心了。"</p>
+                <div class="flex items-center gap-3 mt-auto">
+                  <div class="w-10 h-10 rounded-full bg-pink-500/20 flex items-center justify-center text-pink-400 font-bold">M</div>
+                  <div class="text-left">
+                    <div class="font-bold text-white text-sm">@MovieFan99</div>
+                    <div class="text-xs text-gray-500">长风 · 不限时 订阅</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="w-[320px] md:w-[400px] flex-shrink-0">
+              <div class="bg-[#131F33] border border-white/5 p-8 rounded-3xl flex flex-col h-full shadow-xl hover:border-breeze-blue/30 transition-colors">
+                <div class="flex text-yellow-400 mb-4 space-x-1">
+                  {Array.from({length: 5}).map(() => (
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                  ))}
+                </div>
+                <p class="text-sm md:text-base text-gray-300 italic mb-6 leading-relaxed flex-grow">"原生 IP 节点非常纯净，ChatGPT 和 Claude 终于不会被风控和弹验证码了。对于需要跨区使用 AI 和 API 的开发人员来说绝对是神器。"</p>
+                <div class="flex items-center gap-3 mt-auto">
+                  <div class="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 font-bold">A</div>
+                  <div class="text-left">
+                    <div class="font-bold text-white text-sm">@Dev_Alex</div>
+                    <div class="text-xs text-gray-500">御风 (Mastery) 订阅</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="w-[320px] md:w-[400px] flex-shrink-0">
+              <div class="bg-[#131F33] border border-white/5 p-8 rounded-3xl flex flex-col h-full shadow-xl hover:border-breeze-blue/30 transition-colors">
+                <div class="flex text-yellow-400 mb-4 space-x-1">
+                  {Array.from({length: 5}).map(() => (
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                  ))}
+                </div>
+                <p class="text-sm md:text-base text-gray-300 italic mb-6 leading-relaxed flex-grow">"晚高峰的稳定性是我用过几家服务商里表现最好的。现在跨国开 Zoom 视频会议再也没有因为掉线而尴尬过，贵有贵的道理，物超所值。"</p>
+                <div class="flex items-center gap-3 mt-auto">
+                  <div class="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 font-bold">R</div>
+                  <div class="text-left">
+                    <div class="font-bold text-white text-sm">@RemoteWorker</div>
+                    <div class="text-xs text-gray-500">乘风 (Riding) 订阅</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="w-[320px] md:w-[400px] flex-shrink-0">
+              <div class="bg-[#131F33] border border-white/5 p-8 rounded-3xl flex flex-col h-full shadow-xl hover:border-breeze-blue/30 transition-colors">
+                <div class="flex text-yellow-400 mb-4 space-x-1">
+                  {Array.from({length: 5}).map(() => (
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                  ))}
+                </div>
+                <p class="text-sm md:text-base text-gray-300 italic mb-6 leading-relaxed flex-grow">"客服响应非常快，最重要的是一键订阅导入 Clash 就能直接用，小白友好度拉满，再也不用去折腾那些复杂节点配置了。"</p>
+                <div class="flex items-center gap-3 mt-auto">
+                  <div class="w-10 h-10 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-400 font-bold">L</div>
+                  <div class="text-left">
+                    <div class="font-bold text-white text-sm">@Layla_T</div>
+                    <div class="text-xs text-gray-500">清风 (Breeze) 订阅</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .marquee-track {
+      animation: scroll 40s linear infinite;
+    }
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+  </style>
+
+  <script>
+    // --- Link Cloaking Logic ---
+    const affBtns = document.querySelectorAll('.pricing-aff-btn');
+    affBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetUrl = btn.getAttribute('href');
+        
+        btn.style.pointerEvents = 'none';
+        btn.innerHTML = '安全跳转中... <svg class="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>';
+        
+        setTimeout(() => {
+          window.location.href = targetUrl;
+        }, 3000);
+      });
+    });
+  </script>
+</Layout>

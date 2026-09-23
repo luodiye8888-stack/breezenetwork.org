@@ -1,0 +1,375 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="2026机场推荐：稳定Clash节点与梯子选择指南 | 微风网络" 
+  description="2026机场推荐与Clash节点选择指南，从线路、延迟、倍率、节点地区、流媒体和AI使用场景出发，帮助新手了解稳定机场与网络加速方案怎么选。"
+>
+  <main class="bg-breeze-dark min-h-screen text-gray-300 pt-24 pb-20 font-sans">
+    
+    <!-- Hero 首屏 -->
+    <section class="relative px-4 py-20 text-center overflow-hidden">
+      <!-- Background Glow -->
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-breeze-blue/20 blur-[120px] pointer-events-none"></div>
+      
+      <div class="max-w-4xl mx-auto relative z-10">
+        <h1 class="text-4xl md:text-6xl font-black text-white mb-6 leading-tight tracking-tight">
+          2026 机场推荐：<br class="hidden md:block"/>稳定线路与 Clash 节点选择指南
+        </h1>
+        <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+          从线路类型、节点地区、倍率、设备支持与使用场景出发，快速找到适合自己的网络方案。
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="/pricing" class="w-full sm:w-auto bg-gradient-to-r from-breeze-blue to-[#22D3EE] text-white font-bold py-4 px-8 rounded-full shadow-[0_0_20px_rgba(59,130,246,0.4)] hover:shadow-[0_0_40px_rgba(34,211,238,0.7)] transition-all hover:-translate-y-1">
+            查看微风网络
+          </a>
+          <a href="#how-to-choose" class="w-full sm:w-auto bg-white/5 text-white font-medium py-4 px-8 rounded-full border border-white/10 hover:bg-white/10 transition-colors">
+            先了解怎么选机场 ↓
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 快速选择器 (Interactive) -->
+    <section class="py-16 px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-10">
+          <h2 class="text-3xl font-bold text-white mb-4">你的核心需求是什么？</h2>
+          <p class="text-gray-400">点击下方标签，获取针对性的选购重点参数。</p>
+        </div>
+        
+        <div class="flex flex-wrap justify-center gap-3 mb-8" id="selector-btns">
+          <button class="selector-btn active px-6 py-3 rounded-full bg-breeze-blue text-white font-medium text-sm transition-all shadow-[0_0_15px_rgba(34,211,238,0.3)]" data-target="media">我主要看 YouTube / Netflix</button>
+          <button class="selector-btn px-6 py-3 rounded-full bg-[#131F33] text-gray-400 border border-white/10 font-medium text-sm hover:text-white transition-all" data-target="ai">我主要使用 ChatGPT / AI</button>
+          <button class="selector-btn px-6 py-3 rounded-full bg-[#131F33] text-gray-400 border border-white/10 font-medium text-sm hover:text-white transition-all" data-target="game">我主要打游戏</button>
+          <button class="selector-btn px-6 py-3 rounded-full bg-[#131F33] text-gray-400 border border-white/10 font-medium text-sm hover:text-white transition-all" data-target="asia">我需要低延迟亚洲节点</button>
+          <button class="selector-btn px-6 py-3 rounded-full bg-[#131F33] text-gray-400 border border-white/10 font-medium text-sm hover:text-white transition-all" data-target="newbie">我是第一次使用 Clash</button>
+        </div>
+        
+        <div class="bg-[#131F33] border border-white/10 rounded-3xl p-8 md:p-12 min-h-[160px] flex items-center relative overflow-hidden">
+          <div class="absolute right-0 top-0 w-32 h-32 bg-breeze-cyan/10 blur-3xl rounded-full"></div>
+          <div id="selector-content" class="text-lg md:text-xl text-gray-200 leading-relaxed relative z-10 transition-opacity duration-300">
+            <!-- Default Content -->
+            <span class="text-breeze-cyan font-bold block mb-2">流媒体核心看重：带宽与原生解锁</span>
+            推荐重点：必须支持原生 IP 或流媒体平台解锁，重点关注【新加坡、美国、香港】的流媒体专用节点。不需要极致低延迟，但对晚高峰的“大带宽吞吐量”和“无丢包率”要求极高，这样才能秒开 4K 视频。
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2026 机场应该看什么 (Parameters) -->
+    <section id="how-to-choose" class="py-20 px-4 bg-[#0B1628]/50 border-y border-white/5">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center">2026 机场推荐应该看什么参数？</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-[#131F33] p-8 rounded-2xl border border-white/5 hover:border-breeze-blue/30 transition-colors">
+            <div class="w-12 h-12 rounded-xl bg-breeze-blue/20 flex items-center justify-center text-breeze-cyan mb-6">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">线路质量与架构</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">底层的物理架构决定了上限。优质机场通常采用 BGP 中转入口，甚至是极高成本的 IPLC / IEPL 专线，以规避国际公共网络的严重拥堵。</p>
+          </div>
+          <div class="bg-[#131F33] p-8 rounded-2xl border border-white/5 hover:border-breeze-blue/30 transition-colors">
+            <div class="w-12 h-12 rounded-xl bg-breeze-blue/20 flex items-center justify-center text-breeze-cyan mb-6">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">节点地区分布</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">并非全球越多越好。真正的优质体验取决于常用的香港、日本、新加坡、美国节点是否足够稳定，是否具备冷热备用的集群冗余机制。</p>
+          </div>
+          <div class="bg-[#131F33] p-8 rounded-2xl border border-white/5 hover:border-breeze-blue/30 transition-colors">
+            <div class="w-12 h-12 rounded-xl bg-breeze-blue/20 flex items-center justify-center text-breeze-cyan mb-6">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">倍率 (Multiplier)</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">高级专线往往会设置 2x 或更高的流量倍率来防止滥用。合理利用不同倍率的节点，能在“超低延迟”与“大流量下载”之间取得平衡。</p>
+          </div>
+          <div class="bg-[#131F33] p-8 rounded-2xl border border-white/5 hover:border-breeze-blue/30 transition-colors">
+            <div class="w-12 h-12 rounded-xl bg-breeze-blue/20 flex items-center justify-center text-breeze-cyan mb-6">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.512 15H9v5.488A9.025 9.025 0 013.512 15z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.512 9H9V3.512A9.025 9.025 0 003.512 9z"></path></svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">晚高峰稳定性</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">白天流畅不能说明问题。晚上 8 点至 11 点的跨国出口拥堵期，只有具备优质路由和充足带宽池的稳定机场才能保证 4K 秒开且不丢包。</p>
+          </div>
+          <div class="bg-[#131F33] p-8 rounded-2xl border border-white/5 hover:border-breeze-blue/30 transition-colors">
+            <div class="w-12 h-12 rounded-xl bg-breeze-blue/20 flex items-center justify-center text-breeze-cyan mb-6">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">客户端兼容性</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">无论你是使用 Clash Verge Rev、V2ray、Shadowrocket 还是 Surge，规范的订阅格式和下发配置能够让你一键平滑接入网络。</p>
+          </div>
+          <div class="bg-[#131F33] p-8 rounded-2xl border border-white/5 hover:border-breeze-blue/30 transition-colors">
+            <div class="w-12 h-12 rounded-xl bg-breeze-blue/20 flex items-center justify-center text-breeze-cyan mb-6">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">售后与订阅稳定性</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">小作坊跑路频发。长线运营的服务商会提供防污染的备用订阅地址更新机制，以及专业的客服工单支持，确保不失联。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 线路类型对比 -->
+    <section class="py-20 px-4">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 text-center">一图看懂：各大线路到底有什么区别？</h2>
+        <p class="text-center text-gray-400 mb-12">不要被复杂的英文缩写迷惑，这里是最简单直白的对比。</p>
+        
+        <div class="overflow-x-auto custom-scrollbar">
+          <table class="w-full text-left border-collapse min-w-[700px]">
+            <thead>
+              <tr class="bg-[#131F33] border-b border-gray-700">
+                <th class="p-6 font-bold text-white rounded-tl-2xl">线路类型</th>
+                <th class="p-6 font-bold text-white">延迟表现</th>
+                <th class="p-6 font-bold text-white">晚高峰稳定性</th>
+                <th class="p-6 font-bold text-white">价格定位</th>
+                <th class="p-6 font-bold text-white rounded-tr-2xl">最适合人群</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-800 bg-[#0B1628]">
+              <tr class="hover:bg-white/5 transition-colors">
+                <td class="p-6 font-bold text-gray-300">普通直连 (Direct)</td>
+                <td class="p-6 text-yellow-400">较高 (100ms+)</td>
+                <td class="p-6 text-red-400">极差，容易丢包</td>
+                <td class="p-6 text-green-400">极低</td>
+                <td class="p-6 text-sm text-gray-400">仅偶尔查阅纯文本资料</td>
+              </tr>
+              <tr class="hover:bg-white/5 transition-colors">
+                <td class="p-6 font-bold text-breeze-cyan">BGP 中转 (Transit)</td>
+                <td class="p-6 text-green-400">优秀 (40-80ms)</td>
+                <td class="p-6 text-green-400">良好，吞吐量大</td>
+                <td class="p-6 text-yellow-400">中等性价比</td>
+                <td class="p-6 text-sm text-gray-400">流媒体追剧、高频日常办公</td>
+              </tr>
+              <tr class="hover:bg-white/5 transition-colors">
+                <td class="p-6 font-bold text-purple-400">IEPL / IPLC 专线</td>
+                <td class="p-6 text-breeze-cyan font-bold">极致 (20-50ms)</td>
+                <td class="p-6 text-breeze-cyan font-bold">完美，物理隔离无干扰</td>
+                <td class="p-6 text-red-400">较高</td>
+                <td class="p-6 text-sm text-gray-400">硬核外服游戏、高频跨国会议</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 微风网络专区 (Brand Conversion) -->
+    <section class="py-16 px-4">
+      <div class="max-w-5xl mx-auto bg-gradient-to-br from-breeze-blue/10 to-[#131F33] border border-breeze-cyan/30 rounded-3xl p-8 md:p-14 relative overflow-hidden shadow-2xl shadow-breeze-blue/5">
+        <div class="absolute -right-20 -top-20 w-64 h-64 bg-breeze-cyan/20 blur-[100px]"></div>
+        
+        <div class="relative z-10 flex flex-col md:flex-row gap-10 items-center">
+          <div class="md:w-1/2">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">为什么把微风网络<br/>列入重点考虑范围？</h2>
+            <p class="text-gray-400 mb-6 leading-relaxed">
+              我们不承诺虚无缥缈的“全网第一”，而是实打实地交付经过长期检验的商业级网络基础设施。
+            </p>
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-breeze-cyan flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <div class="text-gray-300">
+                  <strong>全节点 SLA 监控：</strong>公开透明的在线状态展示，节点故障自动下架切换，拒绝掩耳盗铃。
+                  <a href="/status" target="_blank" class="inline-flex items-center gap-1 text-breeze-cyan hover:text-white transition-colors text-sm font-medium mt-2 bg-breeze-blue/10 border border-breeze-cyan/30 px-3 py-1.5 rounded-lg w-max">
+                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                    查看实时监控大屏 
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                  </a>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-breeze-cyan flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <span class="text-gray-300"><strong>原生流媒体与 AI 解锁：</strong>严格筛选纯净 IP，告别烦人的验证码与区域限制。</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-breeze-cyan flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <span class="text-gray-300"><strong>混合调度网络：</strong>融合 BGP 中转与专线架构，晚高峰依然保持超高吞吐。</span>
+              </li>
+            </ul>
+            <a href="/pricing" class="inline-flex items-center gap-2 bg-breeze-cyan text-[#0B1628] font-bold py-3 px-6 rounded-full hover:bg-white transition-colors">
+              查看微风网络套餐
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </a>
+          </div>
+          <div class="md:w-1/2 w-full">
+            <div class="bg-[#0B1628]/80 backdrop-blur border border-white/10 rounded-2xl p-6">
+              <div class="flex items-center gap-3 mb-6">
+                <img src="/logo.png" alt="微风网络 Logo" class="w-12 h-12 object-cover rounded-xl" />
+                <div class="flex flex-col">
+                  <span class="font-bold text-white text-lg leading-tight">微风网络</span>
+                  <span class="text-xs text-breeze-cyan leading-tight">Breeze Network</span>
+                </div>
+              </div>
+              <div class="text-sm text-gray-400 font-mono space-y-3">
+                <div class="flex justify-between border-b border-gray-800 pb-2">
+                  <span>延迟测试 (香港)</span>
+                  <span class="text-green-400">32 ms</span>
+                </div>
+                <div class="flex justify-between border-b border-gray-800 pb-2">
+                  <span>流媒体解锁</span>
+                  <span class="text-breeze-cyan">原生 IP</span>
+                </div>
+                <div class="flex justify-between border-b border-gray-800 pb-2">
+                  <span>晚高峰丢包率</span>
+                  <span class="text-green-400">0.01%</span>
+                </div>
+                <div class="flex justify-between pb-1">
+                  <span>支持协议</span>
+                  <span class="text-gray-300">Trojan / Vless / SS</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 场景式推荐 -->
+    <section class="py-16 px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-white mb-10 text-center">不同预算与场景的精准选择</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <div class="bg-[#131F33] p-8 rounded-2xl border border-white/5">
+            <h3 class="text-xl font-bold text-white mb-2">🎬 影音与日常冲浪</h3>
+            <p class="text-gray-400 mb-6 text-sm">追求性价比和大流量，对毫秒级延迟不敏感，但要求看视频绝对流畅。</p>
+            <div class="bg-[#0B1628] rounded-xl p-4 mb-6">
+              <span class="text-xs text-gray-500 block mb-1">建议配置：</span>
+              <div class="font-bold text-gray-200">BGP 中转线路 + 大流量低倍率套餐</div>
+            </div>
+            <a href="/pricing" class="text-breeze-cyan hover:underline text-sm font-medium flex items-center gap-1">
+              查看适合方案 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </a>
+          </div>
+
+          <div class="bg-[#131F33] p-8 rounded-2xl border border-white/5">
+            <h3 class="text-xl font-bold text-white mb-2">🤖 AI 工具重度用户</h3>
+            <p class="text-gray-400 mb-6 text-sm">依赖 ChatGPT、Midjourney，一旦封号损失巨大，需要极度干净的独立/原生 IP。</p>
+            <div class="bg-[#0B1628] rounded-xl p-4 mb-6">
+              <span class="text-xs text-gray-500 block mb-1">建议配置：</span>
+              <div class="font-bold text-gray-200">美国/日本原生 IP 节点 + 稳定订阅分发</div>
+            </div>
+            <a href="/pricing" class="text-breeze-cyan hover:underline text-sm font-medium flex items-center gap-1">
+              查看适合方案 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 机场常见误区 (SEO Heavy) -->
+    <section class="py-16 px-4 bg-[#0B1628]/50">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-white mb-8">新手避坑：选购常见误区</h2>
+        
+        <div class="space-y-4">
+          <div class="bg-[#131F33] p-6 rounded-xl border border-white/5">
+            <h3 class="font-bold text-lg text-white mb-2">误区一：节点数量越多越好？</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">完全错误。10个极速、冗余且长久维护的高级节点，远胜100个滥竽充数、随时掉线的廉价节点。真正重要的是单个节点的带宽吞吐量和区域覆盖精度。</p>
+          </div>
+          <div class="bg-[#131F33] p-6 rounded-xl border border-white/5">
+            <h3 class="font-bold text-lg text-white mb-2">误区二：延迟最低代表速度最快？</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">延迟仅仅代表“握手”响应时间。看高清视频是否卡顿，取决于“带宽大小”和“丢包率”。很多廉价直连线路延迟看着低，但晚高峰一到，严重丢包会让网速直接归零。</p>
+          </div>
+          <div class="bg-[#131F33] p-6 rounded-xl border border-white/5">
+            <h3 class="font-bold text-lg text-white mb-2">误区三：IPLC 专线就一定完美？</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">专线确实稳定，但其成本极其高昂。某些声称提供“极低价大流量 IPLC”的服务商，往往是在“假专线”或“极致超售”上做手脚。选择时请遵从市场规律，一分钱一分货。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Clash 教程链接 -->
+    <section class="py-20 px-4">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl font-bold text-white mb-8 text-center">客户端与 Clash 节点配置指南</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <a href="/guides/clash-verge-rev" class="group block bg-[#131F33] p-6 rounded-2xl border border-white/5 hover:border-breeze-cyan/50 transition-all">
+            <h3 class="font-bold text-white mb-2 group-hover:text-breeze-cyan transition-colors">Clash Verge Rev 教程 →</h3>
+            <p class="text-sm text-gray-500">目前 Windows/Mac 上体验最棒的客户端配置方法。</p>
+          </a>
+          <a href="/guides/subscription-import" class="group block bg-[#131F33] p-6 rounded-2xl border border-white/5 hover:border-breeze-cyan/50 transition-all">
+            <h3 class="font-bold text-white mb-2 group-hover:text-breeze-cyan transition-colors">订阅链接导入指南 →</h3>
+            <p class="text-sm text-gray-500">如何在各平台一键同步微风网络节点。</p>
+          </a>
+          <a href="/guides/high-latency" class="group block bg-[#131F33] p-6 rounded-2xl border border-white/5 hover:border-breeze-cyan/50 transition-all">
+            <h3 class="font-bold text-white mb-2 group-hover:text-breeze-cyan transition-colors">节点延迟高怎么办？ →</h3>
+            <p class="text-sm text-gray-500">新手必看的网络排障与节点自检手册。</p>
+          </a>
+        </div>
+        <div class="text-center mt-8">
+          <a href="/guides" class="text-gray-400 hover:text-white transition-colors underline">查看完整教程中心</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ & Final CTA -->
+    <section class="py-20 px-4 bg-[#0B1628]/80 border-t border-white/5">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold text-white mb-10 text-center">FAQ：常见问题解答</h2>
+        
+        <div class="space-y-6 mb-16">
+          <div>
+            <h4 class="font-bold text-white mb-1">2026 年机场怎么选最稳妥？</h4>
+            <p class="text-sm text-gray-400">优先选择成立时间较长、提供<a href="/status" target="_blank" class="text-breeze-cyan hover:underline font-medium">透明状态监控大屏</a>、且拥有独立 BGP 入口或专线的服务商。警惕一切“年付打骨折”的超低价促销。</p>
+          </div>
+          <div>
+            <h4 class="font-bold text-white mb-1">Clash 机场是什么？</h4>
+            <p class="text-sm text-gray-400">通常指能够提供标准 YAML 格式订阅链接，完美适配 Clash 内核（含 Meta / Mihomo 分支）代理客户端的网络服务提供商。</p>
+          </div>
+          <div>
+            <h4 class="font-bold text-white mb-1">手机和电脑可以共用同一个订阅吗？</h4>
+            <p class="text-sm text-gray-400">可以。像微风网络的高级套餐允许在合理的设备限制内，全平台（Windows, macOS, iOS, Android, 软路由）同时接入使用。</p>
+          </div>
+        </div>
+
+        <div class="text-center bg-gradient-to-r from-breeze-blue/20 to-[#22D3EE]/10 p-10 rounded-3xl border border-breeze-cyan/20">
+          <h3 class="text-2xl font-bold text-white mb-4">准备好体验优质网络了吗？</h3>
+          <p class="text-gray-400 mb-8">告别卡顿与断流，加入成千上万在微风网络享受高速连接的用户。</p>
+          <a href="/pricing" class="inline-block bg-breeze-cyan text-[#0B1628] font-bold py-4 px-10 rounded-full shadow-[0_0_20px_rgba(34,211,238,0.5)] hover:shadow-[0_0_30px_rgba(34,211,238,0.8)] transition-all hover:-translate-y-1 text-lg">
+            前往查看微风网络套餐
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    // Quick Selector Interactive Logic
+    document.addEventListener('DOMContentLoaded', () => {
+      const btns = document.querySelectorAll('.selector-btn');
+      const content = document.getElementById('selector-content');
+      
+      const data = {
+        media: '<span class="text-breeze-cyan font-bold block mb-2">流媒体核心看重：带宽与原生解锁</span>推荐重点：必须支持原生 IP 或流媒体平台解锁，重点关注【新加坡、美国、香港】的流媒体专用节点。不需要极致低延迟，但对晚高峰的“大带宽吞吐量”和“无丢包率”要求极高，这样才能秒开 4K 视频。',
+        ai: '<span class="text-breeze-cyan font-bold block mb-2">AI 与办公看重：IP 纯净度与连通率</span>推荐重点：ChatGPT 和 Claude 对 IP 纯净度要求苛刻，极易引发封号或无休止的验证码。需要极度稳定的低并发节点，建议选择提供冷门原生 IP 且具备良好分流策略的服务。',
+        game: '<span class="text-breeze-cyan font-bold block mb-2">游戏核心看重：极致延迟与零丢包</span>推荐重点：对延迟和丢包零容忍！请直接略过普通中转，认准 IPLC 或 IEPL 游戏专线。建议优先选择物理距离近的日本、香港专线，并且配合 Clash 的 TUN 虚拟网卡模式使用。',
+        asia: '<span class="text-breeze-cyan font-bold block mb-2">亚洲极速看重：优质 BGP 路由</span>推荐重点：如果你是跨境电商或日常高频网页浏览，极低延迟能大幅提升操作丝滑度。首选香港、日本的 BGP 高级中转，通常 30-60ms 的延迟能带来几乎和国内一样的浏览体验。',
+        newbie: '<span class="text-breeze-cyan font-bold block mb-2">新手核心看重：傻瓜式导入与工单支持</span>推荐重点：别被复杂的参数吓到。你需要的是支持【一键导入】和拥有详细图文教程的服务商。建议购买后先查阅微风指南，下载 Clash Verge Rev 等主流直观客户端。'
+      };
+
+      btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Reset styles
+          btns.forEach(b => {
+            b.classList.remove('active', 'bg-breeze-blue', 'text-white', 'shadow-[0_0_15px_rgba(34,211,238,0.3)]');
+            b.classList.add('bg-[#131F33]', 'text-gray-400');
+          });
+          
+          // Set active styles
+          btn.classList.add('active', 'bg-breeze-blue', 'text-white', 'shadow-[0_0_15px_rgba(34,211,238,0.3)]');
+          btn.classList.remove('bg-[#131F33]', 'text-gray-400');
+          
+          // Animate text change
+          content.style.opacity = '0';
+          setTimeout(() => {
+            content.innerHTML = data[btn.getAttribute('data-target')];
+            content.style.opacity = '1';
+          }, 300);
+        });
+      });
+    });
+  </script>
+</Layout>

@@ -1,0 +1,205 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="微风指南｜从购买、订阅、Clash配置到节点选择的完整教程 - 微风网络" 
+  description="从第一次使用到进阶配置，这里整理 Clash、订阅导入、节点选择、流媒体访问、常见故障排查等实用教程，帮助您快速上手微风网络。"
+>
+  <!-- Hero Section -->
+  <section class="relative pt-24 pb-32 px-4 overflow-hidden bg-breeze-dark">
+    <!-- 背景装饰 -->
+    <div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
+      <div class="absolute -top-20 right-10 w-96 h-96 bg-breeze-blue rounded-full mix-blend-screen filter blur-[128px]"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto text-center">
+      <p class="text-breeze-cyan font-semibold tracking-widest text-sm mb-4 uppercase">微风指南</p>
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+        微风网络使用指南
+      </h1>
+      <p class="text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto">
+        从第一次使用到进阶配置，这里整理了 Clash 使用、订阅导入、节点选择、流媒体访问、常见故障排查等实用教程。
+      </p>
+    </div>
+  </section>
+
+  <!-- 第一次使用微风？ Workflow -->
+  <section class="px-4 -mt-20 relative z-20 mb-16">
+    <div class="max-w-5xl mx-auto">
+      <div class="bg-[#131F33] rounded-3xl p-8 md:p-12 border border-breeze-cyan/20 shadow-2xl relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-breeze-cyan/5 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <h2 class="text-2xl font-bold text-white mb-10 text-center relative z-10">第一次使用微风网络？</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 relative z-10">
+          <!-- 桌面端连接线 -->
+          <div class="hidden md:block absolute top-1/2 left-[15%] right-[15%] h-0.5 bg-gray-700/50 -translate-y-1/2 z-0"></div>
+          
+          <!-- Step 1 -->
+          <a href="/pricing" class="relative z-10 bg-[#0B1628] rounded-2xl p-8 border border-gray-700 hover:border-breeze-blue hover:-translate-y-1 transition-all text-center flex flex-col items-center group shadow-lg">
+            <div class="w-14 h-14 rounded-full bg-[#131F33] border border-gray-700 text-breeze-cyan flex items-center justify-center mb-6 text-xl font-bold group-hover:bg-breeze-blue group-hover:border-breeze-blue group-hover:text-white transition-colors duration-300">1</div>
+            <h3 class="text-xl font-bold text-white mb-3">购买套餐</h3>
+            <p class="text-sm text-gray-400">选择适合您的网络套餐，极速开通服务</p>
+          </a>
+          
+          <!-- Step 2 -->
+          <a href="/guides/subscription-import" class="relative z-10 bg-[#0B1628] rounded-2xl p-8 border border-gray-700 hover:border-breeze-blue hover:-translate-y-1 transition-all text-center flex flex-col items-center group shadow-lg">
+            <div class="w-14 h-14 rounded-full bg-[#131F33] border border-gray-700 text-breeze-cyan flex items-center justify-center mb-6 text-xl font-bold group-hover:bg-breeze-blue group-hover:border-breeze-blue group-hover:text-white transition-colors duration-300">2</div>
+            <h3 class="text-xl font-bold text-white mb-3">获取订阅</h3>
+            <p class="text-sm text-gray-400">前往用户中心，一键复制您的专属节点订阅链接</p>
+          </a>
+          
+          <!-- Step 3 -->
+          <a href="/guides/subscription-import-1" class="relative z-10 bg-[#0B1628] rounded-2xl p-8 border border-gray-700 hover:border-breeze-blue hover:-translate-y-1 transition-all text-center flex flex-col items-center group shadow-lg">
+            <div class="w-14 h-14 rounded-full bg-[#131F33] border border-gray-700 text-breeze-cyan flex items-center justify-center mb-6 text-xl font-bold group-hover:bg-breeze-blue group-hover:border-breeze-blue group-hover:text-white transition-colors duration-300">3</div>
+            <h3 class="text-xl font-bold text-white mb-3">配置客户端</h3>
+            <p class="text-sm text-gray-400">导入订阅至 Clash 等客户端，立即开启无缝网络</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 置顶官方教程 (Featured) -->
+  <section class="py-12 px-4">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-2xl font-bold text-white mb-8 flex items-center gap-2">
+        <svg class="w-6 h-6 text-breeze-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+        必读官方教程
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <a href="/guides/getting-started" class="group bg-[#0B1628] border border-white/10 rounded-2xl p-6 hover:border-breeze-blue/50 transition-all hover:-translate-y-1 shadow-lg hover:shadow-breeze-blue/10 flex flex-col">
+          <div class="text-xs text-breeze-cyan mb-3 font-medium">新手必看</div>
+          <h3 class="text-lg font-bold text-white mb-3 group-hover:text-breeze-blue transition-colors">《微风网络新手使用教程：购买后第一步该做什么》</h3>
+          <p class="text-sm text-gray-400 mt-auto">包含注册、购买、获取订阅地址以及下载客户端的完整保姆级流程。</p>
+        </a>
+
+        <a href="/guides/clash-verge-rev" class="group bg-[#0B1628] border border-white/10 rounded-2xl p-6 hover:border-breeze-blue/50 transition-all hover:-translate-y-1 shadow-lg hover:shadow-breeze-blue/10 flex flex-col">
+          <div class="text-xs text-[#22D3EE] mb-3 font-medium">客户端指南</div>
+          <h3 class="text-lg font-bold text-white mb-3 group-hover:text-breeze-blue transition-colors">《微风网络 Clash Verge Rev 配置教程》</h3>
+          <p class="text-sm text-gray-400 mt-auto">目前最推荐的 Windows/Mac 客户端，图文详解安装与基础配置。</p>
+        </a>
+
+        <a href="/guides/subscription-import-1-1" class="group bg-[#0B1628] border border-white/10 rounded-2xl p-6 hover:border-breeze-blue/50 transition-all hover:-translate-y-1 shadow-lg hover:shadow-breeze-blue/10 flex flex-col">
+          <div class="text-xs text-emerald-400 mb-3 font-medium">全平台适配</div>
+          <h3 class="text-lg font-bold text-white mb-3 group-hover:text-breeze-blue transition-colors">《微风网络订阅链接怎么导入？Windows / Android / iOS 教程》</h3>
+          <p class="text-sm text-gray-400 mt-auto">覆盖全平台的一键导入与手动复制链接导入方法说明。</p>
+        </a>
+
+        <a href="/guides/high-latency" class="group bg-[#0B1628] border border-white/10 rounded-2xl p-6 hover:border-breeze-blue/50 transition-all hover:-translate-y-1 shadow-lg hover:shadow-breeze-blue/10 flex flex-col">
+          <div class="text-xs text-purple-400 mb-3 font-medium">网络调优</div>
+          <h3 class="text-lg font-bold text-white mb-3 group-hover:text-breeze-blue transition-colors">《节点延迟高怎么办？微风网络节点选择指南》</h3>
+          <p class="text-sm text-gray-400 mt-auto">教你如何看懂延迟测试，并根据日常、游戏、流媒体等需求选择最佳节点。</p>
+        </a>
+
+        <a href="/guides/clash-timeout" class="group bg-[#0B1628] border border-white/10 rounded-2xl p-6 hover:border-breeze-blue/50 transition-all hover:-translate-y-1 shadow-lg hover:shadow-breeze-blue/10 flex flex-col md:col-span-2 lg:col-span-1">
+          <div class="text-xs text-red-400 mb-3 font-medium">排障指南</div>
+          <h3 class="text-lg font-bold text-white mb-3 group-hover:text-breeze-blue transition-colors">《Clash 显示 Timeout 怎么办？常见问题排查》</h3>
+          <p class="text-sm text-gray-400 mt-auto">时间不同步？系统代理冲突？三分钟帮你定位并解决无法连接的疑难杂症。</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 分类教程 -->
+  <section class="py-20 px-4 bg-[#131F33]/30 border-t border-white/5 mt-8">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-2xl font-bold text-white mb-10 text-center">浏览所有指南分类</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- 新手入门 -->
+        <div class="bg-[#0B1628] rounded-2xl p-6 border border-gray-800">
+          <div class="w-12 h-12 bg-breeze-blue/20 rounded-xl flex items-center justify-center text-breeze-cyan mb-6">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-4">新手入门</h3>
+          <ul class="space-y-3 text-sm text-gray-400">
+            <li><a href="/guides/what-is-airport" class="hover:text-breeze-cyan transition-colors">机场和节点到底是什么？</a></li>
+            <li><a href="/guides/subscription-import-1-1-1" class="hover:text-breeze-cyan transition-colors">什么是订阅链接？</a></li>
+            <li><a href="/guides/guide-10" class="hover:text-breeze-cyan transition-colors">第一次购买套餐后应该怎么做</a></li>
+            <li><a href="/guides/quick-start-11" class="hover:text-breeze-cyan transition-colors">Windows / Android 快速起步</a></li>
+            <li><a href="/guides/quick-start-12" class="hover:text-breeze-cyan transition-colors">iPhone / Mac (iOS/macOS) 快速起步</a></li>
+          </ul>
+        </div>
+
+        <!-- Clash 教程 -->
+        <div class="bg-[#0B1628] rounded-2xl p-6 border border-gray-800">
+          <div class="w-12 h-12 bg-breeze-blue/20 rounded-xl flex items-center justify-center text-breeze-cyan mb-6">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-4">Clash 进阶教程</h3>
+          <ul class="space-y-3 text-sm text-gray-400">
+            <li><a href="/guides/clash-verge-rev-1" class="hover:text-breeze-cyan transition-colors">Clash Verge Rev、Clash Meta 与 Mihomo 的关系</a></li>
+            <li><a href="/guides/subscription-import-1-1-1-1" class="hover:text-breeze-cyan transition-colors">如何手动更新节点订阅</a></li>
+            <li><a href="/guides/proxy-modes-15" class="hover:text-breeze-cyan transition-colors">规则模式 vs 全局模式，该用哪个？</a></li>
+            <li><a href="/guides/proxy-modes-16" class="hover:text-breeze-cyan transition-colors">什么是 TUN 模式？何时开启虚拟网卡？</a></li>
+            <li><a href="/guides/guide-17" class="hover:text-breeze-cyan transition-colors">系统代理无法关闭的解决办法</a></li>
+          </ul>
+        </div>
+
+        <!-- 节点与线路知识 -->
+        <div class="bg-[#0B1628] rounded-2xl p-6 border border-gray-800">
+          <div class="w-12 h-12 bg-breeze-blue/20 rounded-xl flex items-center justify-center text-breeze-cyan mb-6">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path></svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-4">节点与线路知识</h3>
+          <ul class="space-y-3 text-sm text-gray-400">
+            <li><a href="/network" class="hover:text-breeze-cyan transition-colors">微风网络线路与节点总览</a></li>
+            <li><a href="/guides/region-selection" class="hover:text-breeze-cyan transition-colors">香港、日本、新加坡、美国节点怎么选？</a></li>
+            <li><a href="/guides/line-differences-19" class="hover:text-breeze-cyan transition-colors">IEPL / IPLC / 中转 / 直连区别解析</a></li>
+            <li><a href="/guides/speed-test" class="hover:text-breeze-cyan transition-colors">节点测速：延迟低不等于下载速度快</a></li>
+          </ul>
+        </div>
+
+        <!-- 流媒体与 AI -->
+        <div class="bg-[#0B1628] rounded-2xl p-6 border border-gray-800">
+          <div class="w-12 h-12 bg-breeze-blue/20 rounded-xl flex items-center justify-center text-breeze-cyan mb-6">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-4">流媒体与 AI</h3>
+          <ul class="space-y-3 text-sm text-gray-400">
+            <li><a href="/guides/streaming-unlock" class="hover:text-breeze-cyan transition-colors">Netflix、Disney+ 节点选择与解锁原理</a></li>
+            <li><a href="/guides/speed-test-1" class="hover:text-breeze-cyan transition-colors">YouTube 4K 测速指南</a></li>
+            <li><a href="/guides/ai-unlock" class="hover:text-breeze-cyan transition-colors">ChatGPT、Claude 封号预防与节点选择</a></li>
+            <li><a href="/guides/native-ip" class="hover:text-breeze-cyan transition-colors">什么是“原生 IP”？它的应用场景有哪些？</a></li>
+          </ul>
+        </div>
+
+        <!-- 故障排查 -->
+        <div class="bg-[#0B1628] rounded-2xl p-6 border border-gray-800">
+          <div class="w-12 h-12 bg-breeze-blue/20 rounded-xl flex items-center justify-center text-breeze-cyan mb-6">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-4">故障排查</h3>
+          <ul class="space-y-3 text-sm text-gray-400">
+            <li><a href="/guides/subscription-import-1-1-1-1-1" class="hover:text-breeze-cyan transition-colors">订阅更新失败的 3 种常见原因</a></li>
+            <li><a href="/guides/clash-timeout-1" class="hover:text-breeze-cyan transition-colors">节点全部超时 (Timeout) 怎么解决？</a></li>
+            <li><a href="/guides/browser-issue" class="hover:text-breeze-cyan transition-colors">软件能连接，但浏览器打不开网页？</a></li>
+            <li><a href="/guides/connection-failed-28" class="hover:text-breeze-cyan transition-colors">Windows 系统时间不同步导致的连接失败</a></li>
+            <li><a href="/guides/network-change-issue" class="hover:text-breeze-cyan transition-colors">更换 Wi-Fi/网络环境后无法使用的解决办法</a></li>
+          </ul>
+        </div>
+
+        <!-- 机场选购知识 (SEO Links) -->
+        <div class="bg-gradient-to-br from-[#0B1628] to-[#131F33] rounded-2xl p-6 border border-breeze-blue/30 shadow-lg shadow-breeze-blue/5">
+          <div class="w-12 h-12 bg-breeze-blue/20 rounded-xl flex items-center justify-center text-breeze-cyan mb-6">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-4">机场选购知识</h3>
+          <ul class="space-y-3 text-sm text-breeze-text">
+            <li><a href="/airport-recommendation" class="block hover:text-white hover:translate-x-1 transition-all">《2026 机场推荐怎么看？线路、倍率、稳定性完整指南》</a></li>
+            <li><a href="/clash-airport" class="block hover:text-white hover:translate-x-1 transition-all">《2026 Clash 机场推荐：新手应该关注哪些参数》</a></li>
+            <li><a href="/dedicated-line" class="block hover:text-white hover:translate-x-1 transition-all">《机场推荐里的 IPLC、IEPL、直连到底有什么区别》</a></li>
+            <li><a href="/ladder-recommendation" class="block hover:text-white hover:translate-x-1 transition-all">《梯子推荐怎么选？便宜节点和专线节点的差异》</a></li>
+            <li><a href="/airport-recommendation" class="block hover:text-white hover:translate-x-1 transition-all">《2026 稳定机场应该具备哪些条件》</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</Layout>

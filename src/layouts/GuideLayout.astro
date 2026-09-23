@@ -1,0 +1,214 @@
+---
+import Layout from './Layout.astro';
+import ArticleNav from '../components/ArticleNav.astro';
+const { title, description, summary } = Astro.props;
+---
+<Layout title={title} description={description}>
+  <!-- 将单栏布局改为左右分栏布局（大屏下） -->
+  <div class="max-w-7xl mx-auto px-4 py-20 flex gap-8 lg:gap-16 relative min-h-screen">
+    
+    <!-- 左侧主内容区 -->
+    <article class="flex-1 min-w-0 relative">
+      <header class="mb-12">
+        <a href="/guides" class="text-breeze-cyan hover:underline mb-6 inline-flex items-center gap-2 text-sm font-medium">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+          返回指南中心
+        </a>
+        <h1 class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">{title}</h1>
+        
+        {summary && (
+          <div class="bg-breeze-blue/10 border border-breeze-blue/30 rounded-2xl p-6 mt-8 shadow-lg shadow-breeze-blue/5">
+            <div class="flex items-center gap-2 text-breeze-cyan font-bold mb-3 text-lg">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+              10-30秒重点速读
+            </div>
+            <p class="text-gray-200 text-base leading-relaxed">{summary}</p>
+          </div>
+        )}
+      </header>
+
+      <!-- 排版升级：原生 CSS 接管，确保在没有 typography 插件时也能完美渲染 -->
+      <div id="article-content" class="custom-article-content pb-10">
+        <slot />
+      </div>
+      <ArticleNav />
+    </article>
+
+    <!-- 右侧动态侧边栏目录 (ToC) -->
+    <aside class="hidden xl:block w-80 flex-shrink-0 relative">
+      <div class="sticky top-28 bg-[#0B1628]/80 backdrop-blur-md rounded-3xl border border-white/5 p-8 shadow-2xl">
+        <h4 class="text-white font-bold mb-6 flex items-center gap-3 text-lg">
+          <svg class="w-5 h-5 text-breeze-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"></path></svg>
+          阅读进度目录
+        </h4>
+        <nav id="toc-container" class="flex flex-col gap-3 text-sm text-gray-400 max-h-[60vh] overflow-y-auto">
+          <!-- JS 自动注入目录 -->
+        </nav>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- 底部悬浮大按钮 (AFF) -->
+  <div class="fixed bottom-10 left-0 right-0 z-50 flex justify-center pointer-events-none px-4">
+    <!-- 外部包裹层负责固定视距 perspective -->
+    <a href="/go" rel="nofollow sponsored" class="guide-aff-btn group pointer-events-auto relative block w-72 sm:w-80 h-16 cursor-pointer" style="perspective: 1000px;">
+      <!-- 内部容器负责翻转动画与背景样式 -->
+      <div class="aff-inner relative w-full h-full bg-gradient-to-r from-breeze-blue to-[#22D3EE] text-white font-bold rounded-full shadow-[0_0_30px_rgba(59,130,246,0.6)] group-hover:shadow-[0_0_50px_rgba(34,211,238,0.9)] transition-shadow duration-300 border border-white/20 flex items-center justify-center text-xl">
+        <!-- 默认显示面 -->
+        <span class="absolute transition-opacity duration-300 group-hover:opacity-0 flex items-center gap-2">
+          准备好购买了吗？
+        </span>
+        <!-- 悬停翻转面 -->
+        <span class="absolute opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-center gap-3">
+          立即前往微风网络
+          <svg class="w-6 h-6 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+        </span>
+      </div>
+    </a>
+  </div>
+
+  <style is:global>
+    /* 彻底接管文章正文的排版，不再依赖 Tailwind Typography 插件 */
+    .custom-article-content {
+      color: #D1D5DB; /* text-gray-300 */
+      font-size: 1.125rem; /* text-lg */
+      line-height: 2.2;
+    }
+    
+    .custom-article-content p {
+      margin-bottom: 2rem;
+      text-indent: 2em; /* 小说式首行缩进 */
+    }
+    
+    /* 巨大的主题 H2 标题 */
+    .custom-article-content h2 {
+      color: #22D3EE; /* text-breeze-cyan */
+      font-size: 2.25rem; /* text-4xl */
+      font-weight: 900; /* font-black */
+      margin-top: 5rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(31, 41, 55, 0.5); /* border-gray-800/50 */
+      line-height: 1.3;
+      letter-spacing: -0.025em; /* tracking-tight */
+      text-indent: 0; /* 标题不缩进 */
+      scroll-margin-top: 120px; /* 修复目录锚点跳转被顶部导航栏遮挡 */
+    }
+    
+    /* 大屏下 H2 更大 */
+    @media (min-width: 768px) {
+      .custom-article-content h2 {
+        font-size: 3rem; /* text-5xl */
+      }
+    }
+    
+    /* 常规的 H3 子标题 */
+    .custom-article-content h3 {
+      color: #ffffff;
+      font-size: 1.5rem; /* text-2xl */
+      font-weight: 700;
+      margin-top: 4rem;
+      margin-bottom: 1.5rem;
+      text-indent: 0;
+      scroll-margin-top: 120px; /* 修复目录锚点跳转被顶部导航栏遮挡 */
+    }
+    
+    /* 链接样式 */
+    .custom-article-content a {
+      color: #22D3EE;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .custom-article-content a:hover {
+      text-decoration: underline;
+    }
+
+    /* --- 悬浮按钮 3D 翻转动画 --- */
+    .aff-inner {
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      transform-style: preserve-3d;
+    }
+    .guide-aff-btn:hover .aff-inner {
+      transform: rotateX(360deg);
+    }
+  </style>
+
+  <script>
+    // --- 动态目录 (ToC) 生成与 ScrollSpy ---
+    document.addEventListener('DOMContentLoaded', () => {
+      const content = document.getElementById('article-content');
+      const tocContainer = document.getElementById('toc-container');
+      
+      if (!content || !tocContainer) return;
+
+      const headings = content.querySelectorAll('h2, h3');
+      if (headings.length === 0) {
+        tocContainer.innerHTML = '<div class="text-gray-500 italic">暂无目录</div>';
+        return;
+      }
+
+      let tocHtml = '';
+      headings.forEach((heading, index) => {
+        if (!heading.id) {
+          heading.id = 'heading-' + index;
+        }
+        const level = heading.tagName.toLowerCase();
+        // h2 大一点，h3 往右缩进一点
+        const paddingClass = level === 'h2' ? 'font-bold text-gray-200 mt-2' : 'pl-4 text-xs';
+        
+        tocHtml += `<a href="#${heading.id}" class="toc-link block ${paddingClass} hover:text-breeze-cyan transition-colors border-l-2 border-transparent hover:border-breeze-cyan py-1.5" data-target="${heading.id}">${heading.textContent}</a>`;
+      });
+      
+      tocContainer.innerHTML = tocHtml;
+
+      // 监听滚动位置，高亮当前目录
+      const observer = new IntersectionObserver((entries) => {
+        // Find the currently visible heading
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            document.querySelectorAll('.toc-link').forEach(link => {
+              if (link.getAttribute('data-target') === id) {
+                link.classList.add('text-breeze-cyan', 'border-breeze-cyan');
+                link.classList.remove('border-transparent', 'text-gray-400', 'text-gray-200');
+              } else {
+                link.classList.remove('text-breeze-cyan', 'border-breeze-cyan');
+                link.classList.add('border-transparent');
+                // 恢复默认颜色
+                if(link.classList.contains('font-bold')) {
+                  link.classList.add('text-gray-200');
+                } else {
+                  link.classList.add('text-gray-400');
+                }
+              }
+            });
+          }
+        });
+      }, { rootMargin: '-10% 0px -70% 0px' });
+
+      headings.forEach(h => observer.observe(h));
+    });
+
+    // --- AFF 按钮防伪装逻辑 ---
+    const affBtns = document.querySelectorAll('.guide-aff-btn');
+    affBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetUrl = btn.getAttribute('href');
+        
+        btn.style.pointerEvents = 'none';
+        
+        // 找到内部的翻转层进行安全替换，避免破坏外层尺寸与背景
+        const inner = btn.querySelector('.aff-inner');
+        if (inner) {
+          inner.innerHTML = '<span class="flex items-center gap-2">安全跳转中... <svg class="w-6 h-6 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg></span>';
+        }
+        
+        setTimeout(() => {
+          window.location.href = targetUrl;
+        }, 3000);
+      });
+    });
+  </script>
+</Layout>
